@@ -1,0 +1,67 @@
+[2025-10-25T21:53:49.062+0000] {processor.py:157} INFO - Started process (PID=163) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:53:49.064+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:53:49.066+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:49.066+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:53:50.889+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:53:51.256+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:51.255+0000] {manager.py:499} INFO - Created Permission View: %s
+[2025-10-25T21:53:51.261+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:51.261+0000] {manager.py:499} INFO - Created Permission View: %s
+[2025-10-25T21:53:51.263+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:51.263+0000] {manager.py:499} INFO - Created Permission View: %s
+[2025-10-25T21:53:51.264+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:51.263+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:53:51.269+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:51.269+0000] {dag.py:2963} INFO - Creating ORM DAG for forest_cover_training_pipeline
+[2025-10-25T21:53:51.275+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:53:51.275+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:42:00+00:00, run_after=2025-10-25T21:48:00+00:00
+[2025-10-25T21:53:51.286+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 2.230 seconds
+[2025-10-25T21:54:21.353+0000] {processor.py:157} INFO - Started process (PID=176) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:54:21.357+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:54:21.358+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:54:21.357+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:54:22.381+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:54:22.394+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:54:22.394+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:54:22.403+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:54:22.403+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:54:22.413+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 1.068 seconds
+[2025-10-25T21:54:52.614+0000] {processor.py:157} INFO - Started process (PID=189) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:54:52.615+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:54:52.616+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:54:52.616+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:54:53.467+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:54:53.486+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:54:53.486+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:54:53.566+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:54:53.566+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:54:53.574+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 0.967 seconds
+[2025-10-25T21:55:23.872+0000] {processor.py:157} INFO - Started process (PID=202) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:55:23.874+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:55:23.875+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:55:23.875+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:55:24.847+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:55:24.867+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:55:24.866+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:55:24.877+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:55:24.877+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:55:24.886+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 1.019 seconds
+[2025-10-25T21:55:55.146+0000] {processor.py:157} INFO - Started process (PID=215) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:55:55.147+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:55:55.148+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:55:55.147+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:55:56.215+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:55:56.244+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:55:56.243+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:55:56.377+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:55:56.377+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:55:56.386+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 1.244 seconds
+[2025-10-25T21:56:26.683+0000] {processor.py:157} INFO - Started process (PID=228) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:56:26.692+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:56:26.696+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:56:26.694+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:56:27.707+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:56:27.724+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:56:27.723+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:56:27.739+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:56:27.738+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:56:27.747+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 1.075 seconds
+[2025-10-25T21:56:58.038+0000] {processor.py:157} INFO - Started process (PID=241) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:56:58.039+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:56:58.040+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:56:58.040+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:56:58.879+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:56:58.893+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:56:58.893+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:56:58.971+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:56:58.971+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:56:58.985+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 0.954 seconds
+[2025-10-25T21:57:29.403+0000] {processor.py:157} INFO - Started process (PID=254) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:57:29.406+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:57:29.408+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:57:29.407+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:57:30.526+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:57:30.554+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:57:30.553+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:57:30.566+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:57:30.566+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:57:30.576+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 1.182 seconds
+[2025-10-25T21:58:00.784+0000] {processor.py:157} INFO - Started process (PID=267) to work on /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:58:00.787+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/training_pipeline.py for tasks to queue
+[2025-10-25T21:58:00.788+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:58:00.788+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:58:01.806+0000] {processor.py:839} INFO - DAG(s) dict_keys(['forest_cover_training_pipeline']) retrieved from /opt/airflow/dags/training_pipeline.py
+[2025-10-25T21:58:01.821+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:58:01.821+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-10-25T21:58:01.832+0000] {logging_mixin.py:154} INFO - [2025-10-25T21:58:01.831+0000] {dag.py:3722} INFO - Setting next_dagrun for forest_cover_training_pipeline to 2025-10-25T21:48:00+00:00, run_after=2025-10-25T21:54:00+00:00
+[2025-10-25T21:58:01.839+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/training_pipeline.py took 1.068 seconds

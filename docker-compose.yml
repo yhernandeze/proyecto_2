@@ -1,0 +1,246 @@
+version: '3.8'
+
+services:
+  # Base de datos MySQL para metadata de MLflow
+  mysql:
+    image: mysql:8.0
+    #----------
+    command: --default-authentication-plugin=mysql_native_password
+    #cambio1 v1
+    #----------
+    container_name: MySQL
+    environment:
+      #----------
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      #----------
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - mlops_network
+    
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MinIO - Almacenamiento de objetos
+  minio:
+    image: minio/minio:latest
+    container_name: mlops_minio
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - mlops_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Crear bucket en MinIO
+  minio_create_bucket:
+    image: minio/mc:latest
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set myminio http://minio:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};
+      mc mb myminio/${MINIO_BUCKET} --ignore-existing;
+      mc anonymous set download myminio/${MINIO_BUCKET};
+      exit 0;
+      "
+    networks:
+      - mlops_network
+
+  # MLflow Server
+  mlflow:
+    build:
+      context: ./mlflow
+      dockerfile: Dockerfile
+    container_name: mlops_mlflow
+    depends_on:
+      mysql:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    environment:
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "5000:5000"
+    command: >
+      mlflow server
+      --backend-store-uri mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/${MYSQL_DATABASE}
+      --default-artifact-root s3://${MINIO_BUCKET}/
+      --host 0.0.0.0
+      --port 5000
+    networks:
+      - mlops_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL para Airflow
+  postgres:
+    image: postgres:13
+    container_name: mlops_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mlops_network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Airflow Webserver
+  airflow-webserver:
+    build:
+      context: ./airflow
+      dockerfile: Dockerfile
+    container_name: mlops_airflow_webserver
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: 'UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E='
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__WEBSERVER__SECRET_KEY: 'your-secret-key-here'
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      DATA_API_URL: ${DATA_API_URL}
+      DATA_DB_URI: mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/datasets_db
+      GROUP_NUMBER: ${GROUP_NUMBER}
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "airflow db init &&
+               airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin &&
+               airflow webserver"
+    networks:
+      - mlops_network
+
+  # Airflow Scheduler
+  airflow-scheduler:
+    build:
+      context: ./airflow
+      dockerfile: Dockerfile
+    container_name: mlops_airflow_scheduler
+    depends_on:
+      airflow-webserver:
+        condition: service_started
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: 'UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E='
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      DATA_API_URL: ${DATA_API_URL}
+      DATA_DB_URI: mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/datasets_db
+      GROUP_NUMBER: ${GROUP_NUMBER}
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+    command: airflow scheduler
+    networks:
+      - mlops_network
+
+  #API de Datos (simulación local de la API del profesor)
+  data_api:
+    build:
+      context: ./data_api
+      dockerfile: Dockerfile
+    container_name: mlops_data_api
+    ports:
+      - "8088:8080"
+    networks:
+      - mlops_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # API de Inferencia
+  inference_api:
+    build:
+      context: ./inference_api
+      dockerfile: Dockerfile
+    container_name: mlops_inference_api
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    environment:
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+    ports:
+      - "8989:8989"
+    volumes:
+      - ./inference_api/models:/app/models
+    networks:
+      - mlops_network
+
+  # UI Streamlit (BONO)
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: mlops_ui
+    depends_on:
+      - inference_api
+    environment:
+      INFERENCE_API_URL: http://inference_api:8989
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      AIRFLOW_URL: http://airflow-webserver:8080
+    ports:
+      - "8503:8503"
+    networks:
+      - mlops_network
+
+volumes:
+  mysql_data:
+  minio_data:
+  postgres_data:
+
+networks:
+  mlops_network:
+    driver: bridge
