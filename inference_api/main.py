@@ -1,319 +1,277 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict
-import mlflow
-import mlflow.sklearn
-import pandas as pd
-import numpy as np
+from typing import Any, Dict, List, Optional
 import os
-from datetime import datetime
 import logging
+from datetime import datetime
+import traceback
 
-# Configuración de logging
+import numpy as np
+import pandas as pd
+
+import mlflow
+from mlflow.tracking import MlflowClient
+from mlflow.pyfunc import load_model
+from mlflow.models import get_model_info
+
+# ---------- logging ----------
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Configuración de MLflow
-MLFLOW_TRACKING_URI = os.getenv('MLFLOW_TRACKING_URI', 'http://mlflow:5000')
+# ---------- MLflow config ----------
+MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://mlflow:5000")
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
-# Crear aplicación FastAPI
+DEFAULT_MODEL_NAME = os.getenv("MODEL_NAME")        # e.g. "diabetes_readmit_rf"
+DEFAULT_MODEL_STAGE = os.getenv("MODEL_STAGE", "Production")
+
+# ---------- FastAPI ----------
 app = FastAPI(
-    title="Forest Cover Type Prediction API",
-    description="API para inferencia de tipos de cobertura forestal usando MLflow models",
-    version="1.0.0"
+    title="Generic MLflow Inference API",
+    description="Loads an MLflow (pyfunc) registered model and serves predict()",
+    version="1.1.0"
 )
 
-# Variable global para almacenar modelos cargados
-loaded_models = {}
-current_model_name = None
+# In-memory cache
+_loaded = {
+    "model_name": None,
+    "stage": None,
+    "version": None,
+    "model": None,
+    "signature": None,
+    "loaded_at": None
+}
 
-class PredictionInput(BaseModel):
-    """Schema para entrada de predicción"""
-    Elevation: float = Field(..., description="Elevación en metros")
-    Aspect: float = Field(..., description="Aspecto en grados azimuth")
-    Slope: float = Field(..., description="Pendiente en grados")
-    Horizontal_Distance_To_Hydrology: float = Field(..., description="Distancia horizontal al agua")
-    Vertical_Distance_To_Hydrology: float = Field(..., description="Distancia vertical al agua")
-    Horizontal_Distance_To_Roadways: float = Field(..., description="Distancia horizontal a carreteras")
-    Hillshade_9am: int = Field(..., ge=0, le=255, description="Índice de sombra a las 9am")
-    Hillshade_Noon: int = Field(..., ge=0, le=255, description="Índice de sombra al mediodía")
-    Hillshade_3pm: int = Field(..., ge=0, le=255, description="Índice de sombra a las 3pm")
-    Horizontal_Distance_To_Fire_Points: float = Field(..., description="Distancia a puntos de fuego")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "Elevation": 2596,
-                "Aspect": 51,
-                "Slope": 3,
-                "Horizontal_Distance_To_Hydrology": 258,
-                "Vertical_Distance_To_Hydrology": 0,
-                "Horizontal_Distance_To_Roadways": 510,
-                "Hillshade_9am": 221,
-                "Hillshade_Noon": 232,
-                "Hillshade_3pm": 148,
-                "Horizontal_Distance_To_Fire_Points": 6279
-            }
-        }
+# ---------- helpers ----------
+def _model_uri(name: str, version: Optional[str], stage: Optional[str]) -> str:
+    if version:
+        return f"models:/{name}/{version}"
+    if stage:
+        return f"models:/{name}/{stage}"
+    return f"models:/{name}/latest"
 
-class PredictionOutput(BaseModel):
-    """Schema para salida de predicción"""
-    prediction: int = Field(..., description="Tipo de cobertura forestal predicho (1-7)")
-    prediction_label: str = Field(..., description="Etiqueta del tipo de cobertura")
-    confidence: Optional[float] = Field(None, description="Confianza de la predicción")
-    model_used: str = Field(..., description="Nombre del modelo utilizado")
-    timestamp: str = Field(..., description="Timestamp de la predicción")
+def _load(name: str, version: Optional[str] = None, stage: Optional[str] = None):
+    uri = _model_uri(name, version, stage)
+    logger.info(f"Loading MLflow model from URI: {uri}")
+    model = load_model(uri)  # pyfunc model
+    info = get_model_info(uri)
+    _loaded.update({
+        "model_name": name,
+        "stage": stage,
+        "version": version,
+        "model": model,
+        "signature": info.signature.dict() if info and info.signature else None,
+        "loaded_at": datetime.now().isoformat()
+    })
+    logger.info(f"Loaded model '{name}' (stage={stage}, version={version})")
+    return model
 
-class BatchPredictionInput(BaseModel):
-    """Schema para predicciones por lote"""
-    data: List[PredictionInput]
+def _ensure_loaded():
+    if _loaded["model"] is None:
+        if not DEFAULT_MODEL_NAME:
+            raise HTTPException(status_code=503, detail="No default MODEL_NAME configured")
+        try:
+            _load(DEFAULT_MODEL_NAME, stage=DEFAULT_MODEL_STAGE)
+        except Exception as e:
+            raise HTTPException(status_code=503, detail=f"No se pudo cargar el modelo por defecto: {e}")
 
-class ModelInfo(BaseModel):
-    """Información del modelo"""
-    model_name: str
-    version: Optional[str]
-    stage: Optional[str]
-    loaded: bool
-
-def get_cover_type_label(prediction: int) -> str:
-    """Convertir predicción numérica a etiqueta"""
-    labels = {
-        1: "Spruce/Fir",
-        2: "Lodgepole Pine",
-        3: "Ponderosa Pine",
-        4: "Cottonwood/Willow",
-        5: "Aspen",
-        6: "Douglas-fir",
-        7: "Krummholz"
-    }
-    return labels.get(prediction, "Unknown")
-
-def load_model_from_mlflow(model_name: str, version: Optional[str] = None, stage: Optional[str] = "Production"):
-    """
-    Cargar modelo desde MLflow
-    """
-    global loaded_models, current_model_name
-    
+def _extract_sig_columns(sig_dict: Optional[dict]) -> Optional[List[str]]:
+    """If the MLflow signature exists, return ordered input column names."""
+    if not sig_dict:
+        return None
+    # MLflow pydantic signature dict → fields under inputs
     try:
-        logger.info(f"Intentando cargar modelo: {model_name}")
-        
-        # Si se especifica versión
-        if version:
-            model_uri = f"models:/{model_name}/{version}"
-        # Si se especifica stage
-        elif stage:
-            model_uri = f"models:/{model_name}/{stage}"
-        else:
-            # Cargar última versión
-            model_uri = f"models:/{model_name}/latest"
-        
-        logger.info(f"URI del modelo: {model_uri}")
-        
-        # Cargar modelo
-        model = mlflow.sklearn.load_model(model_uri)
-        
-        # Guardar en cache
-        loaded_models[model_name] = {
-            'model': model,
-            'version': version,
-            'stage': stage,
-            'loaded_at': datetime.now().isoformat()
-        }
-        
-        current_model_name = model_name
-        logger.info(f"Modelo {model_name} cargado exitosamente")
-        
-        return model
-    
-    except Exception as e:
-        logger.error(f"Error al cargar modelo {model_name}: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Error al cargar modelo: {str(e)}")
+        inputs = sig_dict.get("inputs")
+        if not inputs:
+            return None
+        # support schema stored as a list of dicts with 'name' keys
+        names = [f.get("name") for f in inputs if isinstance(f, dict) and "name" in f]
+        return names if names else None
+    except Exception:
+        return None
 
+# ---------- default-fill config for Diabetes dataset ----------
+NUM_DEFAULT_0 = {
+    "time_in_hospital", "num_lab_procedures", "num_procedures", "num_medications",
+    "number_outpatient", "number_emergency", "number_inpatient", "number_diagnoses",
+    "admission_type_id", "discharge_disposition_id", "admission_source_id"
+}
+CAT_DEFAULT_UNKNOWN = {
+    "race", "gender", "age", "payer_code", "medical_specialty",
+    "max_glu_serum", "A1Cresult"
+}
+MED_COLS = {
+    "metformin","repaglinide","nateglinide","chlorpropamide","glimepiride",
+    "acetohexamide","glipizide","glyburide","tolbutamide","pioglitazone",
+    "rosiglitazone","acarbose","miglitol","troglitazone","tolazamide",
+    "examide","citoglipton","glyburide-metformin","glipizide-metformin",
+    "glimepiride-pioglitazone","metformin-rosiglitazone","metformin-pioglitazone",
+    "insulin","change","diabetesMed"
+}
+FILL_VALUES = {
+    **{c: 0 for c in NUM_DEFAULT_0},
+    **{c: "Unknown" for c in CAT_DEFAULT_UNKNOWN},
+    **{c: "No" for c in MED_COLS},
+    "weight": "?",  # dataset used "?" for missing weight
+}
+
+def _try_predict(df: pd.DataFrame):
+    """Call underlying model.predict, return (ok, result_or_error)."""
+    try:
+        res = _loaded["model"].predict(df)
+        return True, res
+    except Exception as e:
+        return False, e
+
+def _missing_from_exception(err: Exception) -> List[str]:
+    """Parse KeyError like: \"['col1','col2'] not in index\" to list of col names."""
+    msg = str(err)
+    if "not in index" in msg:
+        start = msg.find("[")
+        end = msg.find("]", start)
+        if start != -1 and end != -1:
+            inside = msg[start+1:end]
+            parts = [p.strip().strip("'").strip('"') for p in inside.split(",")]
+            return [p for p in parts if p]
+    return []
+
+# ---------- schemas ----------
+class PredictBody(BaseModel):
+    records: List[Dict[str, Any]] = Field(..., description="List of feature dictionaries")
+
+class LoadBody(BaseModel):
+    model_name: str
+    version: Optional[str] = None
+    stage: Optional[str] = None
+
+# ---------- endpoints ----------
 @app.get("/")
 def root():
-    """Endpoint raíz"""
     return {
-        "message": "Forest Cover Type Prediction API",
-        "version": "1.0.0",
+        "message": "MLflow Inference API (pyfunc)",
         "status": "running",
-        "mlflow_uri": MLFLOW_TRACKING_URI
+        "mlflow_uri": MLFLOW_TRACKING_URI,
+        "default_model_name": DEFAULT_MODEL_NAME,
+        "default_model_stage": DEFAULT_MODEL_STAGE
     }
 
 @app.get("/health")
-def health_check():
-    """Health check"""
+def health():
     return {
         "status": "healthy",
         "timestamp": datetime.now().isoformat(),
-        "mlflow_connection": MLFLOW_TRACKING_URI
+        "loaded": _loaded["model"] is not None
     }
 
-@app.get("/models", response_model=List[str])
-def list_available_models():
-    """
-    Listar modelos disponibles en MLflow
-    """
+@app.get("/models")
+def list_models():
     try:
-        client = mlflow.tracking.MlflowClient()
-        registered_models = client.search_registered_models()
-        
-        model_names = [rm.name for rm in registered_models]
-        return model_names
-    
-    except Exception as e:
-        logger.error(f"Error al listar modelos: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Error al listar modelos: {str(e)}")
-
-@app.get("/models/{model_name}/info", response_model=ModelInfo)
-def get_model_info(model_name: str):
-    """
-    Obtener información de un modelo específico
-    """
-    is_loaded = model_name in loaded_models
-    
-    if is_loaded:
-        model_data = loaded_models[model_name]
-        return ModelInfo(
-            model_name=model_name,
-            version=model_data.get('version'),
-            stage=model_data.get('stage'),
-            loaded=True
-        )
-    else:
-        return ModelInfo(
-            model_name=model_name,
-            version=None,
-            stage=None,
-            loaded=False
-        )
-
-@app.post("/models/{model_name}/load")
-def load_specific_model(
-    model_name: str,
-    version: Optional[str] = None,
-    stage: Optional[str] = "Production"
-):
-    """
-    BONO: Cargar un modelo específico para usar en las predicciones
-    """
-    try:
-        load_model_from_mlflow(model_name, version, stage)
-        return {
-            "message": f"Modelo {model_name} cargado exitosamente",
-            "model_name": model_name,
-            "version": version,
-            "stage": stage,
-            "timestamp": datetime.now().isoformat()
-        }
+        client = MlflowClient()
+        rms = client.search_registered_models()
+        return [rm.name for rm in rms]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/predict", response_model=PredictionOutput)
-def predict(input_data: PredictionInput):
-    """
-    Realizar predicción individual
-    """
-    global current_model_name
-    
-    # Si no hay modelo cargado, intentar cargar uno por defecto
-    if not current_model_name or current_model_name not in loaded_models:
-        try:
-            # Intentar cargar modelo por defecto
-            available_models = list_available_models()
-            if not available_models:
-                raise HTTPException(status_code=503, detail="No hay modelos disponibles en MLflow")
-            
-            # Cargar el primer modelo disponible que contenga "forest_cover"
-            default_model = next((m for m in available_models if 'forest_cover' in m.lower()), available_models[0])
-            load_model_from_mlflow(default_model)
-        except Exception as e:
-            raise HTTPException(status_code=503, detail=f"No se pudo cargar ningún modelo: {str(e)}")
-    
+@app.post("/models/load")
+def load_specific_model(body: LoadBody):
     try:
-        # Preparar datos para predicción
-        input_dict = input_data.model_dump()
-        df = pd.DataFrame([input_dict])
-        
-        # Realizar predicción
-        model_data = loaded_models[current_model_name]
-        model = model_data['model']
-        
-        prediction = int(model.predict(df)[0])
-        
-        # Obtener probabilidades si el modelo lo soporta
-        confidence = None
-        if hasattr(model, 'predict_proba'):
-            proba = model.predict_proba(df)[0]
-            confidence = float(max(proba))
-        
-        return PredictionOutput(
-            prediction=prediction,
-            prediction_label=get_cover_type_label(prediction),
-            confidence=confidence,
-            model_used=current_model_name,
-            timestamp=datetime.now().isoformat()
-        )
-    
-    except Exception as e:
-        logger.error(f"Error en predicción: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Error en predicción: {str(e)}")
-
-@app.post("/predict/batch")
-def predict_batch(batch_input: BatchPredictionInput):
-    """
-    Realizar predicciones por lote
-    """
-    global current_model_name
-    
-    if not current_model_name or current_model_name not in loaded_models:
-        raise HTTPException(status_code=503, detail="No hay modelo cargado. Use /models/{model_name}/load primero")
-    
-    try:
-        # Preparar datos
-        input_list = [item.model_dump() for item in batch_input.data]
-        df = pd.DataFrame(input_list)
-        
-        # Realizar predicciones
-        model_data = loaded_models[current_model_name]
-        model = model_data['model']
-        
-        predictions = model.predict(df).tolist()
-        
-        results = []
-        for i, pred in enumerate(predictions):
-            results.append({
-                "index": i,
-                "prediction": int(pred),
-                "prediction_label": get_cover_type_label(int(pred))
-            })
-        
+        _load(body.model_name, version=body.version, stage=body.stage)
         return {
-            "predictions": results,
-            "model_used": current_model_name,
-            "timestamp": datetime.now().isoformat()
+            "message": "Modelo cargado",
+            "model_name": _loaded["model_name"],
+            "stage": _loaded["stage"],
+            "version": _loaded["version"],
+            "loaded_at": _loaded["loaded_at"]
         }
-    
     except Exception as e:
-        logger.error(f"Error en predicción batch: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Error en predicción batch: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error al cargar modelo: {e}")
 
-@app.get("/current-model")
-def get_current_model():
-    """
-    Obtener información del modelo actualmente en uso
-    """
-    if not current_model_name or current_model_name not in loaded_models:
-        return {"message": "No hay modelo cargado actualmente"}
-    
-    model_data = loaded_models[current_model_name]
+@app.get("/model/expected-schema")
+def expected_schema():
+    """Show the input schema according to MLflow model signature (if logged)."""
+    _ensure_loaded()
+    sig = _loaded["signature"]
     return {
-        "model_name": current_model_name,
-        "version": model_data.get('version'),
-        "stage": model_data.get('stage'),
-        "loaded_at": model_data.get('loaded_at')
+        "model_name": _loaded["model_name"],
+        "stage": _loaded["stage"],
+        "version": _loaded["version"],
+        "signature": sig
+    }
+
+@app.post("/predict/check")
+def predict_check(body: PredictBody):
+    """Dry-run: return which columns are missing (no 500)."""
+    _ensure_loaded()
+    if not body.records:
+        raise HTTPException(status_code=400, detail="Empty records")
+    df = pd.DataFrame(body.records)
+
+    ok, res = _try_predict(df)
+    if ok:
+        return {"missing_columns": [], "note": "predict would succeed"}
+    miss = _missing_from_exception(res)
+    return {"missing_columns": miss, "raw_error": str(res)}
+
+@app.post("/predict")
+def predict(body: PredictBody):
+    """
+    Predict with arbitrary JSON records.
+    If signature exists: align to signature.
+    If not: try once, and on KeyError (missing columns) auto-fill with defaults & retry once.
+    """
+    _ensure_loaded()
+    if not body.records:
+        raise HTTPException(status_code=400, detail="Empty records")
+
+    df = pd.DataFrame(body.records)
+    logger.info(f"Incoming DF columns: {list(df.columns)} | shape={df.shape}")
+
+    sig_cols = _extract_sig_columns(_loaded["signature"])
+    if sig_cols:
+        # fill missing signature columns with NaN and reorder
+        for c in sig_cols:
+            if c not in df.columns:
+                df[c] = np.nan
+        df = df[sig_cols]
+        logger.info(f"Aligned to signature. Final DF columns: {list(df.columns)}")
+
+    ok, res = _try_predict(df)
+    if ok:
+        preds = res
+    else:
+        # only retry on missing-column errors
+        missing_cols = _missing_from_exception(res)
+        if not missing_cols:
+            logger.error("Prediction failed (no missing-column hint). Stack:\n" + traceback.format_exc())
+            raise HTTPException(status_code=500, detail=f"Error en predicción: {res}")
+
+        logger.warning(f"Missing columns detected: {missing_cols}. Auto-filling once and retrying.")
+        for c in missing_cols:
+            df[c] = FILL_VALUES.get(c, np.nan)
+
+        if sig_cols:
+            # ensure all signature columns exist & reorder again
+            for c in sig_cols:
+                if c not in df.columns:
+                    df[c] = np.nan
+            df = df[sig_cols]
+
+        ok2, res2 = _try_predict(df)
+        if not ok2:
+            logger.error("Prediction failed after auto-fill retry. Stack:\n" + traceback.format_exc())
+            raise HTTPException(status_code=500, detail=f"Error en predicción (tras reintento): {res2}")
+        preds = res2
+
+    preds_out = preds.tolist() if hasattr(preds, "tolist") else preds
+    return {
+        "model_name": _loaded["model_name"],
+        "stage": _loaded["stage"],
+        "version": _loaded["version"],
+        "timestamp": datetime.now().isoformat(),
+        "predictions": preds_out
     }
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8989)
+ 

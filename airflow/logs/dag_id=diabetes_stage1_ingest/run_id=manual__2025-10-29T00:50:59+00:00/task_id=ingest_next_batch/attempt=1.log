@@ -1,0 +1,22 @@
+[2025-10-29T00:58:55.212+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.ingest_next_batch manual__2025-10-29T00:50:59+00:00 [queued]>
+[2025-10-29T00:58:55.217+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.ingest_next_batch manual__2025-10-29T00:50:59+00:00 [queued]>
+[2025-10-29T00:58:55.217+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-10-29T00:58:55.224+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_next_batch> on 2025-10-29 00:50:59+00:00
+[2025-10-29T00:58:55.231+0000] {standard_task_runner.py:57} INFO - Started process 1208 to run task
+[2025-10-29T00:58:55.235+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'ingest_next_batch', 'manual__2025-10-29T00:50:59+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmphv6mso2i']
+[2025-10-29T00:58:55.242+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask ingest_next_batch
+[2025-10-29T00:58:55.301+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.ingest_next_batch manual__2025-10-29T00:50:59+00:00 [running]> on host 8f23d0ceb5b8
+[2025-10-29T00:58:55.354+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_stage1_ingest' AIRFLOW_CTX_TASK_ID='ingest_next_batch' AIRFLOW_CTX_EXECUTION_DATE='2025-10-29T00:50:59+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-29T00:50:59+00:00'
+[2025-10-29T00:58:55.429+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/diabetes_stage1_ingest.py", line 118, in ingest_next_batch
+    raise Exception("No more rows to ingest")
+Exception: No more rows to ingest
+[2025-10-29T00:58:55.440+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=diabetes_stage1_ingest, task_id=ingest_next_batch, execution_date=20251029T005059, start_date=20251029T005855, end_date=20251029T005855
+[2025-10-29T00:58:55.451+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 7 for task ingest_next_batch (No more rows to ingest; 1208)
+[2025-10-29T00:58:55.465+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-10-29T00:58:55.481+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

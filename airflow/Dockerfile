@@ -15,7 +15,8 @@ RUN pip install --no-cache-dir \
     pandas==2.1.4 \
     numpy==1.26.2 \
     requests==2.31.0 \
-    pymysql==1.1.0
+    pymysql==1.1.0 \
+    ucimlrepo==0.0.7
 
-RUN mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins
+    RUN mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins
 WORKDIR /opt/airflow
