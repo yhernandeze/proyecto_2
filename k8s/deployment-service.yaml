@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-api
+  namespace: mlops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-api
+  template:
+    metadata:
+      labels:
+        app: inference-api
+    spec:
+      containers:
+        - name: inference-api
+          image: inference-api:stage3
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8989
+          envFrom:
+            - configMapRef:
+                name: inference-config
+            - secretRef:
+                name: inference-secrets
+          readinessProbe:
+            httpGet: { path: /health, port: 8989 }
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: { path: /health, port: 8989 }
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests: { cpu: "250m", memory: "256Mi" }
+            limits:   { cpu: "500m", memory: "512Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inference-api
+  namespace: mlops
+spec:
+  selector:
+    app: inference-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8989
+  type: ClusterIP

@@ -1,0 +1,16 @@
+[2025-11-01T23:43:44.503+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.stop_if_done scheduled__2025-11-01T23:36:00+00:00 [queued]>
+[2025-11-01T23:43:44.519+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.stop_if_done scheduled__2025-11-01T23:36:00+00:00 [queued]>
+[2025-11-01T23:43:44.519+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-01T23:43:44.541+0000] {taskinstance.py:1382} INFO - Executing <Task(ShortCircuitOperator): stop_if_done> on 2025-11-01 23:36:00+00:00
+[2025-11-01T23:43:44.562+0000] {standard_task_runner.py:57} INFO - Started process 2306 to run task
+[2025-11-01T23:43:44.570+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'stop_if_done', 'scheduled__2025-11-01T23:36:00+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmp1y5_xex9']
+[2025-11-01T23:43:44.577+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask stop_if_done
+[2025-11-01T23:43:44.714+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.stop_if_done scheduled__2025-11-01T23:36:00+00:00 [running]> on host af34108dcec4
+[2025-11-01T23:43:44.856+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_stage1_ingest' AIRFLOW_CTX_TASK_ID='stop_if_done' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T23:36:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-01T23:36:00+00:00'
+[2025-11-01T23:43:44.879+0000] {python.py:194} INFO - Done. Returned value was: False
+[2025-11-01T23:43:44.880+0000] {python.py:264} INFO - Condition result is False
+[2025-11-01T23:43:44.880+0000] {python.py:291} INFO - Skipping downstream tasks
+[2025-11-01T23:43:44.913+0000] {python.py:299} INFO - Done.
+[2025-11-01T23:43:44.941+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=diabetes_stage1_ingest, task_id=stop_if_done, execution_date=20251101T233600, start_date=20251101T234344, end_date=20251101T234344
+[2025-11-01T23:43:44.998+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-01T23:43:45.084+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

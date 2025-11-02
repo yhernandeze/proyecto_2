@@ -40,3 +40,83 @@ Example:
 [2025-10-29T01:13:27.717+0000] {logging_mixin.py:154} WARNING - 2025/10/29 01:13:27 WARNING mlflow.models.signature: Failed to infer the model signature from the input example. Reason: MlflowException("Unable to map 'object' type to MLflow DataType. object can be mapped iff all values have identical data type which is one of (string, (bytes or byterray),  int, float)."). To see the full traceback, set the logging level to DEBUG via `logging.getLogger("mlflow").setLevel(logging.DEBUG)`. To disable automatic signature inference, set `signature` to `False` in your `log_model` or `save_model` call.
 [2025-10-29T01:13:31.936+0000] {local_task_job_runner.py:228} INFO - Task exited with return code -9
 [2025-10-29T01:13:32.048+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T22:48:53.355+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_training_pipeline.train_models scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T22:48:53.435+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_training_pipeline.train_models scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T22:48:53.435+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-11-01T22:48:53.441+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): train_models> on 2025-10-01 00:00:00+00:00
+[2025-11-01T22:48:53.451+0000] {standard_task_runner.py:57} INFO - Started process 4440 to run task
+[2025-11-01T22:48:53.454+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_training_pipeline', 'train_models', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_training_pipeline.py', '--cfg-path', '/tmp/tmpst5nx2gj']
+[2025-11-01T22:48:53.457+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask train_models
+[2025-11-01T22:48:53.492+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_training_pipeline.train_models scheduled__2025-10-01T00:00:00+00:00 [running]> on host abe2ec3976bd
+[2025-11-01T22:48:53.542+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_training_pipeline' AIRFLOW_CTX_TASK_ID='train_models' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-01T22:48:55.151+0000] {logging_mixin.py:154} WARNING - 2025/11/01 22:48:55 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-11-01T22:49:00.353+0000] {logging_mixin.py:154} WARNING - 2025/11/01 22:49:00 WARNING mlflow.models.signature: Failed to infer the model signature from the input example. Reason: MlflowException("Unable to map 'object' type to MLflow DataType. object can be mapped iff all values have identical data type which is one of (string, (bytes or byterray),  int, float)."). To see the full traceback, set the logging level to DEBUG via `logging.getLogger("mlflow").setLevel(logging.DEBUG)`. To disable automatic signature inference, set `signature` to `False` in your `log_model` or `save_model` call.
+[2025-11-01T22:49:03.683+0000] {logging_mixin.py:154} WARNING - /home/***/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py:33 UserWarning: Setuptools is replacing distutils.
+[2025-11-01T22:49:03.864+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-11-01T22:49:04.574+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/boto3/s3/transfer.py", line 371, in upload_file
+    future.result()
+  File "/home/airflow/.local/lib/python3.10/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+  File "/home/airflow/.local/lib/python3.10/site-packages/s3transfer/futures.py", line 264, in result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/s3transfer/tasks.py", line 135, in __call__
+    return self._execute_main(kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/s3transfer/tasks.py", line 158, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/s3transfer/upload.py", line 762, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/botocore/client.py", line 565, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/botocore/client.py", line 1017, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.NoSuchBucket: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/diabetes_training_pipeline.py", line 158, in train_models
+    mlflow.sklearn.log_model(
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/sklearn/__init__.py", line 411, in log_model
+    return Model.log(
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/models/model.py", line 620, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/tracking/fluent.py", line 1030, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/tracking/client.py", line 1195, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/tracking/_tracking_service/client.py", line 538, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/store/artifact/s3_artifact_repo.py", line 189, in log_artifacts
+    self._upload_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/mlflow/store/artifact/s3_artifact_repo.py", line 165, in _upload_file
+    s3_client.upload_file(Filename=local_file, Bucket=bucket, Key=key, ExtraArgs=extra_args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/boto3/s3/inject.py", line 145, in upload_file
+    return transfer.upload_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/boto3/s3/transfer.py", line 377, in upload_file
+    raise S3UploadFailedError(
+boto3.exceptions.S3UploadFailedError: Failed to upload /tmp/tmprn_azfe4/model/input_example.json to mlflows3/1/aaf17b6558c241c4940d8caa5c8cdea7/artifacts/model/input_example.json: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+[2025-11-01T22:49:04.597+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=diabetes_training_pipeline, task_id=train_models, execution_date=20251001T000000, start_date=20251101T224853, end_date=20251101T224904
+[2025-11-01T22:49:04.605+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 11 for task train_models (Failed to upload /tmp/tmprn_azfe4/model/input_example.json to mlflows3/1/aaf17b6558c241c4940d8caa5c8cdea7/artifacts/model/input_example.json: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist; 4440)
+[2025-11-01T22:49:04.640+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-01T22:49:04.668+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

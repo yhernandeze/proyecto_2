@@ -1,0 +1,13 @@
+[2025-11-01T23:00:03.309+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.ingest_next_batch scheduled__2025-11-01T22:54:00+00:00 [queued]>
+[2025-11-01T23:00:03.313+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.ingest_next_batch scheduled__2025-11-01T22:54:00+00:00 [queued]>
+[2025-11-01T23:00:03.313+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-01T23:00:03.319+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_next_batch> on 2025-11-01 22:54:00+00:00
+[2025-11-01T23:00:03.323+0000] {standard_task_runner.py:57} INFO - Started process 5178 to run task
+[2025-11-01T23:00:03.327+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'ingest_next_batch', 'scheduled__2025-11-01T22:54:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmp90s4qxwj']
+[2025-11-01T23:00:03.330+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask ingest_next_batch
+[2025-11-01T23:00:03.362+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.ingest_next_batch scheduled__2025-11-01T22:54:00+00:00 [running]> on host abe2ec3976bd
+[2025-11-01T23:00:03.414+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_stage1_ingest' AIRFLOW_CTX_TASK_ID='ingest_next_batch' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T22:54:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-01T22:54:00+00:00'
+[2025-11-01T23:00:05.787+0000] {python.py:194} INFO - Done. Returned value was: ingested raw batch=4 rows=15000
+[2025-11-01T23:00:05.810+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=diabetes_stage1_ingest, task_id=ingest_next_batch, execution_date=20251101T225400, start_date=20251101T230003, end_date=20251101T230005
+[2025-11-01T23:00:05.865+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-01T23:00:05.915+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
