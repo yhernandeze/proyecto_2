@@ -5410,3 +5410,33 @@ File Path                                        PID    Runtime      # DAGs    #
 /opt/airflow/dags/diabetes_training_pipeline.py                           1           0  2.00s           2025-11-02T01:27:39
 /opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.68s           2025-11-02T01:27:40
 ================================================================================
+[2025-11-02T01:28:26.364+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/training_pipeline.py                                    1           0  1.60s           2025-11-02T01:28:11
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.52s           2025-11-02T01:28:11
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.50s           2025-11-02T01:28:12
+================================================================================
+[2025-11-02T01:28:56.820+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/training_pipeline.py                                    1           0  1.48s           2025-11-02T01:28:43
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.54s           2025-11-02T01:28:43
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.37s           2025-11-02T01:28:44
+================================================================================
+[2025-11-02T01:29:27.014+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/training_pipeline.py                                    1           0  1.50s           2025-11-02T01:29:15
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.51s           2025-11-02T01:29:15
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.40s           2025-11-02T01:29:15
+================================================================================
