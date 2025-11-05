@@ -18,5 +18,5 @@ RUN pip install --no-cache-dir \
     pymysql==1.1.0 \
     ucimlrepo==0.0.7
 
-    RUN mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins
+RUN mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins
 WORKDIR /opt/airflow

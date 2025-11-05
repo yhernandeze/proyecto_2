@@ -1,53 +1,164 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import numpy as np
+import os
 import pandas as pd
+from sqlalchemy import create_engine, text
+from ucimlrepo import fetch_ucirepo
+from datetime import datetime
 
-app = FastAPI(title="Mock Data API", version="1.0")
+# ---------------------------------------------------------------------
+# ENV / CONFIG
+# ---------------------------------------------------------------------
+MYSQL_HOST = os.getenv("MYSQL_HOST", "mysql")
+MYSQL_PORT = int(os.getenv("MYSQL_PORT", "3306"))
+MYSQL_USER = os.getenv("MYSQL_USER", "mlflow_user")
+MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "mlflow_pass")
+MYSQL_DB = os.getenv("MYSQL_DB", "datasets_db")
 
-# Simulamos N batches de 15k filas. Ajusta N según quieras.
-TOTAL_BATCHES = 5
-CURRENT = {"batch": 0}
+DB_URI = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DB}"
 
-COLS = [
-    'Elevation','Aspect','Slope',
-    'Horizontal_Distance_To_Hydrology','Vertical_Distance_To_Hydrology',
-    'Horizontal_Distance_To_Roadways','Hillshade_9am','Hillshade_Noon','Hillshade_3pm',
-    'Horizontal_Distance_To_Fire_Points','Wilderness_Area','Soil_Type','Cover_Type'
-]
+BATCH_DEFAULT = 15000
 
-def make_batch_df(n=15000, seed=42):
-    rng = np.random.default_rng(seed)
-    df = pd.DataFrame({
-        'Elevation': rng.integers(1800, 3400, n),
-        'Aspect': rng.integers(0, 360, n),
-        'Slope': rng.integers(0, 45, n),
-        'Horizontal_Distance_To_Hydrology': rng.integers(0, 4000, n),
-        'Vertical_Distance_To_Hydrology': rng.integers(-500, 500, n),
-        'Horizontal_Distance_To_Roadways': rng.integers(0, 7000, n),
-        'Hillshade_9am': rng.integers(0, 256, n),
-        'Hillshade_Noon': rng.integers(0, 256, n),
-        'Hillshade_3pm': rng.integers(0, 256, n),
-        'Horizontal_Distance_To_Fire_Points': rng.integers(0, 8000, n),
-        'Wilderness_Area': rng.integers(0, 4, n),   # 4 áreas codificadas
-        'Soil_Type': rng.integers(0, 40, n),        # 40 tipos suelo
-        'Cover_Type': rng.integers(1, 8, n),        # 1..7
-    })
-    return df
+app = FastAPI(
+    title="Diabetes Data API",
+    description="Serves diabetes dataset in random 15k batches from MySQL",
+    version="1.0.0",
+)
 
+# ---------------------------------------------------------------------
+# helpers
+# ---------------------------------------------------------------------
+def get_engine():
+    return create_engine(DB_URI, pool_pre_ping=True, future=True)
+
+def ensure_table():
+    """
+    If datasets_db.diabetes_raw does not exist or is empty, download UCI dataset
+    and load it into MySQL, adding a 'served_at' column (NULL by default).
+    """
+    engine = get_engine()
+    with engine.begin() as conn:
+        # does table exist?
+        exists = conn.execute(
+            text("""
+            SELECT COUNT(*) FROM information_schema.tables
+            WHERE table_schema=:schema AND table_name='diabetes_raw'
+            """),
+            {"schema": MYSQL_DB}
+        ).scalar_one() > 0
+
+        need_load = False
+        if not exists:
+            need_load = True
+        else:
+            nrows = conn.execute(
+                text(f"SELECT COUNT(*) FROM {MYSQL_DB}.diabetes_raw")
+            ).scalar_one()
+            if nrows == 0:
+                need_load = True
+
+        if not need_load:
+            return  # table already populated
+
+    # download outside transaction
+    ds = fetch_ucirepo(id=296)
+    X = ds.data.features.copy()
+    y = None
+    if hasattr(ds.data, "targets") and ds.data.targets is not None:
+        y = ds.data.targets.copy()
+
+    df = X.copy()
+    if y is not None and isinstance(y, pd.DataFrame):
+        for c in y.columns:
+            if c not in df.columns:
+                df[c] = y[c]
+
+    # normalize colnames a bit
+    df.columns = [c.strip().replace(" ", "_") for c in df.columns]
+    # add served_at
+    df["served_at"] = pd.NaT
+
+    # write to MySQL
+    with get_engine().begin() as conn:
+        df.to_sql(
+            "diabetes_raw",
+            con=conn,
+            schema=MYSQL_DB,
+            if_exists="replace",
+            index=False
+        )
+
+@app.on_event("startup")
+def startup_event():
+    ensure_table()
+
+# ---------------------------------------------------------------------
+# endpoints
+# ---------------------------------------------------------------------
 @app.get("/health")
 def health():
-    return {"status":"ok","batches_total": TOTAL_BATCHES, "next_batch": CURRENT["batch"]+1}
+    # quick counts
+    try:
+        with get_engine().begin() as conn:
+            total = conn.execute(
+                text(f"SELECT COUNT(*) FROM {MYSQL_DB}.diabetes_raw")
+            ).scalar_one()
+            unserved = conn.execute(
+                text(f"SELECT COUNT(*) FROM {MYSQL_DB}.diabetes_raw WHERE served_at IS NULL")
+            ).scalar_one()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"DB error: {e}")
+
+    return {
+        "status": "ok",
+        "total_rows": total,
+        "unserved_rows": unserved,
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 @app.get("/data")
-def get_data(group_number: int = 6):
-    # Ignoramos el grupo y servimos secuencialmente
-    if CURRENT["batch"] >= TOTAL_BATCHES:
-        return {"batch_number": CURRENT["batch"], "data": []}  # <- sin datos => DAG marca done
-    CURRENT["batch"] += 1
-    df = make_batch_df(n=15000, seed=1234 + CURRENT["batch"])
+def get_data(batch_size: int = BATCH_DEFAULT):
+    """
+    Return a random batch of rows that have not been served yet.
+    Mark them as served (served_at=NOW()) so they won't appear again.
+    """
+    engine = get_engine()
+    with engine.begin() as conn:
+        # get unserved rows
+        # RAND() on ~100k rows is acceptable here
+        rows = conn.execute(
+            text(f"""
+                SELECT * FROM {MYSQL_DB}.diabetes_raw
+                WHERE served_at IS NULL
+                ORDER BY RAND()
+                LIMIT :lim
+            """),
+            {"lim": batch_size}
+        ).mappings().all()
+
+        if not rows:
+            return {
+                "batch_number": None,
+                "data": []
+            }
+
+        # collect primary identifier(s) to mark served.
+        # dataset has encounter_id, so use that
+        encounter_ids = [r["encounter_id"] for r in rows if "encounter_id" in r]
+
+        if encounter_ids:
+            conn.execute(
+                text(f"""
+                    UPDATE {MYSQL_DB}.diabetes_raw
+                    SET served_at = :ts
+                    WHERE encounter_id IN :ids
+                """),
+                {"ts": datetime.utcnow(), "ids": tuple(encounter_ids)}
+            )
+
+    # return JSON-serializable data
     return {
-        "batch_number": CURRENT["batch"],
-        "data": df.to_dict(orient="records")
+        "batch_number": datetime.utcnow().isoformat(),
+        "data": [dict(r) for r in rows]
     }
  
