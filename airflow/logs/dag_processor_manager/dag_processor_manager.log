@@ -6729,3 +6729,14 @@ File Path                                        PID    Runtime      # DAGs    #
 /opt/airflow/dags/diabetes_training_pipeline.py                           1           0  0.88s           2025-11-09T00:29:42
 /opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.60s           2025-11-09T00:29:39
 ================================================================================
+[2025-11-09T00:30:36.396+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.31s           2025-11-09T00:30:15
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.72s           2025-11-09T00:30:09
+================================================================================
+[2025-11-09T00:40:34.037+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-09T00:40:34.045+0000] {manager.py:758} INFO - There are 2 files in /opt/airflow/dags
