@@ -268,3 +268,360 @@
 [2025-11-09T00:40:36.565+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:40:36.564+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-11-09T00:40:36.581+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:40:36.581+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
 [2025-11-09T00:40:36.607+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 2.516 seconds
+[2025-11-09T00:41:06.975+0000] {processor.py:157} INFO - Started process (PID=1119) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:41:06.977+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:41:06.977+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:41:06.977+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:41:07.924+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:41:07.936+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:41:07.936+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:41:07.941+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:41:07.941+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:41:07.949+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.979 seconds
+[2025-11-09T00:41:38.302+0000] {processor.py:157} INFO - Started process (PID=1138) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:41:38.307+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:41:38.307+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:41:38.307+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:41:39.089+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:41:39.101+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:41:39.101+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:41:39.108+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:41:39.108+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:41:39.119+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.821 seconds
+[2025-11-09T00:42:09.422+0000] {processor.py:157} INFO - Started process (PID=1160) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:42:09.424+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:42:09.424+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:42:09.424+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:42:10.229+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:42:10.240+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:42:10.240+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:42:10.246+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:42:10.246+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:42:10.255+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.842 seconds
+[2025-11-09T00:42:40.556+0000] {processor.py:157} INFO - Started process (PID=1179) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:42:40.558+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:42:40.559+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:42:40.558+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:42:41.363+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:42:41.375+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:42:41.375+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:42:41.380+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:42:41.380+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:42:41.388+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.840 seconds
+[2025-11-09T00:43:11.560+0000] {processor.py:157} INFO - Started process (PID=1198) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:43:11.563+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:43:11.564+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:43:11.563+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:43:12.915+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:43:12.942+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:43:12.942+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:43:12.952+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:43:12.951+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:43:12.962+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.421 seconds
+[2025-11-09T00:43:43.466+0000] {processor.py:157} INFO - Started process (PID=1217) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:43:43.469+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:43:43.473+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:43:43.471+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:43:44.541+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:43:44.560+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:43:44.560+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:43:44.570+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:43:44.569+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:43:44.580+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.126 seconds
+[2025-11-09T00:44:14.944+0000] {processor.py:157} INFO - Started process (PID=1236) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:44:14.947+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:44:14.949+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:44:14.949+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:44:15.858+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:44:15.877+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:44:15.877+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:44:15.883+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:44:15.883+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:44:15.892+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.962 seconds
+[2025-11-09T00:44:46.214+0000] {processor.py:157} INFO - Started process (PID=1255) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:44:46.216+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:44:46.217+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:44:46.217+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:44:46.951+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:44:46.963+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:44:46.963+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:44:46.968+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:44:46.968+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:44:46.977+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.769 seconds
+[2025-11-09T00:45:17.176+0000] {processor.py:157} INFO - Started process (PID=1277) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:45:17.177+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:45:17.178+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:45:17.178+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:45:18.032+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:45:18.044+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:45:18.043+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:45:18.052+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:45:18.052+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:45:18.062+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.890 seconds
+[2025-11-09T00:45:48.902+0000] {processor.py:157} INFO - Started process (PID=1296) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:45:48.905+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:45:48.906+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:45:48.905+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:45:49.681+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:45:49.692+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:45:49.691+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:45:49.697+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:45:49.697+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:45:49.707+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.813 seconds
+[2025-11-09T00:46:20.570+0000] {processor.py:157} INFO - Started process (PID=1318) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:46:20.572+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:46:20.574+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:46:20.573+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:46:21.367+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:46:21.379+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:46:21.379+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:46:21.389+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:46:21.389+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:46:21.398+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.835 seconds
+[2025-11-09T00:46:51.852+0000] {processor.py:157} INFO - Started process (PID=1337) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:46:51.857+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:46:51.858+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:46:51.858+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:46:52.662+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:46:52.673+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:46:52.673+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:46:52.679+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:46:52.679+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:46:52.687+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.843 seconds
+[2025-11-09T00:47:22.992+0000] {processor.py:157} INFO - Started process (PID=1356) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:47:22.994+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:47:22.995+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:47:22.994+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:47:23.814+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:47:23.825+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:47:23.825+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:47:23.831+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:47:23.831+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:47:23.839+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.854 seconds
+[2025-11-09T00:47:54.107+0000] {processor.py:157} INFO - Started process (PID=1375) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:47:54.110+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:47:54.111+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:47:54.110+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:47:54.901+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:47:54.914+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:47:54.914+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:47:54.920+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:47:54.920+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:47:54.928+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.830 seconds
+[2025-11-09T00:48:25.848+0000] {processor.py:157} INFO - Started process (PID=1394) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:48:25.850+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:48:25.852+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:48:25.851+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:48:26.719+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:48:26.737+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:48:26.736+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:48:26.744+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:48:26.744+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:48:26.755+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.915 seconds
+[2025-11-09T00:48:57.201+0000] {processor.py:157} INFO - Started process (PID=1413) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:48:57.209+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:48:57.210+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:48:57.209+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:48:58.341+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:48:58.361+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:48:58.360+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:48:58.367+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:48:58.367+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:48:58.376+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.198 seconds
+[2025-11-09T00:49:28.697+0000] {processor.py:157} INFO - Started process (PID=1432) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:49:28.701+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:49:28.702+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:49:28.701+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:49:29.545+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:49:29.557+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:49:29.557+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:49:29.563+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:49:29.563+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:49:29.574+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.886 seconds
+[2025-11-09T00:49:59.917+0000] {processor.py:157} INFO - Started process (PID=1451) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:49:59.934+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:49:59.943+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:49:59.939+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:50:01.208+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:50:01.224+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:50:01.224+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:50:01.233+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:50:01.233+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:50:01.246+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.341 seconds
+[2025-11-09T00:50:31.569+0000] {processor.py:157} INFO - Started process (PID=1473) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:50:31.571+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:50:31.573+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:50:31.572+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:50:32.632+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:50:32.650+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:50:32.649+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:50:32.655+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:50:32.655+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:50:32.663+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.103 seconds
+[2025-11-09T00:51:02.937+0000] {processor.py:157} INFO - Started process (PID=1494) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:51:02.939+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:51:02.941+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:51:02.940+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:51:03.752+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:51:03.762+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:51:03.762+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:51:03.767+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:51:03.767+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:51:03.776+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.844 seconds
+[2025-11-09T00:51:34.130+0000] {processor.py:157} INFO - Started process (PID=1514) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:51:34.132+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:51:34.134+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:51:34.133+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:51:35.177+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:51:35.198+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:51:35.198+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:51:35.206+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:51:35.206+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:51:35.216+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.100 seconds
+[2025-11-09T00:52:05.535+0000] {processor.py:157} INFO - Started process (PID=1533) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:52:05.537+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:52:05.539+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:52:05.538+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:52:06.595+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:52:06.616+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:52:06.616+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:52:06.623+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:52:06.623+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:52:06.632+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.113 seconds
+[2025-11-09T00:52:36.765+0000] {processor.py:157} INFO - Started process (PID=1552) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:52:36.767+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:52:36.769+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:52:36.768+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:52:38.344+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:52:38.363+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:52:38.363+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:52:38.371+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:52:38.370+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:52:38.380+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.629 seconds
+[2025-11-09T00:53:09.255+0000] {processor.py:157} INFO - Started process (PID=1571) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:53:09.257+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:53:09.259+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:53:09.258+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:53:10.630+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:53:10.660+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:53:10.660+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:53:10.668+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:53:10.668+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:53:10.678+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.430 seconds
+[2025-11-09T00:53:41.062+0000] {processor.py:157} INFO - Started process (PID=1590) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:53:41.065+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:53:41.066+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:53:41.065+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:53:42.007+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:53:42.021+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:53:42.021+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:53:42.027+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:53:42.027+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:53:42.035+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.985 seconds
+[2025-11-09T00:54:12.375+0000] {processor.py:157} INFO - Started process (PID=1609) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:54:12.377+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:54:12.378+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:54:12.378+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:54:13.428+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:54:13.450+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:54:13.449+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:54:13.455+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:54:13.455+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:54:13.464+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.103 seconds
+[2025-11-09T00:54:43.791+0000] {processor.py:157} INFO - Started process (PID=1628) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:54:43.794+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:54:43.795+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:54:43.794+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:54:44.849+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:54:44.864+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:54:44.864+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:54:44.870+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:54:44.870+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:54:44.878+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.097 seconds
+[2025-11-09T00:55:15.136+0000] {processor.py:157} INFO - Started process (PID=1650) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:55:15.138+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:55:15.141+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:55:15.139+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:55:16.180+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:55:16.194+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:55:16.194+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:55:16.200+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:55:16.199+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:55:16.208+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.082 seconds
+[2025-11-09T00:55:46.548+0000] {processor.py:157} INFO - Started process (PID=1669) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:55:46.549+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:55:46.551+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:55:46.550+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:55:47.668+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:55:47.690+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:55:47.689+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:55:47.696+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:55:47.696+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:55:47.705+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.171 seconds
+[2025-11-09T00:56:17.977+0000] {processor.py:157} INFO - Started process (PID=1691) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:56:17.979+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:56:17.981+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:56:17.980+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:56:18.994+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:56:19.008+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:56:19.007+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:56:19.013+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:56:19.013+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:56:19.022+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.050 seconds
+[2025-11-09T00:56:49.366+0000] {processor.py:157} INFO - Started process (PID=1710) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:56:49.369+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:56:49.370+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:56:49.370+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:56:50.422+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:56:50.445+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:56:50.445+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:56:50.452+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:56:50.452+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:56:50.462+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.104 seconds
+[2025-11-09T00:57:20.840+0000] {processor.py:157} INFO - Started process (PID=1729) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:57:20.843+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:57:20.844+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:57:20.844+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:57:21.781+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:57:21.793+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:57:21.793+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:57:21.798+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:57:21.798+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:57:21.807+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.982 seconds
+[2025-11-09T00:57:52.123+0000] {processor.py:157} INFO - Started process (PID=1748) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:57:52.125+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:57:52.126+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:57:52.126+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:57:52.980+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:57:52.993+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:57:52.993+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:57:52.999+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:57:52.999+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:57:53.008+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.893 seconds
+[2025-11-09T00:58:23.350+0000] {processor.py:157} INFO - Started process (PID=1767) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:58:23.352+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:58:23.353+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:58:23.353+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:58:24.500+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:58:24.515+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:58:24.515+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:58:24.521+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:58:24.521+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:58:24.532+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.199 seconds
+[2025-11-09T00:58:54.921+0000] {processor.py:157} INFO - Started process (PID=1786) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:58:54.927+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:58:54.930+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:58:54.929+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:58:56.047+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:58:56.079+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:58:56.078+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:58:56.120+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:58:56.119+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:58:56.154+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.245 seconds
+[2025-11-09T00:59:26.531+0000] {processor.py:157} INFO - Started process (PID=1805) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:59:26.534+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:59:26.535+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:59:26.535+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:59:27.563+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:59:27.580+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:59:27.579+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:59:27.586+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:59:27.586+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:59:27.598+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.081 seconds
+[2025-11-09T00:59:57.867+0000] {processor.py:157} INFO - Started process (PID=1824) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:59:57.869+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T00:59:57.871+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:59:57.870+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:59:58.967+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T00:59:58.980+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:59:58.980+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:59:58.985+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:59:58.985+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T00:59:58.994+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.136 seconds
+[2025-11-09T01:00:29.302+0000] {processor.py:157} INFO - Started process (PID=1846) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:00:29.304+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:00:29.306+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:00:29.305+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:00:30.424+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:00:30.440+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:00:30.440+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:00:30.445+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:00:30.445+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:00:30.454+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.164 seconds
+[2025-11-09T01:01:00.732+0000] {processor.py:157} INFO - Started process (PID=1865) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:01:00.735+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:01:00.736+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:01:00.736+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:01:02.008+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:01:02.038+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:01:02.037+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:01:02.047+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:01:02.047+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:01:02.057+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.339 seconds
+[2025-11-09T01:01:32.384+0000] {processor.py:157} INFO - Started process (PID=1887) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:01:32.387+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:01:32.388+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:01:32.388+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:01:33.429+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:01:33.442+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:01:33.441+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:01:33.447+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:01:33.447+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:01:33.455+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.088 seconds
+[2025-11-09T01:02:03.699+0000] {processor.py:157} INFO - Started process (PID=1906) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:02:03.701+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:02:03.704+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:02:03.703+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:02:04.753+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:02:04.776+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:02:04.775+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:02:04.782+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:02:04.782+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:02:04.793+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.101 seconds
+[2025-11-09T01:02:35.074+0000] {processor.py:157} INFO - Started process (PID=1925) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:02:35.076+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:02:35.078+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:02:35.077+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:02:36.114+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:02:36.134+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:02:36.133+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:02:36.139+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:02:36.139+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:02:36.147+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.088 seconds
+[2025-11-09T01:03:06.417+0000] {processor.py:157} INFO - Started process (PID=1944) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:03:06.420+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:03:06.421+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:03:06.421+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:03:07.411+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:03:07.424+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:03:07.423+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:03:07.432+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:03:07.432+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:03:07.444+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.037 seconds
+[2025-11-09T01:03:37.689+0000] {processor.py:157} INFO - Started process (PID=1963) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:03:37.690+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:03:37.691+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:03:37.691+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:03:38.551+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:03:38.567+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:03:38.566+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:03:38.573+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:03:38.573+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:03:38.580+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.896 seconds
+[2025-11-09T01:04:08.858+0000] {processor.py:157} INFO - Started process (PID=1982) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:04:08.860+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:04:08.861+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:04:08.861+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:04:09.769+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:04:09.785+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:04:09.785+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:04:09.795+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:04:09.795+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:04:09.805+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 0.957 seconds
+[2025-11-09T01:04:40.302+0000] {processor.py:157} INFO - Started process (PID=2001) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:04:40.304+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:04:40.305+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:04:40.304+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:04:41.366+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:04:41.382+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:04:41.381+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:04:41.388+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:04:41.388+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:04:41.396+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.100 seconds
+[2025-11-09T01:05:11.703+0000] {processor.py:157} INFO - Started process (PID=2023) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:05:11.704+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:05:11.705+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:05:11.704+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:05:12.738+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:05:12.751+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:05:12.750+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:05:12.757+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:05:12.756+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:05:12.765+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.076 seconds
+[2025-11-09T01:05:43.071+0000] {processor.py:157} INFO - Started process (PID=2042) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:05:43.075+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:05:43.076+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:05:43.076+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:05:44.090+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:05:44.109+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:05:44.109+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:05:44.114+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:05:44.114+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:05:44.123+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.062 seconds
+[2025-11-09T01:06:14.409+0000] {processor.py:157} INFO - Started process (PID=2064) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:06:14.411+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:06:14.412+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:06:14.412+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:06:15.369+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:06:15.388+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:06:15.387+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:06:15.395+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:06:15.395+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:06:15.404+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.005 seconds
+[2025-11-09T01:06:45.701+0000] {processor.py:157} INFO - Started process (PID=2083) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:06:45.702+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:06:45.703+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:06:45.703+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:06:46.939+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:06:46.969+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:06:46.968+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:06:46.975+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:06:46.975+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:06:46.985+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.288 seconds
+[2025-11-09T01:07:18.067+0000] {processor.py:157} INFO - Started process (PID=2102) to work on /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:07:18.069+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
+[2025-11-09T01:07:18.071+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:07:18.070+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:07:19.372+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-09T01:07:19.397+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:07:19.396+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T01:07:19.404+0000] {logging_mixin.py:154} INFO - [2025-11-09T01:07:19.404+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-09T01:07:19.415+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 1.358 seconds
