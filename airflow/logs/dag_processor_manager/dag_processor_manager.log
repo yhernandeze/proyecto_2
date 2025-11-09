@@ -6684,3 +6684,48 @@ File Path                                          PID  Runtime      # DAGs    #
 /opt/airflow/dags/diabetes_training_pipeline.py                           1           0  0.97s           2025-11-09T00:27:07
 /opt/airflow/dags/diabetes_stage1_ingest.py        963  0.02s             1           0  0.68s           2025-11-09T00:27:04
 ================================================================================
+[2025-11-09T00:28:05.484+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.29s           2025-11-09T00:27:38
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.71s           2025-11-09T00:27:35
+================================================================================
+[2025-11-09T00:28:35.655+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  0.88s           2025-11-09T00:28:09
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.69s           2025-11-09T00:28:06
+================================================================================
+[2025-11-09T00:29:05.895+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  0.82s           2025-11-09T00:28:40
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.62s           2025-11-09T00:28:37
+================================================================================
+[2025-11-09T00:29:35.993+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  0.85s           2025-11-09T00:29:11
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.59s           2025-11-09T00:29:08
+================================================================================
+[2025-11-09T00:30:06.102+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  0.88s           2025-11-09T00:29:42
+/opt/airflow/dags/diabetes_stage1_ingest.py                               1           0  0.60s           2025-11-09T00:29:39
+================================================================================

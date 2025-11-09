@@ -229,3 +229,37 @@
 [2025-11-09T00:27:35.624+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:27:35.624+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-11-09T00:27:35.642+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:27:35.642+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_stage1_ingest to 2025-11-09T00:25:00+00:00, run_after=2025-11-09T00:30:00+00:00
 [2025-11-09T00:27:35.654+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 0.670 seconds
+[2025-11-09T00:28:05.747+0000] {processor.py:157} INFO - Started process (PID=982) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:28:05.750+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
+[2025-11-09T00:28:05.752+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:28:05.751+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:28:06.328+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:28:06.351+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:28:06.351+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:28:06.365+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:28:06.365+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_stage1_ingest to 2025-11-09T00:25:00+00:00, run_after=2025-11-09T00:30:00+00:00
+[2025-11-09T00:28:06.375+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 0.642 seconds
+[2025-11-09T00:28:36.713+0000] {processor.py:157} INFO - Started process (PID=1001) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:28:36.716+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
+[2025-11-09T00:28:36.717+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:28:36.716+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:28:37.248+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:28:37.272+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:28:37.272+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:28:37.285+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:28:37.285+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_stage1_ingest to 2025-11-09T00:25:00+00:00, run_after=2025-11-09T00:30:00+00:00
+[2025-11-09T00:28:37.294+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 0.591 seconds
+[2025-11-09T00:29:07.594+0000] {processor.py:157} INFO - Started process (PID=1020) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:29:07.600+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
+[2025-11-09T00:29:07.602+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:29:07.601+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:29:08.094+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:29:08.115+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:29:08.115+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:29:08.128+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:29:08.128+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_stage1_ingest to 2025-11-09T00:25:00+00:00, run_after=2025-11-09T00:30:00+00:00
+[2025-11-09T00:29:08.139+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 0.553 seconds
+[2025-11-09T00:29:38.433+0000] {processor.py:157} INFO - Started process (PID=1039) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:29:38.435+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
+[2025-11-09T00:29:38.436+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:29:38.436+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:29:38.944+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:29:38.966+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:29:38.966+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:29:38.980+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:29:38.980+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_stage1_ingest to 2025-11-09T00:25:00+00:00, run_after=2025-11-09T00:30:00+00:00
+[2025-11-09T00:29:38.992+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 0.567 seconds
+[2025-11-09T00:30:09.172+0000] {processor.py:157} INFO - Started process (PID=1061) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:30:09.173+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
+[2025-11-09T00:30:09.175+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:30:09.174+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:30:09.509+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-09T00:30:09.573+0000] {logging_mixin.py:154} INFO - [2025-11-09T00:30:09.567+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-09T00:30:09.822+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 0.658 seconds
