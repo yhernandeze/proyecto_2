@@ -1,0 +1,9 @@
+  # prometheus.yml
+  global:
+    scrape_interval: 5s
+
+  scrape_configs:
+    # scrape the inference API container
+    - job_name: 'inference_api'
+      static_configs:
+        - targets: ['inference_api:8989']

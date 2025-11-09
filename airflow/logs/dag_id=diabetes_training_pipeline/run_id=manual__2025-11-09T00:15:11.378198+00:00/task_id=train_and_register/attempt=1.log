@@ -1,0 +1,35 @@
+[2025-11-09T00:15:13.823+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_training_pipeline.train_and_register manual__2025-11-09T00:15:11.378198+00:00 [queued]>
+[2025-11-09T00:15:14.059+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_training_pipeline.train_and_register manual__2025-11-09T00:15:11.378198+00:00 [queued]>
+[2025-11-09T00:15:14.060+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-09T00:15:14.071+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): train_and_register> on 2025-11-09 00:15:11.378198+00:00
+[2025-11-09T00:15:14.080+0000] {standard_task_runner.py:57} INFO - Started process 419 to run task
+[2025-11-09T00:15:14.085+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_training_pipeline', 'train_and_register', 'manual__2025-11-09T00:15:11.378198+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_training_pipeline.py', '--cfg-path', '/tmp/tmpfyy5_389']
+[2025-11-09T00:15:14.088+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask train_and_register
+[2025-11-09T00:15:14.124+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_training_pipeline.train_and_register manual__2025-11-09T00:15:11.378198+00:00 [running]> on host 2b2207d958ee
+[2025-11-09T00:15:14.219+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_training_pipeline' AIRFLOW_CTX_TASK_ID='train_and_register' AIRFLOW_CTX_EXECUTION_DATE='2025-11-09T00:15:11.378198+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-09T00:15:11.378198+00:00'
+[2025-11-09T00:15:15.920+0000] {logging_mixin.py:154} WARNING - 2025/11/09 00:15:15 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-11-09T00:15:22.683+0000] {logging_mixin.py:154} WARNING - 2025/11/09 00:15:22 WARNING mlflow.models.signature: Failed to infer the model signature from the input example. Reason: MlflowException("Unable to map 'object' type to MLflow DataType. object can be mapped iff all values have identical data type which is one of (string, (bytes or byterray),  int, float)."). To see the full traceback, set the logging level to DEBUG via `logging.getLogger("mlflow").setLevel(logging.DEBUG)`. To disable automatic signature inference, set `signature` to `False` in your `log_model` or `save_model` call.
+[2025-11-09T00:15:26.242+0000] {logging_mixin.py:154} WARNING - /home/***/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py:33 UserWarning: Setuptools is replacing distutils.
+[2025-11-09T00:15:26.425+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-11-09T00:15:27.302+0000] {logging_mixin.py:154} WARNING - Registered model 'diabetes_readmit_logreg' already exists. Creating a new version of this model...
+[2025-11-09T00:15:27.343+0000] {logging_mixin.py:154} WARNING - 2025/11/09 00:15:27 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: diabetes_readmit_logreg, version 2
+[2025-11-09T00:15:27.343+0000] {logging_mixin.py:154} WARNING - Created version '2' of model 'diabetes_readmit_logreg'.
+[2025-11-09T00:15:27.570+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-11-09T00:15:27.578+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=diabetes_training_pipeline, task_id=train_and_register, execution_date=20251109T001511, start_date=20251109T001513, end_date=20251109T001527
+[2025-11-09T00:15:27.635+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-09T00:15:27.669+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
+from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 from pydantic import BaseModel, Field
 from typing import Any, Dict, List, Optional
 import os
@@ -39,7 +40,15 @@ _loaded = {
     "signature": None,
     "loaded_at": None,
 }
-
+PREDICT_REQUESTS = Counter(
+    'inference_predict_requests_total',
+    'Total prediction requests to inference_api'
+)
+ 
+PREDICT_LATENCY = Histogram(
+    'inference_predict_latency_seconds',
+    'Latency for prediction requests'
+)
 def _model_uri(name: str, version: Optional[str], stage: Optional[str]) -> str:
     if version:
         return f"models:/{name}/{version}"
@@ -199,9 +208,12 @@ def expected_schema():
 @app.post("/predict")
 def predict(body: PredictBody):
     _ensure_loaded()
+    PREDICT_REQUESTS.inc()
     if not body.records:
         raise HTTPException(status_code=400, detail="Empty records")
-
+    with PREDICT_LATENCY.time():     
+            if not body.records:
+                raise HTTPException(status_code=400, detail="Empty records")
     df = pd.DataFrame(body.records)
     logger.info(f"Incoming DF columns: {list(df.columns)} | shape={df.shape}")
 
@@ -245,6 +257,9 @@ def predict(body: PredictBody):
         "timestamp": datetime.now().isoformat(),
         "predictions": preds_out,
     }
+@app.get("/metrics")
+def metrics():
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
 if __name__ == "__main__":
     import uvicorn

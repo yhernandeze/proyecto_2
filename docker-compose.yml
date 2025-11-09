@@ -221,22 +221,38 @@ services:
     networks:
       - mlops_network
 
-  # UI Streamlit
-  ui:
-    build:
-      context: ./ui
-      dockerfile: Dockerfile
-    container_name: mlops_ui
-    depends_on:
-      - inference_api
-    environment:
-      INFERENCE_API_URL: http://inference_api:8989
-      MLFLOW_TRACKING_URI: http://mlflow:5000
-      AIRFLOW_URL: http://airflow-webserver:8080
+  streamlit:
+    build: ./streamlit
+    container_name: mlops_streamlit
     ports:
-      - "8503:8503"
+      - "8501:8501"
+    depends_on:
+      - prometheus
     networks:
       - mlops_network
+
+  prometheus:
+    image: prom/prometheus
+    container_name: mlops_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - mlops_network
+
+  grafana:
+    image: grafana/grafana
+    container_name: mlops_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+    networks:
+      - mlops_network
+ 
 
 volumes:
   mysql_data:
@@ -246,3 +262,7 @@ volumes:
 networks:
   mlops_network:
     driver: bridge
+
+
+
+     
