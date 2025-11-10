@@ -6003,3 +6003,7 @@ Please take a look at these docs to improve your DAG import time:
 [2025-11-10T05:52:43.210+0000] {processor.py:157} INFO - Started process (PID=1764) to work on /opt/airflow/dags/diabetes_training_pipeline.py
 [2025-11-10T05:52:43.218+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_training_pipeline.py for tasks to queue
 [2025-11-10T05:52:43.221+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:52:43.219+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-10T05:52:50.203+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_training_pipeline']) retrieved from /opt/airflow/dags/diabetes_training_pipeline.py
+[2025-11-10T05:52:50.447+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:52:50.444+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-10T05:52:50.505+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:52:50.505+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_training_pipeline to None, run_after=None
+[2025-11-10T05:52:50.570+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_training_pipeline.py took 7.374 seconds
