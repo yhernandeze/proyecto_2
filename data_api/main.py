@@ -95,26 +95,8 @@ def startup_event():
 # ---------------------------------------------------------------------
 # endpoints
 # ---------------------------------------------------------------------
-@app.get("/health")
 def health():
-    # quick counts
-    try:
-        with get_engine().begin() as conn:
-            total = conn.execute(
-                text(f"SELECT COUNT(*) FROM {MYSQL_DB}.diabetes_raw")
-            ).scalar_one()
-            unserved = conn.execute(
-                text(f"SELECT COUNT(*) FROM {MYSQL_DB}.diabetes_raw WHERE served_at IS NULL")
-            ).scalar_one()
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"DB error: {e}")
-
-    return {
-        "status": "ok",
-        "total_rows": total,
-        "unserved_rows": unserved,
-        "timestamp": datetime.utcnow().isoformat()
-    }
+    return {"status": "ok"}
 
 @app.get("/data")
 def get_data(batch_size: int = BATCH_DEFAULT):

@@ -1,0 +1,12 @@
+[2025-11-10T04:37:45.956+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.trigger_training scheduled__2025-11-10T04:30:00+00:00 [queued]>
+[2025-11-10T04:37:45.971+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.trigger_training scheduled__2025-11-10T04:30:00+00:00 [queued]>
+[2025-11-10T04:37:45.972+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-10T04:37:45.986+0000] {taskinstance.py:1382} INFO - Executing <Task(TriggerDagRunOperator): trigger_training> on 2025-11-10 04:30:00+00:00
+[2025-11-10T04:37:46.007+0000] {standard_task_runner.py:57} INFO - Started process 721 to run task
+[2025-11-10T04:37:46.019+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'trigger_training', 'scheduled__2025-11-10T04:30:00+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmprfl2gnvp']
+[2025-11-10T04:37:46.033+0000] {standard_task_runner.py:85} INFO - Job 64: Subtask trigger_training
+[2025-11-10T04:37:46.124+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.trigger_training scheduled__2025-11-10T04:30:00+00:00 [running]> on host 47d439ee3e9b
+[2025-11-10T04:37:46.240+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_stage1_ingest' AIRFLOW_CTX_TASK_ID='trigger_training' AIRFLOW_CTX_EXECUTION_DATE='2025-11-10T04:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-10T04:30:00+00:00'
+[2025-11-10T04:37:46.309+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=diabetes_stage1_ingest, task_id=trigger_training, execution_date=20251110T043000, start_date=20251110T043745, end_date=20251110T043746
+[2025-11-10T04:37:46.322+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-10T04:37:46.335+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

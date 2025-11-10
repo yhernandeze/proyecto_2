@@ -1,0 +1,14 @@
+[2025-11-10T00:15:07.863+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.clean_and_upsert scheduled__2025-11-10T00:10:00+00:00 [queued]>
+[2025-11-10T00:15:07.868+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.clean_and_upsert scheduled__2025-11-10T00:10:00+00:00 [queued]>
+[2025-11-10T00:15:07.868+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-10T00:15:07.876+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): clean_and_upsert> on 2025-11-10 00:10:00+00:00
+[2025-11-10T00:15:07.881+0000] {standard_task_runner.py:57} INFO - Started process 543 to run task
+[2025-11-10T00:15:07.884+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'clean_and_upsert', 'scheduled__2025-11-10T00:10:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmpla5mm3gf']
+[2025-11-10T00:15:07.886+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask clean_and_upsert
+[2025-11-10T00:15:07.925+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.clean_and_upsert scheduled__2025-11-10T00:10:00+00:00 [running]> on host dd6ccc3e5aed
+[2025-11-10T00:15:07.969+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_stage1_ingest' AIRFLOW_CTX_TASK_ID='clean_and_upsert' AIRFLOW_CTX_EXECUTION_DATE='2025-11-10T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-10T00:10:00+00:00'
+[2025-11-10T00:15:08.406+0000] {logging_mixin.py:154} WARNING - /opt/***/dags/diabetes_stage1_ingest.py:66 FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+[2025-11-10T00:15:11.816+0000] {python.py:194} INFO - Done. Returned value was: curated 15000 rows
+[2025-11-10T00:15:11.897+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=diabetes_stage1_ingest, task_id=clean_and_upsert, execution_date=20251110T001000, start_date=20251110T001507, end_date=20251110T001511
+[2025-11-10T00:15:11.954+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-10T00:15:11.998+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

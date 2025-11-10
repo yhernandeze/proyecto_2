@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: locust
+  labels:
+    app: locust
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: locust
+  template:
+    metadata:
+      labels:
+        app: locust
+    spec:
+      containers:
+        - name: locust
+          image: mlops/locust:latest
+          env:
+            - name: TARGET_HOST
+              value: "http://inference-api:8989"
+            - name: LOCUST_OPTS
+              value: "--enable-prometheus --prometheus-port 9649"
+          ports:
+            - containerPort: 8089
+            - containerPort: 9649

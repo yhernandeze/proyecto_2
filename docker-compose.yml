@@ -3,12 +3,12 @@ version: '3.8'
 services:
   # Base de datos MySQL para metadata de MLflow
   mysql:
+    container_name: mysql
     image: mysql:8.0
     #----------
     command: --default-authentication-plugin=mysql_native_password
     #cambio1 v1
     #----------
-    container_name: MySQL
     environment:
       #----------
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -133,7 +133,7 @@ services:
       AIRFLOW__CORE__FERNET_KEY: 'UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E='
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
       AIRFLOW__WEBSERVER__SECRET_KEY: 'your-secret-key-here'
-      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MLFLOW_TRACKING_URI: http://host.minikube.internal:5000
       DATA_API_URL: ${DATA_API_URL}
       DATA_DB_URI: mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/datasets_db
       GROUP_NUMBER: ${GROUP_NUMBER}
@@ -204,7 +204,7 @@ services:
       context: ./inference_api
       dockerfile: Dockerfile
     container_name: mlops_inference_api
-    depends_on:
+    depends_on: 
       mlflow:
         condition: service_healthy
     environment:
@@ -212,7 +212,7 @@ services:
       AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
       AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
       MLFLOW_S3_ENDPOINT_URL: http://minio:9000
-      MODEL_NAME: diabetes_readmit_rf     # <-- set to your exact MLflow registered model name
+      MODEL_NAME: diabetes_readmit_logreg     # <-- set to your exact MLflow registered model name
       MODEL_STAGE: Production                 # <-- or Production if you promoted it
     ports:
       - "8989:8989"
@@ -220,6 +220,22 @@ services:
       - ./inference_api/models:/app/models
     networks:
       - mlops_network
+  locust:
+    build:
+      context: ./locust
+      dockerfile: Dockerfile
+    container_name: locust
+    environment:
+      - TARGET_HOST=http://inference_api:8989 
+      - LOCUST_OPTS=
+    depends_on:
+      - inference_api
+    ports:
+      - "8089:8089"   # UI
+      - "9649:9649"   # métricas Prometheus (si activas exporter)
+    networks:
+      - mlops_network
+
 
   streamlit:
     build: ./streamlit
@@ -231,6 +247,7 @@ services:
     networks:
       - mlops_network
 
+
   prometheus:
     image: prom/prometheus
     container_name: mlops_prometheus
@@ -238,6 +255,7 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus-rules.yml:/etc/prometheus/prometheus-rules.yml
     networks:
       - mlops_network
 

@@ -1,0 +1,131 @@
+[2025-11-10T03:46:47.238+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.clean_and_upsert scheduled__2025-11-10T03:40:00+00:00 [queued]>
+[2025-11-10T03:46:47.246+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.clean_and_upsert scheduled__2025-11-10T03:40:00+00:00 [queued]>
+[2025-11-10T03:46:47.246+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-11-10T03:46:47.255+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): clean_and_upsert> on 2025-11-10 03:40:00+00:00
+[2025-11-10T03:46:47.264+0000] {standard_task_runner.py:57} INFO - Started process 1481 to run task
+[2025-11-10T03:46:47.274+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'clean_and_upsert', 'scheduled__2025-11-10T03:40:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmpv00fmswn']
+[2025-11-10T03:46:47.290+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask clean_and_upsert
+[2025-11-10T03:46:47.439+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.clean_and_upsert scheduled__2025-11-10T03:40:00+00:00 [running]> on host a5abe9870291
+[2025-11-10T03:46:47.636+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_team' AIRFLOW_CTX_DAG_ID='diabetes_stage1_ingest' AIRFLOW_CTX_TASK_ID='clean_and_upsert' AIRFLOW_CTX_EXECUTION_DATE='2025-11-10T03:40:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-10T03:40:00+00:00'
+[2025-11-10T03:46:48.145+0000] {logging_mixin.py:154} WARNING - /opt/***/dags/diabetes_stage1_ingest.py:66 FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+[2025-11-10T03:46:48.857+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/local/lib/python3.10/socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'mysql' ([Errno -2] Name or service not known)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/diabetes_stage1_ingest.py", line 82, in clean_and_upsert
+    with eng.begin() as conn:
+  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/future/engine.py", line 379, in begin
+    with self.connect() as conn:
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/future/engine.py", line 406, in connect
+    return super(Engine, self).connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'mysql' ([Errno -2] Name or service not known)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-11-10T03:46:48.892+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=diabetes_stage1_ingest, task_id=clean_and_upsert, execution_date=20251110T034000, start_date=20251110T034647, end_date=20251110T034648
+[2025-11-10T03:46:48.915+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 27 for task clean_and_upsert ((pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'mysql' ([Errno -2] Name or service not known)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8); 1481)
+[2025-11-10T03:46:48.952+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-10T03:46:49.026+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

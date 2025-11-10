@@ -1,0 +1,8 @@
+[2025-11-10T05:46:39.413+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.fetch_batch scheduled__2025-11-10T05:40:00+00:00 [queued]>
+[2025-11-10T05:46:39.621+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: diabetes_stage1_ingest.fetch_batch scheduled__2025-11-10T05:40:00+00:00 [queued]>
+[2025-11-10T05:46:39.626+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-11-10T05:46:39.787+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): fetch_batch> on 2025-11-10 05:40:00+00:00
+[2025-11-10T05:46:39.930+0000] {standard_task_runner.py:57} INFO - Started process 1578 to run task
+[2025-11-10T05:46:40.029+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'diabetes_stage1_ingest', 'fetch_batch', 'scheduled__2025-11-10T05:40:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/diabetes_stage1_ingest.py', '--cfg-path', '/tmp/tmpnyogt7zr']
+[2025-11-10T05:46:40.075+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask fetch_batch
+[2025-11-10T05:46:40.652+0000] {task_command.py:416} INFO - Running <TaskInstance: diabetes_stage1_ingest.fetch_batch scheduled__2025-11-10T05:40:00+00:00 [running]> on host 48f0b90a37da

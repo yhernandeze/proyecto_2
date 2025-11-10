@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inference-config
+  namespace: mlops
+data:
+  MLFLOW_TRACKING_URI: http://host.docker.internal:5000
+  MODEL_NAME: diabetes_readmit_logreg
+  MODEL_STAGE: Production
+ 
+  # if your inference_api needs to download artifacts from MinIO in Docker:
+  MLFLOW_S3_ENDPOINT_URL: http://host.docker.internal:9000
+  AWS_ACCESS_KEY_ID: admin         # or your value from docker-compose
+  AWS_SECRET_ACCESS_KEY: supersecret     # or your value

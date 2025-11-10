@@ -7,3 +7,5 @@
     - job_name: 'inference_api'
       static_configs:
         - targets: ['inference_api:8989']
+  rule_files:
+    - /etc/prometheus/prometheus-rules.yml

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: locust
+  labels:
+    app: locust
+spec:
+  selector:
+    app: locust
+  ports:
+    - name: web
+      port: 8089
+      targetPort: 8089
+    - name: metrics
+      port: 9649
+      targetPort: 9649
+  type: ClusterIP
