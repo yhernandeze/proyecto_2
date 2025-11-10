@@ -4050,3 +4050,13 @@ Please take a look at these docs to improve your DAG import time:
 [2025-11-10T05:46:13.674+0000] {processor.py:157} INFO - Started process (PID=1572) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
 [2025-11-10T05:46:13.678+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
 [2025-11-10T05:46:13.685+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:46:13.681+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-10T05:46:42.266+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-10T05:46:42.564+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:46:42.545+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-10T05:46:42.785+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 29.173 seconds
+[2025-11-10T05:47:14.441+0000] {processor.py:157} INFO - Started process (PID=1592) to work on /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-10T05:47:14.461+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/diabetes_stage1_ingest.py for tasks to queue
+[2025-11-10T05:47:14.508+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:47:14.481+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-10T05:47:17.246+0000] {processor.py:839} INFO - DAG(s) dict_keys(['diabetes_stage1_ingest']) retrieved from /opt/airflow/dags/diabetes_stage1_ingest.py
+[2025-11-10T05:47:17.284+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:47:17.284+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-10T05:47:17.314+0000] {logging_mixin.py:154} INFO - [2025-11-10T05:47:17.314+0000] {dag.py:3722} INFO - Setting next_dagrun for diabetes_stage1_ingest to 2025-11-10T05:45:00+00:00, run_after=2025-11-10T05:50:00+00:00
+[2025-11-10T05:47:17.328+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/diabetes_stage1_ingest.py took 2.987 seconds
