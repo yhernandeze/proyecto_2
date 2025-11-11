@@ -8,7 +8,7 @@ data:
   MODEL_NAME: diabetes_readmit_logreg
   MODEL_STAGE: Production
  
-  # if your inference_api needs to download artifacts from MinIO in Docker:
+  # en caso que API pida datos:
   MLFLOW_S3_ENDPOINT_URL: http://host.docker.internal:9000
-  AWS_ACCESS_KEY_ID: admin         # or your value from docker-compose
-  AWS_SECRET_ACCESS_KEY: supersecret     # or your value
+  AWS_ACCESS_KEY_ID: admin         
+  AWS_SECRET_ACCESS_KEY: supersecret 

@@ -212,8 +212,8 @@ services:
       AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
       AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
       MLFLOW_S3_ENDPOINT_URL: http://minio:9000
-      MODEL_NAME: diabetes_readmit_logreg     # <-- set to your exact MLflow registered model name
-      MODEL_STAGE: Production                 # <-- or Production if you promoted it
+      MODEL_NAME: diabetes_readmit_logreg     #
+      MODEL_STAGE: Production                 #
     ports:
       - "8989:8989"
     volumes:
@@ -232,7 +232,7 @@ services:
       - inference_api
     ports:
       - "8089:8089"   # UI
-      - "9649:9649"   # métricas Prometheus (si activas exporter)
+      - "9649:9649"   # métricas Prometheus (con exporter)
     networks:
       - mlops_network
 

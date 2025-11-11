@@ -3,7 +3,7 @@
     scrape_interval: 5s
 
   scrape_configs:
-    # scrape the inference API container
+    # trae datos de la APi de inferencia
     - job_name: 'inference_api'
       static_configs:
         - targets: ['inference_api:8989']

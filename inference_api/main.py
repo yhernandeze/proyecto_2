@@ -124,8 +124,8 @@ FILL_VALUES: Dict[str, Any] = {
     # meds = "No"
     **{c: "No" for c in MED_COLS},
     # columns from error
-    "weight": "?",          # dataset style
-    "served_at": None,      # appears in curated table
+    "weight": "?",          
+    "served_at": None,     
 }
 
 def _try_predict(df: pd.DataFrame):

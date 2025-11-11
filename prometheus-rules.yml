@@ -8,7 +8,7 @@ groups:
           severity: warning
         annotations:
           summary: "Inference latency p90 > 1s"
-          description: "We should have more containers"
+          description: "Wecontainers should have more "
       - alert: HighInferenceRequestRate
         expr: rate(inference_requests_total[1m]) > 50
         for: 1m
