@@ -37,6 +37,26 @@ PREDICTION_LATENCY = Histogram(
     "Prediction latency in seconds"
 )
 
+# --- Prometheus metrics ---
+INFERENCE_REQUESTS = Counter(
+    "house_price_inference_requests_total",
+    "Total number of inference requests",
+    ["endpoint", "model_name", "model_stage"],
+)
+
+INFERENCE_EXCEPTIONS = Counter(
+    "house_price_inference_exceptions_total",
+    "Total number of exceptions during inference",
+    ["endpoint", "model_name", "model_stage"],
+)
+
+INFERENCE_LATENCY = Histogram(
+    "house_price_inference_latency_seconds",
+    "Latency of inference requests in seconds",
+    ["endpoint", "model_name", "model_stage"],
+)
+
+
 # ------------- DB helpers -------------
 def _parse_mysql_uri(uri: str):
     if not uri:
@@ -171,19 +191,26 @@ def _log_inference_to_db(model_info: dict, features: HouseFeatures, predicted_pr
 @app.get("/health")
 def health():
     """
-    Simple health endpoint that also checks model loading.
+    Simple health endpoint.
     """
+    endpoint = "/health"
+    labels = {
+        "endpoint": endpoint,
+        "model_name": MODEL_NAME,
+        "model_stage": MODEL_STAGE,
+    }
+
+    start = time.perf_counter()
     try:
-        mi = load_model()
-        return {
-            "status": "ok",
-            "model_name": mi["model_name"],
-            "stage": MODEL_STAGE,
-            "model_version": mi["model_version"],
-            "run_id": mi["run_id"],
-        }
+        _ = load_model()
+        INFERENCE_REQUESTS.labels(**labels).inc()
+        INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
+        return {"status": "ok", "model_name": MODEL_NAME, "stage": MODEL_STAGE}
     except Exception as e:
+        INFERENCE_EXCEPTIONS.labels(**labels).inc()
+        INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
         raise HTTPException(status_code=500, detail=str(e))
+
 
 
 @app.post("/predict", response_model=PredictionResponse)
@@ -191,51 +218,51 @@ def predict(features: HouseFeatures):
     """
     Predict house price given feature set.
     """
-    start = time.time()
+    endpoint = "/predict"
+    labels = {
+        "endpoint": endpoint,
+        "model_name": MODEL_NAME,
+        "model_stage": MODEL_STAGE,
+    }
+
+    start = time.perf_counter()
     try:
-        mi = load_model()
-        model = mi["model"]
+        model = load_model()
+    except RuntimeError as e:
+        INFERENCE_EXCEPTIONS.labels(**labels).inc()
+        INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
+        raise HTTPException(status_code=500, detail=str(e))
 
-        # Convert to DataFrame with same feature order as training
-        df = pd.DataFrame(
-            [{
-                "bed": features.bed,
-                "bath": features.bath,
-                "acre_lot": features.acre_lot,
-                "house_size": features.house_size,
-                "zip_code": features.zip_code,
-                "brokered_by": features.brokered_by,
-                "street": features.street,
-            }]
-        )
+    df = pd.DataFrame(
+        [{
+            "bed": features.bed,
+            "bath": features.bath,
+            "acre_lot": features.acre_lot,
+            "house_size": features.house_size,
+            "zip_code": features.zip_code,
+            "brokered_by": features.brokered_by,
+            "street": features.street,
+        }]
+    )
 
+    try:
         preds = model.predict(df)
-        predicted_price = float(preds[0])
-
-        # Log to DB (best-effort)
-        _log_inference_to_db(mi, features, predicted_price)
-
-        PREDICTION_REQUESTS.labels(status="success").inc()
-        return PredictionResponse(
-            predicted_price=predicted_price,
-            model_name=mi["model_name"],
-            model_version=str(mi["model_version"]),
-            run_id=mi["run_id"],
-        )
-    except HTTPException as e:
-        PREDICTION_REQUESTS.labels(status=str(e.status_code)).inc()
-        raise
     except Exception as e:
-        PREDICTION_REQUESTS.labels(status="500").inc()
+        INFERENCE_EXCEPTIONS.labels(**labels).inc()
+        INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
         raise HTTPException(status_code=500, detail=f"Inference error: {e}")
-    finally:
-        elapsed = time.time() - start
-        PREDICTION_LATENCY.observe(elapsed)
+
+    INFERENCE_REQUESTS.labels(**labels).inc()
+    INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
+
+    return PredictionResponse(predicted_price=float(preds[0]))
+
 
 
 @app.get("/metrics")
 def metrics():
     """
-    Prometheus metrics endpoint.
+    Expose Prometheus metrics.
     """
-    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+    data = generate_latest()
+    return Response(content=data, media_type=CONTENT_TYPE_LATEST)

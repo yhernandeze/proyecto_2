@@ -11724,3 +11724,703 @@ IndentationError: unexpected indent
 [2025-11-26T18:36:03.060+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:36:03.059+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-11-26T18:36:03.076+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:36:03.076+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
 [2025-11-26T18:36:03.104+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.990 seconds
+[2025-11-26T18:36:33.720+0000] {processor.py:157} INFO - Started process (PID=3064) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:36:33.722+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:36:33.723+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:36:33.723+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:36:35.996+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:36:36.045+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:36:36.044+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:36:36.065+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:36:36.065+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:36:36.095+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.381 seconds
+[2025-11-26T18:37:06.490+0000] {processor.py:157} INFO - Started process (PID=3088) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:37:06.491+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:37:06.492+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:37:06.492+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:37:08.516+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:37:08.551+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:37:08.550+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:37:08.567+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:37:08.566+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:37:08.592+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.109 seconds
+[2025-11-26T18:37:38.916+0000] {processor.py:157} INFO - Started process (PID=3107) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:37:38.918+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:37:38.921+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:37:38.921+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:37:41.250+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:37:41.307+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:37:41.305+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:37:41.328+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:37:41.328+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:37:41.369+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.458 seconds
+[2025-11-26T18:38:11.681+0000] {processor.py:157} INFO - Started process (PID=3131) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:38:11.683+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:38:11.685+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:38:11.685+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:38:13.638+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:38:13.671+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:38:13.671+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:38:13.689+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:38:13.689+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:38:13.718+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.042 seconds
+[2025-11-26T18:38:44.108+0000] {processor.py:157} INFO - Started process (PID=3150) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:38:44.111+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:38:44.112+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:38:44.112+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:38:46.197+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:38:46.238+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:38:46.237+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:38:46.252+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:38:46.252+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:38:46.280+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.178 seconds
+[2025-11-26T18:39:16.768+0000] {processor.py:157} INFO - Started process (PID=3169) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:39:16.771+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:39:16.772+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:39:16.771+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:39:18.576+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:39:18.605+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:39:18.604+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:39:18.621+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:39:18.620+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:39:18.646+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.883 seconds
+[2025-11-26T18:39:49.124+0000] {processor.py:157} INFO - Started process (PID=3188) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:39:49.127+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:39:49.128+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:39:49.127+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:39:50.942+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:39:50.973+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:39:50.972+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:39:50.987+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:39:50.987+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:39:51.009+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.890 seconds
+[2025-11-26T18:40:21.480+0000] {processor.py:157} INFO - Started process (PID=3207) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:40:21.483+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:40:21.485+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:40:21.484+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:40:23.279+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:40:23.307+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:40:23.307+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:40:23.321+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:40:23.321+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:40:23.347+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.874 seconds
+[2025-11-26T18:40:53.647+0000] {processor.py:157} INFO - Started process (PID=3226) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:40:53.650+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:40:53.651+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:40:53.650+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:40:55.360+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:40:55.397+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:40:55.396+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:40:55.414+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:40:55.413+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:40:55.452+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.813 seconds
+[2025-11-26T18:41:26.229+0000] {processor.py:157} INFO - Started process (PID=3245) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:41:26.233+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:41:26.235+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:41:26.234+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:41:28.064+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:41:28.115+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:41:28.114+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:41:28.138+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:41:28.137+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:41:28.177+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.958 seconds
+[2025-11-26T18:41:58.618+0000] {processor.py:157} INFO - Started process (PID=3264) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:41:58.620+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:41:58.622+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:41:58.621+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:42:00.391+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:42:00.438+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:42:00.438+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:42:00.454+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:42:00.454+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:42:00.496+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.885 seconds
+[2025-11-26T18:42:30.993+0000] {processor.py:157} INFO - Started process (PID=3283) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:42:30.995+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:42:30.996+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:42:30.996+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:42:32.725+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:42:32.766+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:42:32.766+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:42:32.782+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:42:32.781+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:42:32.810+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.823 seconds
+[2025-11-26T18:43:03.297+0000] {processor.py:157} INFO - Started process (PID=3302) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:43:03.299+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:43:03.300+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:43:03.300+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:43:05.057+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:43:05.091+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:43:05.089+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:43:05.119+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:43:05.119+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:43:05.161+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.868 seconds
+[2025-11-26T18:43:35.658+0000] {processor.py:157} INFO - Started process (PID=3321) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:43:35.660+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:43:35.662+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:43:35.662+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:43:37.514+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:43:37.573+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:43:37.572+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:43:37.588+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:43:37.588+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:43:37.614+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.962 seconds
+[2025-11-26T18:44:08.100+0000] {processor.py:157} INFO - Started process (PID=3340) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:44:08.102+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:44:08.104+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:44:08.104+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:44:09.870+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:44:09.925+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:44:09.924+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:44:09.945+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:44:09.944+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:44:09.980+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.886 seconds
+[2025-11-26T18:44:40.461+0000] {processor.py:157} INFO - Started process (PID=3359) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:44:40.464+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:44:40.467+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:44:40.466+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:44:42.357+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:44:42.394+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:44:42.393+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:44:42.407+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:44:42.407+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:44:42.432+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.976 seconds
+[2025-11-26T18:45:12.978+0000] {processor.py:157} INFO - Started process (PID=3383) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:45:12.980+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:45:12.981+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:45:12.981+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:45:14.782+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:45:14.818+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:45:14.817+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:45:14.833+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:45:14.832+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:45:14.857+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.885 seconds
+[2025-11-26T18:45:45.381+0000] {processor.py:157} INFO - Started process (PID=3402) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:45:45.383+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:45:45.384+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:45:45.383+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:45:47.264+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:45:47.313+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:45:47.311+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:45:47.340+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:45:47.340+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:45:47.408+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.033 seconds
+[2025-11-26T18:46:17.909+0000] {processor.py:157} INFO - Started process (PID=3426) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:46:17.912+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:46:17.914+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:46:17.913+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:46:19.744+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:46:19.787+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:46:19.787+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:46:19.802+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:46:19.801+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:46:19.827+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.924 seconds
+[2025-11-26T18:46:50.325+0000] {processor.py:157} INFO - Started process (PID=3445) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:46:50.328+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:46:50.331+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:46:50.330+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:46:52.096+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:46:52.130+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:46:52.129+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:46:52.144+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:46:52.144+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:46:52.169+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.850 seconds
+[2025-11-26T18:47:22.661+0000] {processor.py:157} INFO - Started process (PID=3464) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:47:22.663+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:47:22.664+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:47:22.664+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:47:24.485+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:47:24.515+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:47:24.514+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:47:24.528+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:47:24.528+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:47:24.569+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.913 seconds
+[2025-11-26T18:47:55.044+0000] {processor.py:157} INFO - Started process (PID=3483) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:47:55.047+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:47:55.048+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:47:55.047+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:47:56.838+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:47:56.868+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:47:56.867+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:47:56.883+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:47:56.882+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:47:56.915+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.878 seconds
+[2025-11-26T18:48:27.394+0000] {processor.py:157} INFO - Started process (PID=3502) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:48:27.395+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:48:27.397+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:48:27.396+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:48:29.162+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:48:29.200+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:48:29.199+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:48:29.220+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:48:29.220+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:48:29.252+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.864 seconds
+[2025-11-26T18:48:59.738+0000] {processor.py:157} INFO - Started process (PID=3521) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:48:59.740+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:48:59.741+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:48:59.741+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:49:01.480+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:49:01.519+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:49:01.518+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:49:01.532+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:49:01.532+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:49:01.555+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.824 seconds
+[2025-11-26T18:49:32.047+0000] {processor.py:157} INFO - Started process (PID=3540) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:49:32.049+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:49:32.050+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:49:32.050+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:49:33.801+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:49:33.831+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:49:33.830+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:49:33.848+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:49:33.847+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:49:33.874+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.833 seconds
+[2025-11-26T18:50:04.342+0000] {processor.py:157} INFO - Started process (PID=3559) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:50:04.345+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:50:04.346+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:50:04.346+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:50:06.069+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:50:06.098+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:50:06.097+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:50:06.111+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:50:06.111+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:50:06.139+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.805 seconds
+[2025-11-26T18:50:36.626+0000] {processor.py:157} INFO - Started process (PID=3578) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:50:36.628+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:50:36.629+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:50:36.629+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:50:38.410+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:50:38.455+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:50:38.454+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:50:38.478+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:50:38.477+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:50:38.506+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.886 seconds
+[2025-11-26T18:51:08.986+0000] {processor.py:157} INFO - Started process (PID=3597) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:51:08.988+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:51:08.989+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:51:08.989+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:51:10.764+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:51:10.799+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:51:10.798+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:51:10.813+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:51:10.813+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:51:10.845+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.864 seconds
+[2025-11-26T18:51:41.349+0000] {processor.py:157} INFO - Started process (PID=3616) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:51:41.352+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:51:41.354+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:51:41.354+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:51:43.099+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:51:43.137+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:51:43.136+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:51:43.155+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:51:43.155+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:51:43.191+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.850 seconds
+[2025-11-26T18:52:13.720+0000] {processor.py:157} INFO - Started process (PID=3635) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:52:13.722+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:52:13.724+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:52:13.723+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:52:15.492+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:52:15.532+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:52:15.531+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:52:15.550+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:52:15.549+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:52:15.579+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.868 seconds
+[2025-11-26T18:52:46.127+0000] {processor.py:157} INFO - Started process (PID=3654) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:52:46.130+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:52:46.133+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:52:46.132+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:52:47.875+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:52:47.919+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:52:47.918+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:52:47.934+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:52:47.933+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:52:47.958+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.837 seconds
+[2025-11-26T18:53:18.813+0000] {processor.py:157} INFO - Started process (PID=3678) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:53:18.816+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:53:18.818+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:53:18.818+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:53:20.874+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:53:20.904+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:53:20.904+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:53:20.918+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:53:20.918+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:53:20.941+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.133 seconds
+[2025-11-26T18:53:51.276+0000] {processor.py:157} INFO - Started process (PID=3697) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:53:51.278+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:53:51.279+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:53:51.279+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:53:53.051+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:53:53.079+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:53:53.079+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:53:53.093+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:53:53.092+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:53:53.127+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.856 seconds
+[2025-11-26T18:54:23.640+0000] {processor.py:157} INFO - Started process (PID=3721) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:54:23.642+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:54:23.644+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:54:23.643+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:54:25.454+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:54:25.497+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:54:25.496+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:54:25.523+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:54:25.522+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:54:25.567+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.933 seconds
+[2025-11-26T18:54:56.063+0000] {processor.py:157} INFO - Started process (PID=3740) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:54:56.065+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:54:56.067+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:54:56.066+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:54:57.806+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:54:57.845+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:54:57.845+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:54:57.859+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:54:57.859+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:54:57.885+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.827 seconds
+[2025-11-26T18:55:28.395+0000] {processor.py:157} INFO - Started process (PID=3759) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:55:28.398+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:55:28.399+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:55:28.399+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:55:30.557+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:55:30.591+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:55:30.590+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:55:30.606+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:55:30.606+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:55:30.640+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.251 seconds
+[2025-11-26T18:56:01.001+0000] {processor.py:157} INFO - Started process (PID=3778) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:56:01.004+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:56:01.005+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:56:01.005+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:56:02.868+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:56:02.899+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:56:02.898+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:56:02.912+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:56:02.911+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:56:02.940+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.946 seconds
+[2025-11-26T18:56:33.432+0000] {processor.py:157} INFO - Started process (PID=3797) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:56:33.437+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:56:33.439+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:56:33.439+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:56:35.262+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:56:35.291+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:56:35.290+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:56:35.309+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:56:35.308+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:56:35.335+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.910 seconds
+[2025-11-26T18:57:05.870+0000] {processor.py:157} INFO - Started process (PID=3816) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:57:05.873+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:57:05.875+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:57:05.874+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:57:07.629+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:57:07.665+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:57:07.664+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:57:07.682+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:57:07.682+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:57:07.709+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.845 seconds
+[2025-11-26T18:57:38.253+0000] {processor.py:157} INFO - Started process (PID=3835) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:57:38.256+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:57:38.258+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:57:38.257+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:57:39.987+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:57:40.022+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:57:40.021+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:57:40.035+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:57:40.035+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:57:40.056+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.807 seconds
+[2025-11-26T18:58:10.556+0000] {processor.py:157} INFO - Started process (PID=3854) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:58:10.559+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:58:10.561+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:58:10.560+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:58:12.240+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:58:12.273+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:58:12.272+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:58:12.291+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:58:12.290+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:58:12.321+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.771 seconds
+[2025-11-26T18:58:42.869+0000] {processor.py:157} INFO - Started process (PID=3873) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:58:42.871+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:58:42.872+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:58:42.871+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:58:44.605+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:58:44.637+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:58:44.636+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:58:44.653+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:58:44.652+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:58:44.690+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.827 seconds
+[2025-11-26T18:59:15.191+0000] {processor.py:157} INFO - Started process (PID=3892) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:59:15.193+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:59:15.194+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:59:15.194+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:59:16.903+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:59:16.946+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:59:16.945+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:59:16.964+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:59:16.964+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:59:17.001+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.817 seconds
+[2025-11-26T18:59:47.543+0000] {processor.py:157} INFO - Started process (PID=3911) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:59:47.545+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T18:59:47.546+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:59:47.545+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:59:49.328+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T18:59:49.367+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:59:49.366+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T18:59:49.381+0000] {logging_mixin.py:154} INFO - [2025-11-26T18:59:49.380+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T18:59:49.431+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.894 seconds
+[2025-11-26T19:00:19.953+0000] {processor.py:157} INFO - Started process (PID=3930) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:00:19.955+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:00:19.956+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:00:19.955+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:00:21.667+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:00:21.701+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:00:21.700+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:00:21.714+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:00:21.714+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:00:21.736+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.789 seconds
+[2025-11-26T19:00:52.274+0000] {processor.py:157} INFO - Started process (PID=3949) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:00:52.277+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:00:52.279+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:00:52.278+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:00:54.085+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:00:54.126+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:00:54.125+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:00:54.139+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:00:54.139+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:00:54.204+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.937 seconds
+[2025-11-26T19:01:24.711+0000] {processor.py:157} INFO - Started process (PID=3973) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:01:24.714+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:01:24.716+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:01:24.715+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:01:26.661+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:01:26.705+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:01:26.704+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:01:26.720+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:01:26.719+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:01:26.753+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.047 seconds
+[2025-11-26T19:01:57.171+0000] {processor.py:157} INFO - Started process (PID=3992) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:01:57.174+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:01:57.176+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:01:57.175+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:01:58.883+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:01:58.915+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:01:58.914+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:01:58.934+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:01:58.933+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:01:58.974+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.808 seconds
+[2025-11-26T19:02:29.459+0000] {processor.py:157} INFO - Started process (PID=4016) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:02:29.462+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:02:29.463+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:02:29.463+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:02:31.248+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:02:31.278+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:02:31.277+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:02:31.291+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:02:31.291+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:02:31.319+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.868 seconds
+[2025-11-26T19:03:01.827+0000] {processor.py:157} INFO - Started process (PID=4035) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:03:01.830+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:03:01.832+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:03:01.831+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:03:03.537+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:03:03.566+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:03:03.565+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:03:03.579+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:03:03.579+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:03:03.604+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.782 seconds
+[2025-11-26T19:03:34.077+0000] {processor.py:157} INFO - Started process (PID=4054) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:03:34.079+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:03:34.081+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:03:34.080+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:03:35.913+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:03:35.949+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:03:35.948+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:03:35.966+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:03:35.966+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:03:35.989+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.920 seconds
+[2025-11-26T19:04:06.467+0000] {processor.py:157} INFO - Started process (PID=4073) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:04:06.469+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:04:06.470+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:04:06.470+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:04:08.210+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:04:08.242+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:04:08.241+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:04:08.255+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:04:08.255+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:04:08.278+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.817 seconds
+[2025-11-26T19:04:38.753+0000] {processor.py:157} INFO - Started process (PID=4092) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:04:38.756+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:04:38.759+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:04:38.758+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:04:40.553+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:04:40.587+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:04:40.586+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:04:40.603+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:04:40.603+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:04:40.632+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.884 seconds
+[2025-11-26T19:05:11.123+0000] {processor.py:157} INFO - Started process (PID=4111) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:05:11.126+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:05:11.127+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:05:11.127+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:05:12.981+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:05:13.013+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:05:13.012+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:05:13.030+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:05:13.030+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:05:13.066+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.948 seconds
+[2025-11-26T19:05:43.534+0000] {processor.py:157} INFO - Started process (PID=4130) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:05:43.536+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:05:43.537+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:05:43.536+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:05:45.336+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:05:45.367+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:05:45.366+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:05:45.381+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:05:45.380+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:05:45.408+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.880 seconds
+[2025-11-26T19:06:15.874+0000] {processor.py:157} INFO - Started process (PID=4149) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:06:15.877+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:06:15.878+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:06:15.878+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:06:17.588+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:06:17.626+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:06:17.625+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:06:17.644+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:06:17.644+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:06:17.673+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.804 seconds
+[2025-11-26T19:06:48.153+0000] {processor.py:157} INFO - Started process (PID=4168) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:06:48.156+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:06:48.158+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:06:48.157+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:06:49.847+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:06:49.889+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:06:49.888+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:06:49.905+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:06:49.905+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:06:49.936+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.789 seconds
+[2025-11-26T19:07:20.446+0000] {processor.py:157} INFO - Started process (PID=4187) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:07:20.449+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:07:20.450+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:07:20.449+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:07:22.841+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:07:22.874+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:07:22.872+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:07:22.889+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:07:22.889+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:07:22.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.474 seconds
+[2025-11-26T19:07:53.220+0000] {processor.py:157} INFO - Started process (PID=4206) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:07:53.222+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:07:53.224+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:07:53.224+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:07:55.501+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:07:55.537+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:07:55.536+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:07:55.553+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:07:55.552+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:07:55.582+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.370 seconds
+[2025-11-26T19:08:25.751+0000] {processor.py:157} INFO - Started process (PID=4225) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:08:25.758+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:08:25.763+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:08:25.763+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:08:28.010+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:08:28.069+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:08:28.068+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:08:28.109+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:08:28.109+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:08:28.153+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.415 seconds
+[2025-11-26T19:08:59.040+0000] {processor.py:157} INFO - Started process (PID=4244) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:08:59.042+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:08:59.044+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:08:59.043+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:09:00.871+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:09:00.912+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:09:00.911+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:09:00.931+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:09:00.931+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:09:00.961+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.927 seconds
+[2025-11-26T19:09:31.485+0000] {processor.py:157} INFO - Started process (PID=4268) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:09:31.487+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:09:31.489+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:09:31.488+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:09:33.246+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:09:33.276+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:09:33.275+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:09:33.290+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:09:33.290+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:09:33.313+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.834 seconds
+[2025-11-26T19:10:03.881+0000] {processor.py:157} INFO - Started process (PID=4287) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:10:03.883+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:10:03.885+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:10:03.884+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:10:06.057+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:10:06.394+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:10:06.392+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:10:06.411+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:10:06.411+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:10:06.437+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.561 seconds
+[2025-11-26T19:10:36.679+0000] {processor.py:157} INFO - Started process (PID=4311) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:10:36.681+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:10:36.682+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:10:36.681+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:10:38.347+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:10:38.394+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:10:38.393+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:10:38.417+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:10:38.417+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:10:38.713+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.041 seconds
+[2025-11-26T19:11:09.120+0000] {processor.py:157} INFO - Started process (PID=4330) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:11:09.122+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:11:09.123+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:11:09.123+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:11:11.102+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:11:11.152+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:11:11.151+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:11:11.170+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:11:11.169+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:11:11.201+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.087 seconds
+[2025-11-26T19:11:41.594+0000] {processor.py:157} INFO - Started process (PID=4349) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:11:41.595+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:11:41.596+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:11:41.596+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:11:43.296+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:11:43.332+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:11:43.331+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:11:43.593+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:11:43.593+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:11:43.618+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.030 seconds
+[2025-11-26T19:12:14.040+0000] {processor.py:157} INFO - Started process (PID=4368) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:12:14.042+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:12:14.043+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:12:14.043+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:12:16.131+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:12:16.177+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:12:16.176+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:12:16.192+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:12:16.192+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:12:16.222+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.187 seconds
+[2025-11-26T19:12:46.468+0000] {processor.py:157} INFO - Started process (PID=4387) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:12:46.471+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:12:46.472+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:12:46.471+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:12:48.595+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:12:48.870+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:12:48.869+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:12:48.885+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:12:48.885+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:12:48.918+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.455 seconds
+[2025-11-26T19:13:18.998+0000] {processor.py:157} INFO - Started process (PID=4406) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:13:19.001+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:13:19.003+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:13:19.002+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:13:20.911+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:13:20.950+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:13:20.949+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:13:20.979+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:13:20.975+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:13:21.020+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.027 seconds
+[2025-11-26T19:13:51.439+0000] {processor.py:157} INFO - Started process (PID=4425) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:13:51.440+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:13:51.442+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:13:51.441+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:13:53.515+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:13:53.560+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:13:53.559+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:13:53.577+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:13:53.577+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:13:53.606+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.174 seconds
+[2025-11-26T19:14:23.888+0000] {processor.py:157} INFO - Started process (PID=4444) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:14:23.890+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:14:23.891+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:14:23.891+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:14:25.940+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:14:25.980+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:14:25.979+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:14:26.229+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:14:26.228+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:14:26.261+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.378 seconds
+[2025-11-26T19:14:56.430+0000] {processor.py:157} INFO - Started process (PID=4463) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:14:56.433+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:14:56.434+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:14:56.434+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:14:58.480+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:14:58.516+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:14:58.515+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:14:58.529+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:14:58.529+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:14:58.558+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.134 seconds
+[2025-11-26T19:15:28.933+0000] {processor.py:157} INFO - Started process (PID=4482) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:15:28.936+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:15:28.937+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:15:28.937+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:15:30.938+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:15:30.975+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:15:30.974+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:15:30.991+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:15:30.991+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:15:31.014+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.087 seconds
+[2025-11-26T19:16:01.437+0000] {processor.py:157} INFO - Started process (PID=4501) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:16:01.441+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:16:01.442+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:16:01.442+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:16:03.347+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:16:03.397+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:16:03.396+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:16:03.423+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:16:03.423+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:16:03.468+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.036 seconds
+[2025-11-26T19:16:33.865+0000] {processor.py:157} INFO - Started process (PID=4520) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:16:33.866+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:16:33.868+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:16:33.867+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:16:35.817+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:16:35.908+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:16:35.907+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:16:35.947+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:16:35.947+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:16:36.014+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.155 seconds
+[2025-11-26T19:17:06.307+0000] {processor.py:157} INFO - Started process (PID=4539) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:17:06.312+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:17:06.313+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:17:06.313+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:17:08.384+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:17:08.413+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:17:08.412+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:17:08.439+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:17:08.439+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:17:08.463+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.162 seconds
+[2025-11-26T19:17:38.841+0000] {processor.py:157} INFO - Started process (PID=4563) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:17:38.843+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:17:38.844+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:17:38.844+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:17:41.085+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:17:41.132+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:17:41.131+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:17:41.151+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:17:41.150+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:17:41.188+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.352 seconds
+[2025-11-26T19:18:11.469+0000] {processor.py:157} INFO - Started process (PID=4582) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:18:11.471+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:18:11.472+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:18:11.472+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:18:13.779+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:18:13.829+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:18:13.828+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:18:13.842+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:18:13.842+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:18:13.864+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.402 seconds
+[2025-11-26T19:18:44.082+0000] {processor.py:157} INFO - Started process (PID=4606) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:18:44.085+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:18:44.086+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:18:44.086+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:18:46.209+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:18:46.238+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:18:46.237+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:18:46.252+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:18:46.252+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:18:46.276+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.198 seconds
+[2025-11-26T19:19:16.544+0000] {processor.py:157} INFO - Started process (PID=4625) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:19:16.545+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:19:16.547+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:19:16.546+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:19:18.587+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:19:18.622+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:19:18.621+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:19:18.635+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:19:18.635+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:19:18.664+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.126 seconds
+[2025-11-26T19:19:49.118+0000] {processor.py:157} INFO - Started process (PID=4644) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:19:49.121+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:19:49.122+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:19:49.121+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:19:51.084+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:19:51.129+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:19:51.128+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:19:51.145+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:19:51.145+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:19:51.185+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.072 seconds
+[2025-11-26T19:20:21.526+0000] {processor.py:157} INFO - Started process (PID=4663) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:20:21.529+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:20:21.530+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:20:21.530+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:20:23.380+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:20:23.418+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:20:23.417+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:20:23.441+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:20:23.441+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:20:23.463+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.947 seconds
+[2025-11-26T19:20:53.895+0000] {processor.py:157} INFO - Started process (PID=4682) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:20:53.897+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:20:53.899+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:20:53.898+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:20:55.910+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:20:55.959+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:20:55.958+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:20:55.982+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:20:55.981+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:20:56.038+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.148 seconds
+[2025-11-26T19:21:26.436+0000] {processor.py:157} INFO - Started process (PID=4701) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:21:26.438+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:21:26.439+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:21:26.438+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:21:28.336+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:21:28.383+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:21:28.382+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:21:28.399+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:21:28.399+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:21:28.428+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.997 seconds
+[2025-11-26T19:21:58.856+0000] {processor.py:157} INFO - Started process (PID=4720) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:21:58.862+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:21:58.863+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:21:58.863+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:22:00.744+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:22:00.771+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:22:00.770+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:22:00.785+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:22:00.785+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:22:00.821+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.971 seconds
+[2025-11-26T19:22:31.223+0000] {processor.py:157} INFO - Started process (PID=4739) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:22:31.225+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:22:31.226+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:22:31.226+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:22:33.170+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:22:33.220+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:22:33.219+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:22:33.234+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:22:33.233+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:22:33.260+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.044 seconds
+[2025-11-26T19:23:03.692+0000] {processor.py:157} INFO - Started process (PID=4758) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:23:03.695+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:23:03.696+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:23:03.696+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:23:05.924+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:23:05.961+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:23:05.960+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:23:05.978+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:23:05.978+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:23:06.002+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.314 seconds
+[2025-11-26T19:23:36.130+0000] {processor.py:157} INFO - Started process (PID=4777) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:23:36.132+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:23:36.134+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:23:36.133+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:23:38.274+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:23:38.315+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:23:38.314+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:23:38.341+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:23:38.340+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:23:38.390+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.264 seconds
+[2025-11-26T19:24:08.564+0000] {processor.py:157} INFO - Started process (PID=4796) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:24:08.567+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:24:08.569+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:24:08.568+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:24:10.410+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:24:10.448+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:24:10.447+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:24:10.461+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:24:10.461+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:24:10.484+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.925 seconds
+[2025-11-26T19:24:40.773+0000] {processor.py:157} INFO - Started process (PID=4815) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:24:40.775+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:24:40.776+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:24:40.776+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:24:42.653+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:24:42.688+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:24:42.687+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:24:42.701+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:24:42.701+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:24:42.725+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.957 seconds
+[2025-11-26T19:25:13.180+0000] {processor.py:157} INFO - Started process (PID=4834) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:25:13.182+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:25:13.184+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:25:13.184+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:25:15.260+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:25:15.292+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:25:15.291+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:25:15.306+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:25:15.306+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:25:15.329+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.156 seconds
+[2025-11-26T19:25:45.763+0000] {processor.py:157} INFO - Started process (PID=4858) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:25:45.765+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:25:45.766+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:25:45.766+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:25:47.772+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:25:47.838+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:25:47.837+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:25:47.863+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:25:47.863+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:25:47.939+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.182 seconds
+[2025-11-26T19:26:18.232+0000] {processor.py:157} INFO - Started process (PID=4877) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:26:18.236+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:26:18.237+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:26:18.236+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:26:20.257+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:26:20.286+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:26:20.285+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:26:20.300+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:26:20.300+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:26:20.322+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.097 seconds
+[2025-11-26T19:26:50.759+0000] {processor.py:157} INFO - Started process (PID=4901) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:26:50.761+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:26:50.762+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:26:50.762+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:26:52.611+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:26:52.641+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:26:52.640+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:26:52.655+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:26:52.654+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:26:52.684+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 1.930 seconds
+[2025-11-26T19:27:23.140+0000] {processor.py:157} INFO - Started process (PID=4920) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:27:23.143+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:27:23.145+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:27:23.145+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:27:25.152+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:27:25.193+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:27:25.192+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:27:25.222+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:27:25.221+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:27:25.265+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.130 seconds
+[2025-11-26T19:27:55.715+0000] {processor.py:157} INFO - Started process (PID=4939) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:27:55.717+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:27:55.718+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:27:55.718+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:27:57.781+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:27:57.809+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:27:57.808+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:27:57.822+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:27:57.822+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:27:57.845+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.137 seconds
+[2025-11-26T19:28:28.182+0000] {processor.py:157} INFO - Started process (PID=4958) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:28:28.186+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:28:28.188+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:28:28.187+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:28:30.154+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:28:30.203+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:28:30.202+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:28:30.221+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:28:30.221+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:28:30.251+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.075 seconds
+[2025-11-26T19:29:00.567+0000] {processor.py:157} INFO - Started process (PID=4977) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:29:00.573+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:29:00.576+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:29:00.576+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:29:02.575+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:29:02.607+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:29:02.606+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:29:02.622+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:29:02.622+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:29:02.647+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.092 seconds
+[2025-11-26T19:29:32.965+0000] {processor.py:157} INFO - Started process (PID=4996) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:29:32.968+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:29:32.971+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:29:32.970+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:29:34.972+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:29:35.011+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:29:35.011+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:29:35.030+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:29:35.030+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:29:35.061+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.101 seconds
+[2025-11-26T19:30:05.501+0000] {processor.py:157} INFO - Started process (PID=5015) to work on /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:30:05.503+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_train_model.py for tasks to queue
+[2025-11-26T19:30:05.504+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:30:05.504+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:30:07.511+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_train_model']) retrieved from /opt/airflow/dags/house_prices_train_model.py
+[2025-11-26T19:30:07.542+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:30:07.541+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T19:30:07.560+0000] {logging_mixin.py:154} INFO - [2025-11-26T19:30:07.559+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_train_model to None, run_after=None
+[2025-11-26T19:30:07.590+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_train_model.py took 2.094 seconds
