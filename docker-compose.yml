@@ -182,22 +182,6 @@ services:
     networks:
       - mlops_network
 
-  #API de Datos (simulación local de la API del profesor)
-  data_api:
-    build:
-      context: ./data_api
-      dockerfile: Dockerfile
-    container_name: mlops_data_api
-    ports:
-      - "8088:8080"
-    networks:
-      - mlops_network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   # API de Inferencia
   inference_api:
     build:
@@ -212,12 +196,10 @@ services:
       AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
       AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
       MLFLOW_S3_ENDPOINT_URL: http://minio:9000
-      MODEL_NAME: diabetes_readmit_logreg     #
+      MODEL_NAME: house_prices_regression     #
       MODEL_STAGE: Production                 #
     ports:
       - "8989:8989"
-    volumes:
-      - ./inference_api/models:/app/models
     networks:
       - mlops_network
   locust:

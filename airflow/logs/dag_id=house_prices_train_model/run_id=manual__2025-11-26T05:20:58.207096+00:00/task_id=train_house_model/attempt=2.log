@@ -1,0 +1,55 @@
+[2025-11-26T05:26:04.163+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T05:20:58.207096+00:00 [queued]>
+[2025-11-26T05:26:04.182+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T05:20:58.207096+00:00 [queued]>
+[2025-11-26T05:26:04.183+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-11-26T05:26:04.215+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): train_house_model> on 2025-11-26 05:20:58.207096+00:00
+[2025-11-26T05:26:04.234+0000] {standard_task_runner.py:57} INFO - Started process 398 to run task
+[2025-11-26T05:26:04.248+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'house_prices_train_model', 'train_house_model', 'manual__2025-11-26T05:20:58.207096+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/house_prices_train_model.py', '--cfg-path', '/tmp/tmpt9av2y8y']
+[2025-11-26T05:26:04.253+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask train_house_model
+[2025-11-26T05:26:04.398+0000] {task_command.py:416} INFO - Running <TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T05:20:58.207096+00:00 [running]> on host 73034cc89b82
+[2025-11-26T05:26:04.568+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_student' AIRFLOW_CTX_DAG_ID='house_prices_train_model' AIRFLOW_CTX_TASK_ID='train_house_model' AIRFLOW_CTX_EXECUTION_DATE='2025-11-26T05:20:58.207096+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-26T05:20:58.207096+00:00'
+[2025-11-26T05:26:04.578+0000] {logging_mixin.py:154} INFO - [train_house_price_model] DATA_DB_URI in task: mysql+pymysql://mlflow_user:mlflow_pass@mysql:3306/datasets_db
+[2025-11-26T05:26:04.578+0000] {logging_mixin.py:154} INFO - [train_house_price_model] SQL being executed:
+[2025-11-26T05:26:04.578+0000] {logging_mixin.py:154} INFO - 
+            SELECT
+                bed,
+                bath,
+                acre_lot,
+                house_size,
+                zip_code,
+                brokered_by,
+                street,
+                price
+            FROM clean_house_prices
+            WHERE price IS NOT NULL
+        
+[2025-11-26T05:26:04.594+0000] {logging_mixin.py:154} WARNING - /opt/***/dags/house_prices_train_model.py:96 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-11-26T05:26:05.035+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Raw dtypes from DB:
+[2025-11-26T05:26:05.037+0000] {logging_mixin.py:154} INFO - bed            object
+bath           object
+acre_lot       object
+house_size     object
+zip_code       object
+brokered_by    object
+street         object
+price          object
+dtype: object
+[2025-11-26T05:26:05.038+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Head:
+[2025-11-26T05:26:05.042+0000] {logging_mixin.py:154} INFO -    bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+0  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+1  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+2  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+3  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+4  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+[2025-11-26T05:26:05.043+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/house_prices_train_model.py", line 113, in train_house_price_model
+    raise ValueError(
+ValueError: clean_house_prices appears to contain HEADER STRINGS as data (first row is literally the column names). This is a problem in how clean_house_prices is populated for user mlflow_user. Fix the upstream load/clean DAG or the table definition, then re-run this training DAG.
+[2025-11-26T05:26:05.064+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=house_prices_train_model, task_id=train_house_model, execution_date=20251126T052058, start_date=20251126T052604, end_date=20251126T052605
+[2025-11-26T05:26:05.082+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 47 for task train_house_model (clean_house_prices appears to contain HEADER STRINGS as data (first row is literally the column names). This is a problem in how clean_house_prices is populated for user mlflow_user. Fix the upstream load/clean DAG or the table definition, then re-run this training DAG.; 398)
+[2025-11-26T05:26:05.141+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-26T05:26:05.191+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

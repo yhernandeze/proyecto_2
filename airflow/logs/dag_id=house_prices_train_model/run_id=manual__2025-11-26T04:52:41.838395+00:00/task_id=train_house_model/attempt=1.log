@@ -1,0 +1,57 @@
+[2025-11-26T04:52:45.021+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T04:52:41.838395+00:00 [queued]>
+[2025-11-26T04:52:45.048+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T04:52:41.838395+00:00 [queued]>
+[2025-11-26T04:52:45.049+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-26T04:52:45.089+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): train_house_model> on 2025-11-26 04:52:41.838395+00:00
+[2025-11-26T04:52:45.102+0000] {standard_task_runner.py:57} INFO - Started process 203 to run task
+[2025-11-26T04:52:45.109+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'house_prices_train_model', 'train_house_model', 'manual__2025-11-26T04:52:41.838395+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/house_prices_train_model.py', '--cfg-path', '/tmp/tmpe26v3cyx']
+[2025-11-26T04:52:45.114+0000] {standard_task_runner.py:85} INFO - Job 39: Subtask train_house_model
+[2025-11-26T04:52:45.188+0000] {task_command.py:416} INFO - Running <TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T04:52:41.838395+00:00 [running]> on host 73034cc89b82
+[2025-11-26T04:52:45.336+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_student' AIRFLOW_CTX_DAG_ID='house_prices_train_model' AIRFLOW_CTX_TASK_ID='train_house_model' AIRFLOW_CTX_EXECUTION_DATE='2025-11-26T04:52:41.838395+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-26T04:52:41.838395+00:00'
+[2025-11-26T04:52:45.359+0000] {logging_mixin.py:154} WARNING - /opt/***/dags/house_prices_train_model.py:79 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-11-26T04:52:45.819+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Raw dtypes from DB:
+[2025-11-26T04:52:45.821+0000] {logging_mixin.py:154} INFO - bed            object
+bath           object
+acre_lot       object
+house_size     object
+zip_code       object
+brokered_by    object
+street         object
+price          object
+dtype: object
+[2025-11-26T04:52:45.821+0000] {logging_mixin.py:154} INFO - [train_house_price_model] First 5 rows (raw):
+[2025-11-26T04:52:45.825+0000] {logging_mixin.py:154} INFO -    bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+0  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+1  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+2  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+3  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+4  bed  bath  acre_lot  house_size  zip_code  brokered_by  street  price
+[2025-11-26T04:52:45.825+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for bed: ["'bed'", "'bed'", "'bed'", "'bed'", "'bed'", "'bed'", "'bed'", "'bed'", "'bed'", "'bed'"]
+[2025-11-26T04:52:45.826+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for bath: ["'bath'", "'bath'", "'bath'", "'bath'", "'bath'", "'bath'", "'bath'", "'bath'", "'bath'", "'bath'"]
+[2025-11-26T04:52:45.826+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for acre_lot: ["'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'", "'acre_lot'"]
+[2025-11-26T04:52:45.826+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for house_size: ["'house_size'", "'house_size'", "'house_size'", "'house_size'", "'house_size'", "'house_size'", "'house_size'", "'house_size'", "'house_size'", "'house_size'"]
+[2025-11-26T04:52:45.826+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for zip_code: ["'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'", "'zip_code'"]
+[2025-11-26T04:52:45.826+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for brokered_by: ["'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'", "'brokered_by'"]
+[2025-11-26T04:52:45.826+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for street: ["'street'", "'street'", "'street'", "'street'", "'street'", "'street'", "'street'", "'street'", "'street'", "'street'"]
+[2025-11-26T04:52:45.827+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Sample values for price: ["'price'", "'price'", "'price'", "'price'", "'price'", "'price'", "'price'", "'price'", "'price'", "'price'"]
+[2025-11-26T04:52:45.838+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column bed has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.850+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column bath has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.863+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column acre_lot has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.878+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column house_size has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.891+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column zip_code has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.909+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column brokered_by has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.922+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column street has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.935+0000] {logging_mixin.py:154} INFO - [train_house_price_model] After cleaning, column price has 4055 NaNs out of 4055
+[2025-11-26T04:52:45.938+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Dropped 4055 rows with NaNs in ['bed', 'bath', 'acre_lot', 'house_size', 'zip_code', 'brokered_by', 'street', 'price']; remaining 0
+[2025-11-26T04:52:45.939+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/house_prices_train_model.py", line 142, in train_house_price_model
+    raise ValueError(
+ValueError: Too few valid rows after cleaning (0). Check clean_house_prices contents (see debug logs above).
+[2025-11-26T04:52:45.950+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=house_prices_train_model, task_id=train_house_model, execution_date=20251126T045241, start_date=20251126T045245, end_date=20251126T045245
+[2025-11-26T04:52:45.972+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 39 for task train_house_model (Too few valid rows after cleaning (0). Check clean_house_prices contents (see debug logs above).; 203)
+[2025-11-26T04:52:46.005+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-26T04:52:46.028+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

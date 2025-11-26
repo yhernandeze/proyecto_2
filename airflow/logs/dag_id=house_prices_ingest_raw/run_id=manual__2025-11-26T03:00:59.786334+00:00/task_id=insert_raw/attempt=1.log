@@ -1,0 +1,36 @@
+[2025-11-26T03:01:14.270+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: house_prices_ingest_raw.insert_raw manual__2025-11-26T03:00:59.786334+00:00 [queued]>
+[2025-11-26T03:01:14.282+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: house_prices_ingest_raw.insert_raw manual__2025-11-26T03:00:59.786334+00:00 [queued]>
+[2025-11-26T03:01:14.283+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-26T03:01:14.305+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): insert_raw> on 2025-11-26 03:00:59.786334+00:00
+[2025-11-26T03:01:14.312+0000] {standard_task_runner.py:57} INFO - Started process 1191 to run task
+[2025-11-26T03:01:14.318+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'house_prices_ingest_raw', 'insert_raw', 'manual__2025-11-26T03:00:59.786334+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/house_prices_ingest.py', '--cfg-path', '/tmp/tmpm4vq5fxf']
+[2025-11-26T03:01:14.322+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask insert_raw
+[2025-11-26T03:01:14.407+0000] {task_command.py:416} INFO - Running <TaskInstance: house_prices_ingest_raw.insert_raw manual__2025-11-26T03:00:59.786334+00:00 [running]> on host 986e5cfcf7e1
+[2025-11-26T03:01:14.559+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_student' AIRFLOW_CTX_DAG_ID='house_prices_ingest_raw' AIRFLOW_CTX_TASK_ID='insert_raw' AIRFLOW_CTX_EXECUTION_DATE='2025-11-26T03:00:59.786334+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-26T03:00:59.786334+00:00'
+[2025-11-26T03:01:16.471+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/house_prices_ingest.py", line 88, in insert_raw_batch
+    conn = _get_mysql_connection()
+  File "/opt/airflow/dags/house_prices_ingest.py", line 37, in _get_mysql_connection
+    return pymysql.connect(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 664, in connect
+    self._request_authentication()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 954, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1044, "Access denied for user 'mlflow_user'@'%' to database 'datasets_db'")
+[2025-11-26T03:01:16.489+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=house_prices_ingest_raw, task_id=insert_raw, execution_date=20251126T030059, start_date=20251126T030114, end_date=20251126T030116
+[2025-11-26T03:01:16.506+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 6 for task insert_raw ((1044, "Access denied for user 'mlflow_user'@'%' to database 'datasets_db'"); 1191)
+[2025-11-26T03:01:16.547+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-26T03:01:16.583+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

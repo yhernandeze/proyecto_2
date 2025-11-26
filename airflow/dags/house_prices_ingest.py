@@ -46,17 +46,34 @@ def _get_mysql_connection():
 def fetch_batch_from_api(**context):
     """
     Call the professor's API for the next batch of house prices.
-    We assume there is some counter or the API keeps track of sequential batches by group.
+    API expects query params: group_number (int) and day ('Tuesday' or 'Wednesday').
+    We'll map the logical_date weekday to those two, and default to 'Tuesday' otherwise.
     """
     if not DATA_API_URL:
         raise ValueError("DATA_API_URL is not set")
 
-    url = f"{DATA_API_URL}/data?group={GROUP_NUMBER}"
-    resp = requests.get(url, timeout=10)
-    resp.raise_for_status()
-    data = resp.json()
+    logical_date: datetime = context["logical_date"]
+    weekday_name = logical_date.strftime("%A")  # 'Monday', 'Tuesday', etc.
 
-    # Store in XCom so the next task can insert into MySQL
+    if weekday_name in ("Tuesday", "Wednesday"):
+        day_param = weekday_name
+    else:
+        # If DAG runs on another day, just default to Tuesday's dataset
+        day_param = "Tuesday"
+
+    params = {
+        "group_number": int(GROUP_NUMBER),
+        "day": day_param,
+    }
+
+    url = f"{DATA_API_URL}/data"
+    print(f"Calling data API: {url} with params={params}")
+    resp = requests.get(url, params=params, timeout=10)
+    print("Status code:", resp.status_code)
+    print("Response text (first 500 chars):", resp.text[:500])
+    resp.raise_for_status()
+
+    data = resp.json()
     return data
 
 def insert_raw_batch(**context):
