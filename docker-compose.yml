@@ -219,13 +219,23 @@ services:
       - mlops_network
 
 
-  streamlit:
-    build: ./streamlit
+  streamlit_ui:
+    build:
+      context: ./streamlit_ui
+      dockerfile: Dockerfile
     container_name: mlops_streamlit
+    depends_on:
+      - inference_api
+      - mlflow
+      - mysql
+    environment:
+      INFERENCE_API_URL: http://inference_api:8989
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      DATA_DB_URI: ${DATA_DB_URI}
+      MODEL_NAME: house_prices_regression
+      GROUP_NUMBER: ${GROUP_NUMBER}
     ports:
       - "8501:8501"
-    depends_on:
-      - prometheus
     networks:
       - mlops_network
 

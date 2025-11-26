@@ -1,0 +1,5 @@
+streamlit==1.39.0
+requests==2.31.0
+pandas==2.1.4
+pymysql==1.1.0
+mlflow==2.9.2

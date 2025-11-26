@@ -1,0 +1,90 @@
+[2025-11-26T17:18:25.757+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T17:18:22.646710+00:00 [queued]>
+[2025-11-26T17:18:25.779+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T17:18:22.646710+00:00 [queued]>
+[2025-11-26T17:18:25.780+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-11-26T17:18:25.821+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): train_house_model> on 2025-11-26 17:18:22.646710+00:00
+[2025-11-26T17:18:25.834+0000] {standard_task_runner.py:57} INFO - Started process 204 to run task
+[2025-11-26T17:18:25.842+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'house_prices_train_model', 'train_house_model', 'manual__2025-11-26T17:18:22.646710+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/house_prices_train_model.py', '--cfg-path', '/tmp/tmpa557217n']
+[2025-11-26T17:18:25.851+0000] {standard_task_runner.py:85} INFO - Job 57: Subtask train_house_model
+[2025-11-26T17:18:25.936+0000] {task_command.py:416} INFO - Running <TaskInstance: house_prices_train_model.train_house_model manual__2025-11-26T17:18:22.646710+00:00 [running]> on host 73034cc89b82
+[2025-11-26T17:18:26.098+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops_student' AIRFLOW_CTX_DAG_ID='house_prices_train_model' AIRFLOW_CTX_TASK_ID='train_house_model' AIRFLOW_CTX_EXECUTION_DATE='2025-11-26T17:18:22.646710+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-26T17:18:22.646710+00:00'
+[2025-11-26T17:18:26.101+0000] {logging_mixin.py:154} INFO - [train_house_price_model] DATA_DB_URI in task: mysql+pymysql://mlflow_user:mlflow_pass@mysql:3306/datasets_db
+[2025-11-26T17:18:26.110+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Global stats: total_rows=4055, mean_price=236809.57731196054, var_price=2872533041.9540086, max_batch_id=1764126285
+[2025-11-26T17:18:26.118+0000] {logging_mixin.py:154} INFO - [train_house_price_model] new_rows=4055, new_ratio=1.0000, drift_mean=0.0000, drift_var=0.0000, drift_score=0.0000
+[2025-11-26T17:18:26.118+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Retrain decision: trained_first_time | No previous training_runs; first training.
+[2025-11-26T17:18:26.549+0000] {logging_mixin.py:154} INFO - [train_house_price_model] SQL being executed:
+[2025-11-26T17:18:26.549+0000] {logging_mixin.py:154} INFO - 
+            SELECT
+                bed,
+                bath,
+                acre_lot,
+                house_size,
+                zip_code,
+                brokered_by,
+                street,
+                price,
+                batch_id
+            FROM clean_house_prices
+            WHERE price IS NOT NULL
+        
+[2025-11-26T17:18:26.628+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Rows fetched from DB: 4055
+[2025-11-26T17:18:26.644+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Raw dtypes from DB (DataFrame):
+[2025-11-26T17:18:26.647+0000] {logging_mixin.py:154} INFO - bed            float64
+bath           float64
+acre_lot       float64
+house_size     float64
+zip_code       float64
+brokered_by    float64
+street         float64
+price          float64
+batch_id         int64
+dtype: object
+[2025-11-26T17:18:26.647+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Head:
+[2025-11-26T17:18:26.655+0000] {logging_mixin.py:154} INFO -    bed  bath  acre_lot  house_size  zip_code  brokered_by     street     price    batch_id
+0  3.0   2.0      0.36      1276.0    1001.0      67455.0  1698080.0  289900.0  1764126285
+1  3.0   2.0      1.76      1968.0    1001.0      33714.0  1745924.0  199999.0  1764126285
+2  3.0   2.0      0.16      1280.0    1002.0      62476.0  1308332.0  275000.0  1764126285
+3  4.0   3.0      0.29      1514.0    1020.0      77236.0  1342303.0  249900.0  1764126285
+4  2.0   1.0      0.28      1207.0    1013.0      98727.0  1548010.0  240000.0  1764126285
+[2025-11-26T17:18:26.658+0000] {logging_mixin.py:154} INFO - [train_house_price_model] dtypes after to_numeric:
+[2025-11-26T17:18:26.659+0000] {logging_mixin.py:154} INFO - bed            float64
+bath           float64
+acre_lot       float64
+house_size     float64
+zip_code       float64
+brokered_by    float64
+street         float64
+price          float64
+batch_id         int64
+dtype: object
+[2025-11-26T17:18:26.662+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Dropped 0 rows with NaNs; remaining 4055
+[2025-11-26T17:18:26.664+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Shape of X: (4055, 7), y: (4055,)
+[2025-11-26T17:18:26.716+0000] {logging_mixin.py:154} WARNING - 2025/11/26 17:18:26 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-11-26T17:18:37.171+0000] {logging_mixin.py:154} WARNING - /home/***/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py:33 UserWarning: Setuptools is replacing distutils.
+[2025-11-26T17:18:37.334+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-11-26T17:18:37.819+0000] {logging_mixin.py:154} WARNING - Registered model 'house_prices_regression' already exists. Creating a new version of this model...
+[2025-11-26T17:18:37.876+0000] {logging_mixin.py:154} WARNING - 2025/11/26 17:18:37 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: house_prices_regression, version 2
+[2025-11-26T17:18:37.876+0000] {logging_mixin.py:154} WARNING - Created version '2' of model 'house_prices_regression'.
+[2025-11-26T17:18:37.904+0000] {logging_mixin.py:154} INFO - Run ID: 4df628e039c34b95b04bbc61b9936868
+[2025-11-26T17:18:37.905+0000] {logging_mixin.py:154} INFO - RMSE: 47418.36, R2: 0.2085
+[2025-11-26T17:18:37.951+0000] {logging_mixin.py:154} WARNING - /opt/***/dags/house_prices_train_model.py:363 FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/2.9.2/model-registry.html#migrating-from-stages
+[2025-11-26T17:18:38.032+0000] {logging_mixin.py:154} WARNING - /opt/***/dags/house_prices_train_model.py:383 FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/2.9.2/model-registry.html#migrating-from-stages
+[2025-11-26T17:18:38.091+0000] {logging_mixin.py:154} INFO - [train_house_price_model] Model version 2 promoted to Production.
+[2025-11-26T17:18:38.180+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-11-26T17:18:38.200+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=house_prices_train_model, task_id=train_house_model, execution_date=20251126T171822, start_date=20251126T171825, end_date=20251126T171838
+[2025-11-26T17:18:38.295+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-26T17:18:38.320+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
