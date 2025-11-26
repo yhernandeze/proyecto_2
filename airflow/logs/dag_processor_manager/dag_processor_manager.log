@@ -15739,3 +15739,21 @@ File Path                                        PID    Runtime      # DAGs    #
 /opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.80s           2025-11-26T02:33:53
 /opt/airflow/dags/house_prices_ingest.py                                  1           0  0.22s           2025-11-26T02:33:43
 ================================================================================
+[2025-11-26T02:34:42.622+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.92s           2025-11-26T02:34:26
+/opt/airflow/dags/house_prices_ingest.py                                  1           0  0.19s           2025-11-26T02:34:13
+================================================================================
+[2025-11-26T02:35:12.925+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/diabetes_training_pipeline.py                           1           0  1.82s           2025-11-26T02:34:58
+/opt/airflow/dags/house_prices_ingest.py                                  1           0  0.20s           2025-11-26T02:34:44
+================================================================================
