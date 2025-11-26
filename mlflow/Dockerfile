@@ -22,6 +22,6 @@ RUN pip install --no-cache-dir \
 # Puerto para MLflow
 EXPOSE 5000
 
-# Healthcheck
+# Healthcheck (use root, MLflow has no /health)
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-    CMD curl -f http://localhost:5000/health || exit 1
+    CMD curl -f http://localhost:5000 || exit 1
