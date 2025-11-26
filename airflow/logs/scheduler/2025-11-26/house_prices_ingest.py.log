@@ -198,3 +198,10 @@
 [2025-11-26T02:35:14.451+0000] {logging_mixin.py:154} INFO - [2025-11-26T02:35:14.451+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-11-26T02:35:14.489+0000] {logging_mixin.py:154} INFO - [2025-11-26T02:35:14.488+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_ingest_raw to 2025-11-25T00:00:00+00:00, run_after=2025-11-26T00:00:00+00:00
 [2025-11-26T02:35:14.522+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_ingest.py took 0.198 seconds
+[2025-11-26T02:35:44.766+0000] {processor.py:157} INFO - Started process (PID=501) to work on /opt/airflow/dags/house_prices_ingest.py
+[2025-11-26T02:35:44.769+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/house_prices_ingest.py for tasks to queue
+[2025-11-26T02:35:44.770+0000] {logging_mixin.py:154} INFO - [2025-11-26T02:35:44.770+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/house_prices_ingest.py
+[2025-11-26T02:35:44.805+0000] {processor.py:839} INFO - DAG(s) dict_keys(['house_prices_ingest_raw']) retrieved from /opt/airflow/dags/house_prices_ingest.py
+[2025-11-26T02:35:44.843+0000] {logging_mixin.py:154} INFO - [2025-11-26T02:35:44.843+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-11-26T02:35:44.876+0000] {logging_mixin.py:154} INFO - [2025-11-26T02:35:44.875+0000] {dag.py:3722} INFO - Setting next_dagrun for house_prices_ingest_raw to 2025-11-25T00:00:00+00:00, run_after=2025-11-26T00:00:00+00:00
+[2025-11-26T02:35:44.910+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/house_prices_ingest.py took 0.150 seconds
