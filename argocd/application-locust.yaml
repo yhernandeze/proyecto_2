@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: locust
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/<TU_USUARIO>/<TU_REPO>.git
+    targetRevision: main
+    path: k8s   # ahí ya existen locust-deployment.yaml y locust-service.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mlops
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
