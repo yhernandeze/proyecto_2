@@ -1,165 +1,191 @@
 import os
-import json
+import requests
+import streamlit as st
 from datetime import datetime
 
-import requests
-import pandas as pd
-import streamlit as st
-
-# -----------------------------------------------------------------------------
-# Config
-# -----------------------------------------------------------------------------
-BACKEND_URL = os.getenv("INFERENCE_API_URL", "http://inference_api:8989")
-MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://mlflow:5000")
-MODEL_NAME = os.getenv("MODEL_NAME", "house_prices_regression")
-MODEL_STAGE = os.getenv("MODEL_STAGE", "Production")
-
+# -----------------------------
+# Configuración de la página
+# -----------------------------
 st.set_page_config(
-    page_title="House Prices UI",
-    layout="centered",
+    page_title="MLOps Dashboard - House Prices",
+    page_icon="📈",
+    layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-st.title("🏠 House Prices – Demo MLOps (Group 6)")
-st.caption(f"Backend: {BACKEND_URL} | Model: `{MODEL_NAME}` stage `{MODEL_STAGE}`")
+# -----------------------------
+# Estilos (colores institucionales)
+# Azul / teal / gris claro
+# -----------------------------
+PRIMARY = "#004A9F"   # azul institucional
+ACCENT = "#00A19B"    # teal
+BG_LIGHT = "#F5F7FB"  # gris muy claro
+CARD_BG = "#FFFFFF"   # blanco
 
-# -----------------------------------------------------------------------------
-# Helper para llamar al API
-# -----------------------------------------------------------------------------
-def call_predict_api(payload: dict):
-    url = f"{BACKEND_URL}/predict"
-    try:
-        resp = requests.post(url, json=payload, timeout=5)
-        resp.raise_for_status()
-        data = resp.json()
-        return data
-    except Exception as e:
-        st.error(f"Error llamando a {url}: {e}")
-        return None
+st.markdown(
+    f"""
+    <style>
+    .main {{
+        background-color: {BG_LIGHT};
+    }}
+    .big-title {{
+        font-size: 32px;
+        font-weight: 700;
+        color: {PRIMARY};
+        margin-bottom: 0.2rem;
+    }}
+    .subtitle {{
+        font-size: 14px;
+        color: #4F4F4F;
+        margin-bottom: 1.5rem;
+    }}
+    .metric-card {{
+        background-color: {CARD_BG};
+        padding: 1.2rem 1.0rem;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(15, 23, 42, 0.05);
+        border-left: 4px solid {ACCENT};
+    }}
+    .section-title {{
+        font-size: 18px;
+        font-weight: 600;
+        color: {PRIMARY};
+        margin-top: 1.8rem;
+        margin-bottom: 0.5rem;
+    }}
+    .small-label {{
+        font-size: 12px;
+        color: #6B7280;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
+# Sidebar: info de proyecto
+st.sidebar.title("Proyecto MLOps")
+st.sidebar.markdown(
+    """
+**Pipeline general**
 
-def call_health():
-    url = f"{BACKEND_URL}/health"
-    try:
-        resp = requests.get(url, timeout=5)
-        resp.raise_for_status()
-        return resp.json()
-    except Exception as e:
-        st.error(f"Error llamando a {url}: {e}")
-        return None
-
-
-# -----------------------------------------------------------------------------
-# Estado de sesión para histórico local (UI)
-# -----------------------------------------------------------------------------
-if "history" not in st.session_state:
-    st.session_state["history"] = []  # lista de dicts {timestamp, features, prediction}
-
-
-# -----------------------------------------------------------------------------
-# Layout en tabs
-# -----------------------------------------------------------------------------
-tab_predict, tab_history, tab_info = st.tabs(["🔮 Predicción", "📜 Historial (UI)", "ℹ️ Info modelo"])
-
-# -----------------------------------------------------------------------------
-# TAB 1: Predicción
-# -----------------------------------------------------------------------------
-with tab_predict:
-    st.subheader("Parámetros de la casa")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        bed = st.number_input("Dormitorios (bed)", min_value=0.0, max_value=20.0, value=3.0, step=1.0)
-        bath = st.number_input("Baños (bath)", min_value=0.0, max_value=10.0, value=2.0, step=0.5)
-        acre_lot = st.number_input("Tamaño del lote (acre_lot)", min_value=0.0, max_value=10.0, value=0.3, step=0.01)
-        house_size = st.number_input("Tamaño de la casa (house_size)", min_value=0.0, max_value=20000.0, value=1200.0, step=10.0)
-
-    with col2:
-        zip_code = st.number_input("Zip code", min_value=0.0, max_value=99999.0, value=1001.0, step=1.0)
-        brokered_by = st.number_input("Brokered by (id)", min_value=0.0, max_value=200000.0, value=67455.0, step=1.0)
-        street = st.number_input("Street (id)", min_value=0.0, max_value=2000000.0, value=1698080.0, step=10.0)
-
-    if st.button("Predecir precio"):
-        features = {
-            "bed": bed,
-            "bath": bath,
-            "acre_lot": acre_lot,
-            "house_size": house_size,
-            "zip_code": zip_code,
-            "brokered_by": brokered_by,
-            "street": street,
-        }
-
-        st.write("Payload enviado al API:")
-        st.json(features)
-
-        result = call_predict_api(features)
-        if result is not None and "predicted_price" in result:
-            pred = result["predicted_price"]
-            st.success(f"Precio predicho: **${pred:,.2f}**")
-
-            # Guardar en historial local
-            st.session_state["history"].append(
-                {
-                    "timestamp": datetime.utcnow().isoformat(),
-                    "features": features,
-                    "prediction": pred,
-                }
-            )
-
-# -----------------------------------------------------------------------------
-# TAB 2: Historial (local en UI)
-# -----------------------------------------------------------------------------
-with tab_history:
-    st.subheader("Historial de predicciones (solo sesión actual)")
-
-    if not st.session_state["history"]:
-        st.info("Aún no hay predicciones en esta sesión.")
-    else:
-        # Convertir a DataFrame
-        rows = []
-        for item in st.session_state["history"]:
-            row = {
-                "timestamp": item["timestamp"],
-                **item["features"],
-                "predicted_price": item["prediction"],
-            }
-            rows.append(row)
-        df_hist = pd.DataFrame(rows)
-        st.dataframe(df_hist)
-
-# -----------------------------------------------------------------------------
-# TAB 3: Info modelo / health
-# -----------------------------------------------------------------------------
-with tab_info:
-    st.subheader("Estado del API y del modelo")
-
-    if st.button("Comprobar /health"):
-        health = call_health()
-        if health is not None:
-            st.success("Respuesta de /health:")
-            st.json(health)
-
-    st.markdown("### Configuración actual")
-    st.code(
-        f"""
-INFERENCE_API_URL = {BACKEND_URL}
-MLFLOW_TRACKING_URI = {MLFLOW_TRACKING_URI}
-MODEL_NAME = {MODEL_NAME}
-MODEL_STAGE = {MODEL_STAGE}
-""",
-        language="bash",
-    )
-
-    st.markdown(
-        """
-En esta versión básica:
-
-- Las peticiones se envían al endpoint `/predict` del API FastAPI.
-- El historial mostrado es **solo local de la sesión de Streamlit**.
-- Más adelante podemos:
-  - Leer el histórico real desde la tabla `house_price_inference_log`.
-  - Mostrar métricas agregadas de producción.
-  - Añadir pestaña de SHAP / explicabilidad.
+1. Ingesta desde API (Airflow)  
+2. Almacenamiento en MySQL (`raw_house_prices`)  
+3. Limpieza y feature engineering  
+4. Entrenamiento & registro en **MLflow**  
+5. Despliegue del modelo en **Inference API**  
+6. Pruebas de carga con **Locust**  
+7. Monitoreo con **Prometheus + Grafana**  
+8. Visualización en **Streamlit**
 """
-    )
+)
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("**Variables de entorno detectadas:**")
+
+mlflow_uri = os.getenv("MLFLOW_TRACKING_URI", "no configurado")
+inference_url = os.getenv("INFERENCE_API_URL", "http://localhost:8989")
+group_number = os.getenv("GROUP_NUMBER", "–")
+
+st.sidebar.markdown(f"- `MLFLOW_TRACKING_URI`: `{mlflow_uri}`")
+st.sidebar.markdown(f"- `INFERENCE_API_URL`: `{inference_url}`")
+st.sidebar.markdown(f"- `GROUP_NUMBER`: `{group_number}`")
+
+# Encabezado principal
+
+st.markdown('<div class="big-title">MLOps Dashboard – House Prices</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="subtitle">Vista general del flujo de ingesta, entrenamiento y despliegue del modelo de precios de vivienda.</div>',
+    unsafe_allow_html=True,
+)
+
+# Métricas principales (placeholder ligeros)
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    with st.container():
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.caption("Lotes ingeridos (Airflow → API profesor)")
+        st.metric("Batches totales", value="12")
+        st.markdown("</div>", unsafe_allow_html=True)
+
+with col2:
+    with st.container():
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.caption("Modelos entrenados (MLflow)")
+        st.metric("Runs registrados", value="5")
+        st.markdown("</div>", unsafe_allow_html=True)
+
+with col3:
+    with st.container():
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.caption("Modelo en producción")
+        st.metric("Versión", value="v2.1", delta="RandomForestRegressor")
+        st.markdown("</div>", unsafe_allow_html=True)
+
+with col4:
+    with st.container():
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.caption("Último entrenamiento")
+        st.metric("Fecha", value=datetime.now().strftime("%Y-%m-%d"))
+        st.markdown("</div>", unsafe_allow_html=True)
+
+
+# Estado de servicios (health checks muy ligeros)
+
+st.markdown('<div class="section-title">🔌 Estado de servicios</div>', unsafe_allow_html=True)
+st.markdown('<p class="small-label">Se realizan verificaciones muy ligeras contra los endpoints de salud.</p>', unsafe_allow_html=True)
+
+svc_col1, svc_col2, svc_col3 = st.columns(3)
+
+def check_health(url: str) -> str:
+    try:
+        resp = requests.get(url, timeout=2)
+        if resp.status_code == 200:
+            return " OK"
+        return f" {resp.status_code}"
+    except Exception:
+        return "No disponible"
+
+with svc_col1:
+    st.markdown("**Inference API**")
+    inf_health = check_health(f"{inference_url.rstrip('/')}/health")
+    st.write(f"Estado: {inf_health}")
+    st.caption(f"URL: {inference_url}/health")
+
+with svc_col2:
+    st.markdown("**MLflow Tracking**")
+    if mlflow_uri != "no configurado":
+        mlflow_health = check_health(f"{mlflow_uri.rstrip('/')}/health")
+        st.write(f"Estado: {mlflow_health}")
+        st.caption(f"URL: {mlflow_uri}/health")
+    else:
+        st.write("No configurado")
+        st.caption("Define `MLFLOW_TRACKING_URI` para verificar salud.")
+
+with svc_col3:
+    st.markdown("**Locust (carga)**")
+    locust_url = os.getenv("LOCUST_URL", "http://localhost:8089")
+    locust_health = check_health(locust_url)
+    st.write(f"Estado: {locust_health}")
+    st.caption(f"UI: {locust_url}")
+
+
+# Resumen textual del flujo
+
+st.markdown('<div class="section-title"> Resumen del flujo MLOps</div>', unsafe_allow_html=True)
+
+st.markdown(
+    """
+Este proyecto orquesta un flujo de **MLOps completo**:
+
+- **Ingesta**: Airflow consume la API y guarda los lotes de datos en MySQL (`raw_house_prices`).
+- **Preparación**: Se limpian y transforman los datos para entrenamiento (features numéricas para regresión).
+- **Entrenamiento**: Se entrena un modelo de regresión ('RandomForestRegressor`) y se registra en **MLflow**.
+- **Despliegue**: El mejor modelo se carga en la **Inference API** (FastAPI) para servir predicciones.
+- **Pruebas de carga**: Con **Locust** se generan peticiones concurrentes para medir latencia y throughput.
+- **Monitoreo**: **Prometheus + Grafana** recolectan métricas técnicas del sistema.
+- **Visualización**: Esta interfaz en **Streamlit** resume el estado general del pipeline.
+"""
+)
+
