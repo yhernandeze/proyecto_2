@@ -2,17 +2,17 @@ import os
 import time
 from functools import lru_cache
 
+import mlflow
+import mlflow.pyfunc
 import pandas as pd
 import pymysql
 from fastapi import FastAPI, HTTPException
 from fastapi import Response
+from mlflow.tracking import MlflowClient
+from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 from pydantic import BaseModel
 
-import mlflow
-import mlflow.pyfunc
-from mlflow.tracking import MlflowClient
-
-from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
+from shared.feature_contract import FEATURE_COLUMNS
 
 # ---------------- ENV VARS ----------------
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://mlflow:5000")
@@ -202,10 +202,16 @@ def health():
 
     start = time.perf_counter()
     try:
-        _ = load_model()
+        model_info = load_model()
         INFERENCE_REQUESTS.labels(**labels).inc()
         INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
-        return {"status": "ok", "model_name": MODEL_NAME, "stage": MODEL_STAGE}
+        return {
+            "status": "ok",
+            "model_name": model_info["model_name"],
+            "stage": MODEL_STAGE,
+            "model_version": model_info["model_version"],
+            "run_id": model_info["run_id"],
+        }
     except Exception as e:
         INFERENCE_EXCEPTIONS.labels(**labels).inc()
         INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
@@ -227,23 +233,17 @@ def predict(features: HouseFeatures):
 
     start = time.perf_counter()
     try:
-        model = load_model()
+        model_info = load_model()
+        model = model_info["model"]
     except RuntimeError as e:
         INFERENCE_EXCEPTIONS.labels(**labels).inc()
         INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
         raise HTTPException(status_code=500, detail=str(e))
 
-    df = pd.DataFrame(
-        [{
-            "bed": features.bed,
-            "bath": features.bath,
-            "acre_lot": features.acre_lot,
-            "house_size": features.house_size,
-            "zip_code": features.zip_code,
-            "brokered_by": features.brokered_by,
-            "street": features.street,
-        }]
-    )
+    df = pd.DataFrame([{
+        col: getattr(features, col)
+        for col in FEATURE_COLUMNS
+    }])
 
     try:
         preds = model.predict(df)
@@ -255,7 +255,12 @@ def predict(features: HouseFeatures):
     INFERENCE_REQUESTS.labels(**labels).inc()
     INFERENCE_LATENCY.labels(**labels).observe(time.perf_counter() - start)
 
-    return PredictionResponse(predicted_price=float(preds[0]))
+    return PredictionResponse(
+        predicted_price=float(preds[0]),
+        model_name=model_info["model_name"],
+        model_version=str(model_info["model_version"]),
+        run_id=model_info["run_id"],
+    )
 
 
 

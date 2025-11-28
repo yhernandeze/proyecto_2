@@ -8,13 +8,14 @@ import pymysql
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
-
 import mlflow
 import mlflow.sklearn
 from mlflow.tracking import MlflowClient
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+
+from shared.feature_contract import FEATURE_COLUMNS
 
 # --------- ENV VARS ----------
 DATA_DB_URI = os.getenv("DATA_DB_URI")  # mysql+pymysql://user:pass@mysql:3306/datasets_db
@@ -22,6 +23,7 @@ GROUP_NUMBER = os.getenv("GROUP_NUMBER", "6")
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://mlflow:5000")
 
 REGISTERED_MODEL_NAME = "house_prices_regression"
+FEATURE_COLS = FEATURE_COLUMNS
 
 # --------- HELPERS TO CONNECT TO MYSQL ----------
 def _parse_mysql_uri(uri: str):
@@ -56,6 +58,16 @@ def _get_mysql_connection():
         cursorclass=pymysql.cursors.DictCursor,
     )
 
+
+def should_promote_model(old_rmse, old_r2, new_rmse, new_r2):
+    """
+    Simple policy: promote when no existing model or the new model is
+    at least as good on RMSE and R2.
+    """
+    if old_rmse is None or old_r2 is None:
+        return True
+    return (new_rmse <= old_rmse) and (new_r2 >= old_r2)
+
 # --------- MAIN TRAINING FUNCTION ----------
 def train_house_price_model(**context):
     """
@@ -65,15 +77,7 @@ def train_house_price_model(**context):
 
     print("[train_house_price_model] DATA_DB_URI in task:", DATA_DB_URI)
 
-    feature_cols = [
-        "bed",
-        "bath",
-        "acre_lot",
-        "house_size",
-        "zip_code",
-        "brokered_by",
-        "street",
-    ]
+    feature_cols = FEATURE_COLS
     target_col = "price"
 
     # -------------------- 0) GLOBAL STATS + DECISION --------------------
@@ -372,7 +376,12 @@ def train_house_price_model(**context):
             prod_run = client.get_run(prod_ver.run_id)
             rmse_prod = float(prod_run.data.metrics.get("rmse", float("inf")))
             r2_prod = float(prod_run.data.metrics.get("r2", float("-1e9")))
-            promote = (rmse <= rmse_prod) and (r2 >= r2_prod)
+            promote = should_promote_model(
+                old_rmse=rmse_prod,
+                old_r2=r2_prod,
+                new_rmse=rmse,
+                new_r2=r2,
+            )
             promotion_reason = (
                 f"rmse_new={rmse:.4f} vs rmse_prod={rmse_prod:.4f}, "
                 f"r2_new={r2:.4f} vs r2_prod={r2_prod:.4f}. "

@@ -9,13 +9,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copiar requirements
-COPY requirements.txt .
+COPY inference_api/requirements.txt .
 
 # Instalar dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar código de la aplicación
-COPY main.py .
+# Copiar código de la aplicación y módulo compartido
+COPY shared ./shared
+COPY inference_api/main.py .
 
 # Crear directorio para modelos
 RUN mkdir -p /app/models

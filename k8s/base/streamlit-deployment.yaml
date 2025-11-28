@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: house-streamlit
+  namespace: mlops-house
+  labels:
+    app: house-streamlit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: house-streamlit
+  template:
+    metadata:
+      labels:
+        app: house-streamlit
+    spec:
+      containers:
+        - name: streamlit-ui
+          image: docker.io/yolandah/house-streamlit:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
+          env:
+            - name: INFERENCE_API_URL
+              value: "http://house-inference-api:8989"
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi

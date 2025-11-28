@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: house-streamlit
+  namespace: mlops-house
+  labels:
+    app: house-streamlit
+spec:
+  selector:
+    app: house-streamlit
+  ports:
+    - name: http
+      port: 8501
+      targetPort: 8501
+      nodePort: 30851
+      protocol: TCP
+  type: NodePort

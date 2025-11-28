@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: house-inference-api
+  namespace: mlops-house
+  labels:
+    app: house-inference-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: house-inference-api
+  template:
+    metadata:
+      labels:
+        app: house-inference-api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8989"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: inference-api
+          image: docker.io/yolandah/house-inference-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8989
+          env:
+            - name: MLFLOW_TRACKING_URI
+              value: "http://mlflow:5000"
+            - name: MODEL_NAME
+              value: "house_prices_regression"
+            - name: MODEL_STAGE
+              value: "Production"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

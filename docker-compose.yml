@@ -119,8 +119,8 @@ services:
   # Airflow Webserver
   airflow-webserver:
     build:
-      context: ./airflow
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./airflow/Dockerfile
     container_name: mlops_airflow_webserver
     depends_on:
       postgres:
@@ -156,8 +156,8 @@ services:
   # Airflow Scheduler
   airflow-scheduler:
     build:
-      context: ./airflow
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./airflow/Dockerfile
     container_name: mlops_airflow_scheduler
     depends_on:
       airflow-webserver:
@@ -185,8 +185,8 @@ services:
   # API de Inferencia
   inference_api:
     build:
-      context: ./inference_api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./inference_api/Dockerfile
     container_name: mlops_inference_api
     depends_on: 
       mlflow:
@@ -221,8 +221,8 @@ services:
 
   streamlit_ui:
     build:
-      context: ./streamlit_ui
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./streamlit_ui/Dockerfile
     container_name: mlops_streamlit
     depends_on:
       - inference_api

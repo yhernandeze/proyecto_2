@@ -7,7 +7,6 @@ RUN apt-get update && \
 
 USER airflow
 
-
 RUN pip install --no-cache-dir \
     mlflow==2.9.2 \
     boto3==1.34.12 \
@@ -17,6 +16,10 @@ RUN pip install --no-cache-dir \
     requests==2.31.0 \
     pymysql==1.1.0 \
     ucimlrepo==0.0.7
+
+# Copiamos utilidades compartidas (feature contract) al contenedor
+COPY shared /opt/airflow/shared
+ENV PYTHONPATH="/opt/airflow/shared:${PYTHONPATH}"
 
 RUN mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins
 WORKDIR /opt/airflow

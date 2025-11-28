@@ -7,10 +7,11 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY streamlit_ui/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app.py .
+COPY shared ./shared
+COPY streamlit_ui/app.py .
 
 EXPOSE 8501
 

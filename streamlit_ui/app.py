@@ -4,6 +4,8 @@ from datetime import datetime
 import requests
 import streamlit as st
 
+from shared.feature_contract import FEATURE_COLUMNS, get_feature_names as shared_get_feature_names
+
 # CONFIGURACIÓN DE LA PÁGINA
 st.set_page_config(
     page_title="Predicción de precios de vivienda",
@@ -111,9 +113,9 @@ a partir de sus características principales:
 - Baños (`bath`)
 - Tamaño del lote (`acre_lot`)
 - Tamaño construido (`house_size`)
-- Ubicación (`city`, `state`, `zip_code`)
-- Estado de la propiedad (`status`)
+- Código postal (`zip_code`)
 - Agencia o corredor (`brokered_by`)
+- Calle (`street`)
 """
 )
 
@@ -150,13 +152,11 @@ with col_form:
     bath = st.number_input("Baños (bath)", min_value=0.0, max_value=20.0, value=2.0, step=0.5)
     acre_lot = st.number_input("Tamaño del lote (acre_lot)", min_value=0.0, value=0.1, step=0.1)
     house_size = st.number_input("Tamaño construido (house_size, ft²)", min_value=0, value=1200, step=10)
-    zip_code = st.text_input("Código postal (zip_code)", value="12345")
+    zip_code = st.number_input("Código postal (zip_code)", min_value=0, value=12345, step=1)
 
     # --- Inputs de ubicación y estado ---
-    city = st.text_input("Ciudad (city)", value="Sample City")
-    state = st.text_input("Estado / Región (state)", value="SC")
-    status = st.text_input("Estado de la propiedad (status)", value="for_sale")
-    brokered_by = st.text_input("Corredor / Agencia (brokered_by)", value="Sample Broker")
+    brokered_by = st.number_input("Corredor / Agencia (brokered_by)", min_value=0.0, value=60000.0, step=100.0)
+    street = st.number_input("Identificador de calle (street)", min_value=0, value=1000, step=1)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -176,10 +176,8 @@ with col_result:
             "acre_lot": acre_lot,
             "house_size": house_size,
             "zip_code": zip_code,
-            "city": city,
-            "state": state,
-            "status": status,
             "brokered_by": brokered_by,
+            "street": street,
         }
 
         predicted_price, raw_response = call_inference_api(payload)
@@ -232,3 +230,7 @@ no reemplaza una tasación profesional.
 """
 )
 
+
+def get_feature_names():
+    """Compat helper used by tests to validate the feature contract."""
+    return shared_get_feature_names()

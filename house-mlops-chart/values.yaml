@@ -1,0 +1,22 @@
+namespace: mlops-house
+
+image:
+  api:
+    repository: docker.io/yolandah/house-inference-api
+    tag: "latest"
+  streamlit:
+    repository: docker.io/yolandah/house-streamlit
+    tag: "latest"
+
+replicas:
+  api: 1
+  streamlit: 1
+
+inference:
+  mlflowTrackingUri: "http://mlflow:5000"
+  modelName: "house_prices_regression"
+  modelStage: "Production"
+
+streamlit:
+  inferenceApiUrl: "http://house-inference-api:8989"
+  nodePort: 30851

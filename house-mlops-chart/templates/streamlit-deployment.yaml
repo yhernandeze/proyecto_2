@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: house-streamlit
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: house-streamlit
+spec:
+  replicas: {{ .Values.replicas.streamlit }}
+  selector:
+    matchLabels:
+      app: house-streamlit
+  template:
+    metadata:
+      labels:
+        app: house-streamlit
+    spec:
+      containers:
+        - name: streamlit-ui
+          image: "{{ .Values.image.streamlit.repository }}:{{ .Values.image.streamlit.tag }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
+          env:
+            - name: INFERENCE_API_URL
+              value: "{{ .Values.streamlit.inferenceApiUrl }}"
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi

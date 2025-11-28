@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: house-inference-api
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: house-inference-api
+spec:
+  replicas: {{ .Values.replicas.api }}
+  selector:
+    matchLabels:
+      app: house-inference-api
+  template:
+    metadata:
+      labels:
+        app: house-inference-api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8989"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: inference-api
+          image: "{{ .Values.image.api.repository }}:{{ .Values.image.api.tag }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8989
+          env:
+            - name: MLFLOW_TRACKING_URI
+              value: "{{ .Values.inference.mlflowTrackingUri }}"
+            - name: MODEL_NAME
+              value: "{{ .Values.inference.modelName }}"
+            - name: MODEL_STAGE
+              value: "{{ .Values.inference.modelStage }}"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

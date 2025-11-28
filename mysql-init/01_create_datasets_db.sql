@@ -16,28 +16,59 @@ CREATE TABLE IF NOT EXISTS clean_house_prices (
     batch_id INT NOT NULL,
     received_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    -- Example feature columns (we’ll refine once we see the exact schema)
-    beds INT,
-    baths INT,
-    sqft_living INT,
-    sqft_lot INT,
-    floors FLOAT,
-    waterfront TINYINT(1),
-    view INT,
-    condition INT,
-    grade INT,
-    sqft_above INT,
-    sqft_basement INT,
-    yr_built INT,
-    yr_renovated INT,
-    lat DOUBLE,
-    long DOUBLE,
-    sqft_living15 INT,
-    sqft_lot15 INT,
+    -- Metadata from the API
+    group_number INT,
+    api_day VARCHAR(20),
+    api_batch_number INT,
+
+    -- Feature columns aligned with the model
+    brokered_by VARCHAR(255),
+    status VARCHAR(50),
+    price DOUBLE,
+    bed DOUBLE,
+    bath DOUBLE,
+    acre_lot DOUBLE,
+    street DOUBLE,
     city VARCHAR(100),
     state VARCHAR(50),
-    zipcode VARCHAR(20),
+    zip_code DOUBLE,
+    house_size DOUBLE,
+    prev_sold_date VARCHAR(50)
+);
 
-    -- Target
-    price DOUBLE
+-- Table to register training runs and decisions
+CREATE TABLE IF NOT EXISTS training_runs (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    run_id VARCHAR(64),
+    last_seen_batch_id INT,
+    total_rows INT,
+    new_rows INT,
+    new_ratio DOUBLE,
+    mean_price DOUBLE,
+    var_price DOUBLE,
+    drift_mean DOUBLE,
+    drift_var DOUBLE,
+    drift_score DOUBLE,
+    retrain_decision VARCHAR(50),
+    promotion_decision VARCHAR(50),
+    decision_reason TEXT,
+    promoted_to_production TINYINT(1),
+    training_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table to log inference calls (used by the API)
+CREATE TABLE IF NOT EXISTS inference_requests (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    model_name VARCHAR(100),
+    model_version VARCHAR(50),
+    run_id VARCHAR(64),
+    bed DOUBLE,
+    bath DOUBLE,
+    acre_lot DOUBLE,
+    house_size DOUBLE,
+    zip_code DOUBLE,
+    brokered_by DOUBLE,
+    street DOUBLE,
+    predicted_price DOUBLE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

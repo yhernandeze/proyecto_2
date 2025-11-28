@@ -1,0 +1,6 @@
+apiVersion: v2
+name: house-mlops-chart
+description: Helm chart for house price inference API and Streamlit UI
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
