@@ -4,6 +4,7 @@ from functools import lru_cache
 
 import mlflow
 import mlflow.pyfunc
+import mlflow.sklearn
 import pandas as pd
 import pymysql
 from fastapi import FastAPI, HTTPException
@@ -124,7 +125,8 @@ def load_model():
     v = versions[0]
     model_uri = f"models:/{MODEL_NAME}/{MODEL_STAGE}"
     try:
-        model = mlflow.pyfunc.load_model(model_uri)
+        # Use the sklearn flavor directly to avoid pyfunc wrapper issues
+        model = mlflow.sklearn.load_model(model_uri)
     except Exception as e:
         raise RuntimeError(f"Failed to load model from '{model_uri}': {e}")
 

@@ -36659,3 +36659,902 @@ File Path                                      PID    Runtime      # DAGs    # E
 /opt/airflow/dags/house_prices_build_clean.py                           1           0  0.22s           2025-11-26T19:54:36
 /opt/airflow/dags/house_prices_train_model.py                           1           0  2.06s           2025-11-26T19:54:59
 ================================================================================
+[2025-11-28T13:12:08.092+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T13:12:08.094+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-11-28T13:12:08.094+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T13:12:08.095+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:12:08.097+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:12:08.205+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/house_prices_build_clean.py   3439  0.03s             0           0
+/opt/airflow/dags/house_prices_ingest.py                                0           0
+/opt/airflow/dags/house_prices_train_model.py   3436  0.05s             0           0
+================================================================================
+[2025-11-28T13:12:38.664+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   3455  0.02s             1           0  0.20s           2025-11-28T13:12:08
+/opt/airflow/dags/house_prices_ingest.py        3458  0.01s             1           0  0.22s           2025-11-28T13:12:08
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.28s           2025-11-28T13:12:10
+================================================================================
+[2025-11-28T13:12:42.135+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T13:12:42.135+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T13:12:42.635+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T13:12:56.918+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T13:12:56.921+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-11-28T13:12:56.922+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T13:12:56.922+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:12:56.925+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:12:57.072+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/house_prices_build_clean.py    161  0.06s             0           0
+/opt/airflow/dags/house_prices_ingest.py                                0           0
+/opt/airflow/dags/house_prices_train_model.py    159  0.08s             0           0
+================================================================================
+[2025-11-28T13:13:27.475+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    186  0.02s             1           0  0.29s           2025-11-28T13:12:57
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.40s           2025-11-28T13:12:57
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.62s           2025-11-28T13:12:59
+================================================================================
+[2025-11-28T13:13:57.826+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    210  0.01s             1           0  0.18s           2025-11-28T13:13:27
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.28s           2025-11-28T13:13:28
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.99s           2025-11-28T13:13:31
+================================================================================
+[2025-11-28T13:14:28.175+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    229  0.01s             1           0  0.16s           2025-11-28T13:13:57
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:13:59
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.98s           2025-11-28T13:14:04
+================================================================================
+[2025-11-28T13:14:58.417+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    250  0.01s             1           0  0.16s           2025-11-28T13:14:28
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:14:29
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.84s           2025-11-28T13:14:36
+================================================================================
+[2025-11-28T13:15:29.077+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    269  0.01s             1           0  0.20s           2025-11-28T13:14:58
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:14:59
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.44s           2025-11-28T13:15:09
+================================================================================
+[2025-11-28T13:15:59.462+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    288  0.01s             1           0  0.17s           2025-11-28T13:15:29
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.26s           2025-11-28T13:15:30
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.10s           2025-11-28T13:15:41
+================================================================================
+[2025-11-28T13:16:29.960+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    307  0.01s             1           0  0.16s           2025-11-28T13:15:59
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:16:00
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.13s           2025-11-28T13:16:13
+================================================================================
+[2025-11-28T13:17:00.299+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    328  0.01s             1           0  0.16s           2025-11-28T13:16:30
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:16:31
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.95s           2025-11-28T13:16:47
+================================================================================
+[2025-11-28T13:17:30.815+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    347  0.01s             1           0  0.17s           2025-11-28T13:17:00
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:17:01
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.22s           2025-11-28T13:17:19
+================================================================================
+[2025-11-28T13:17:57.250+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:17:57.257+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:18:01.324+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    368  0.01s             1           0  0.23s           2025-11-28T13:17:31
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:17:32
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.29s           2025-11-28T13:17:52
+================================================================================
+[2025-11-28T13:18:31.757+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    387  0.01s             1           0  0.17s           2025-11-28T13:18:01
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:18:02
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.19s           2025-11-28T13:18:24
+================================================================================
+[2025-11-28T13:19:02.075+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    408  0.01s             1           0  0.18s           2025-11-28T13:18:31
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:18:33
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.92s           2025-11-28T13:18:58
+================================================================================
+[2025-11-28T13:19:32.645+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    427  0.01s             1           0  0.15s           2025-11-28T13:19:02
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:19:03
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.25s           2025-11-28T13:19:30
+================================================================================
+[2025-11-28T13:20:03.086+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    444  0.02s             1           0  0.18s           2025-11-28T13:19:32
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:19:33
+/opt/airflow/dags/house_prices_train_model.py    437  2.04s             1           0  2.25s           2025-11-28T13:19:30
+================================================================================
+[2025-11-28T13:20:33.539+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    459  0.01s             1           0  0.18s           2025-11-28T13:20:03
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:20:04
+/opt/airflow/dags/house_prices_train_model.py    456  0.02s             1           0  2.21s           2025-11-28T13:20:03
+================================================================================
+[2025-11-28T13:21:03.840+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    475  0.01s             1           0  0.17s           2025-11-28T13:20:33
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.17s           2025-11-28T13:20:34
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.13s           2025-11-28T13:20:35
+================================================================================
+[2025-11-28T13:21:34.279+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    494  0.01s             1           0  0.17s           2025-11-28T13:21:04
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.23s           2025-11-28T13:21:05
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.22s           2025-11-28T13:21:08
+================================================================================
+[2025-11-28T13:22:04.708+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    513  0.01s             1           0  0.18s           2025-11-28T13:21:34
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:21:35
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.17s           2025-11-28T13:21:40
+================================================================================
+[2025-11-28T13:22:35.260+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    532  0.01s             1           0  0.19s           2025-11-28T13:22:04
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:22:06
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.19s           2025-11-28T13:22:13
+================================================================================
+[2025-11-28T13:22:57.692+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:22:57.695+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:23:05.797+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    551  0.01s             1           0  0.17s           2025-11-28T13:22:35
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:22:36
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.24s           2025-11-28T13:22:45
+================================================================================
+[2025-11-28T13:23:36.224+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    570  0.01s             1           0  0.17s           2025-11-28T13:23:05
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:23:07
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.08s           2025-11-28T13:23:18
+================================================================================
+[2025-11-28T13:24:06.702+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    589  0.01s             1           0  0.17s           2025-11-28T13:23:36
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:23:37
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.11s           2025-11-28T13:23:50
+================================================================================
+[2025-11-28T13:24:37.166+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    608  0.01s             1           0  0.21s           2025-11-28T13:24:06
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:24:07
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.11s           2025-11-28T13:24:23
+================================================================================
+[2025-11-28T13:25:07.681+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    627  0.01s             1           0  0.18s           2025-11-28T13:24:37
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:24:38
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.11s           2025-11-28T13:24:55
+================================================================================
+[2025-11-28T13:25:38.138+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    646  0.01s             1           0  0.16s           2025-11-28T13:25:07
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:25:08
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.08s           2025-11-28T13:25:28
+================================================================================
+[2025-11-28T13:26:08.599+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    665  0.01s             1           0  0.15s           2025-11-28T13:25:38
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:25:39
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.15s           2025-11-28T13:26:00
+================================================================================
+[2025-11-28T13:26:39.092+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    684  0.01s             1           0  0.17s           2025-11-28T13:26:08
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.23s           2025-11-28T13:26:09
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.25s           2025-11-28T13:26:33
+================================================================================
+[2025-11-28T13:27:09.672+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    703  0.01s             1           0  0.20s           2025-11-28T13:26:39
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:26:40
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.15s           2025-11-28T13:27:05
+================================================================================
+[2025-11-28T13:27:40.093+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    726  0.01s             1           0  0.17s           2025-11-28T13:27:09
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.23s           2025-11-28T13:27:10
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.08s           2025-11-28T13:27:38
+================================================================================
+[2025-11-28T13:27:58.386+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:27:58.391+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:28:10.506+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    772  0.01s             1           0  0.19s           2025-11-28T13:27:40
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:27:41
+/opt/airflow/dags/house_prices_train_model.py    765  2.03s             1           0  2.08s           2025-11-28T13:27:38
+================================================================================
+[2025-11-28T13:28:41.022+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    787  0.01s             1           0  0.23s           2025-11-28T13:28:10
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:28:11
+/opt/airflow/dags/house_prices_train_model.py    784  0.02s             1           0  2.30s           2025-11-28T13:28:10
+================================================================================
+[2025-11-28T13:29:11.302+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    803  0.01s             1           0  0.27s           2025-11-28T13:28:41
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:28:42
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.12s           2025-11-28T13:28:43
+================================================================================
+[2025-11-28T13:29:41.867+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    822  0.01s             1           0  0.17s           2025-11-28T13:29:11
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:29:12
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.22s           2025-11-28T13:29:15
+================================================================================
+[2025-11-28T13:30:12.317+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    841  0.01s             1           0  0.16s           2025-11-28T13:29:42
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:29:43
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.19s           2025-11-28T13:29:48
+================================================================================
+[2025-11-28T13:30:42.753+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    860  0.01s             1           0  0.18s           2025-11-28T13:30:12
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.17s           2025-11-28T13:30:13
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.06s           2025-11-28T13:30:20
+================================================================================
+[2025-11-28T13:31:13.221+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    879  0.01s             1           0  0.15s           2025-11-28T13:30:42
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:30:43
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.13s           2025-11-28T13:30:53
+================================================================================
+[2025-11-28T13:31:43.717+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    898  0.01s             1           0  0.19s           2025-11-28T13:31:13
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:31:14
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.28s           2025-11-28T13:31:25
+================================================================================
+[2025-11-28T13:32:14.145+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    917  0.01s             1           0  0.17s           2025-11-28T13:31:43
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:31:44
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.21s           2025-11-28T13:31:58
+================================================================================
+[2025-11-28T13:32:44.599+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    936  0.01s             1           0  0.17s           2025-11-28T13:32:14
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:32:15
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.18s           2025-11-28T13:32:30
+================================================================================
+[2025-11-28T13:32:58.892+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:32:58.897+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:33:15.123+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    955  0.01s             1           0  0.20s           2025-11-28T13:32:44
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:32:45
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.14s           2025-11-28T13:33:03
+================================================================================
+[2025-11-28T13:33:45.538+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    974  0.01s             1           0  0.17s           2025-11-28T13:33:15
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:33:16
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.08s           2025-11-28T13:33:35
+================================================================================
+[2025-11-28T13:34:15.934+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py    993  0.01s             1           0  0.15s           2025-11-28T13:33:45
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:33:46
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.10s           2025-11-28T13:34:07
+================================================================================
+[2025-11-28T13:34:46.360+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1012  0.01s             1           0  0.17s           2025-11-28T13:34:16
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.44s           2025-11-28T13:34:17
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.28s           2025-11-28T13:34:40
+================================================================================
+[2025-11-28T13:35:16.939+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1031  0.01s             1           0  0.45s           2025-11-28T13:34:46
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.24s           2025-11-28T13:34:47
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.92s           2025-11-28T13:35:13
+================================================================================
+[2025-11-28T13:35:47.380+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1050  0.01s             1           0  0.20s           2025-11-28T13:35:17
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.43s           2025-11-28T13:35:18
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.07s           2025-11-28T13:35:46
+================================================================================
+[2025-11-28T13:36:18.060+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1067  0.01s             1           0  0.43s           2025-11-28T13:35:47
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:35:49
+/opt/airflow/dags/house_prices_train_model.py   1060  1.03s             1           0  2.07s           2025-11-28T13:35:46
+================================================================================
+[2025-11-28T13:36:48.752+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1079  0.01s             1           0  0.47s           2025-11-28T13:36:18
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.45s           2025-11-28T13:36:19
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.10s           2025-11-28T13:36:19
+================================================================================
+[2025-11-28T13:37:18.918+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py                           1           0  0.42s           2025-11-28T13:36:49
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.27s           2025-11-28T13:36:50
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.30s           2025-11-28T13:36:51
+================================================================================
+[2025-11-28T13:37:49.753+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1117  0.01s             1           0  0.18s           2025-11-28T13:37:19
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:37:20
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.98s           2025-11-28T13:37:24
+================================================================================
+[2025-11-28T13:37:58.942+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:37:58.949+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:38:20.123+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1136  0.01s             1           0  0.19s           2025-11-28T13:37:49
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:37:50
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.95s           2025-11-28T13:37:56
+================================================================================
+[2025-11-28T13:38:50.438+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1155  0.01s             1           0  0.23s           2025-11-28T13:38:20
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:38:21
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.87s           2025-11-28T13:38:29
+================================================================================
+[2025-11-28T13:39:20.724+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1174  0.01s             1           0  0.18s           2025-11-28T13:38:50
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:38:51
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.89s           2025-11-28T13:39:01
+================================================================================
+[2025-11-28T13:39:51.106+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1193  0.01s             1           0  0.17s           2025-11-28T13:39:20
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:39:22
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.98s           2025-11-28T13:39:33
+================================================================================
+[2025-11-28T13:40:21.526+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1212  0.01s             1           0  0.21s           2025-11-28T13:39:51
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:39:52
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.99s           2025-11-28T13:40:06
+================================================================================
+[2025-11-28T13:40:51.913+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1231  0.01s             1           0  0.19s           2025-11-28T13:40:21
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.24s           2025-11-28T13:40:22
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.96s           2025-11-28T13:40:38
+================================================================================
+[2025-11-28T13:41:22.332+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1250  0.01s             1           0  0.18s           2025-11-28T13:40:52
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.23s           2025-11-28T13:40:53
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.01s           2025-11-28T13:41:11
+================================================================================
+[2025-11-28T13:41:52.724+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1269  0.01s             1           0  0.16s           2025-11-28T13:41:22
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:41:23
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.00s           2025-11-28T13:41:43
+================================================================================
+[2025-11-28T13:42:23.294+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1288  0.01s             1           0  0.17s           2025-11-28T13:41:52
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:41:54
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.38s           2025-11-28T13:42:16
+================================================================================
+[2025-11-28T13:42:53.707+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1307  0.01s             1           0  0.17s           2025-11-28T13:42:23
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:42:24
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.03s           2025-11-28T13:42:48
+================================================================================
+[2025-11-28T13:42:58.983+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:42:58.988+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:43:24.154+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1326  0.01s             1           0  0.18s           2025-11-28T13:42:53
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:42:54
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.98s           2025-11-28T13:43:21
+================================================================================
+[2025-11-28T13:43:54.600+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1345  0.01s             1           0  0.19s           2025-11-28T13:43:24
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:43:25
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.03s           2025-11-28T13:43:53
+================================================================================
+[2025-11-28T13:44:25.099+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1362  0.01s             1           0  0.21s           2025-11-28T13:43:54
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:43:55
+/opt/airflow/dags/house_prices_train_model.py   1355  1.04s             1           0  2.03s           2025-11-28T13:43:53
+================================================================================
+[2025-11-28T13:44:55.287+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1374  0.01s             1           0  0.18s           2025-11-28T13:44:25
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.23s           2025-11-28T13:44:26
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.96s           2025-11-28T13:44:26
+================================================================================
+[2025-11-28T13:45:25.597+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1393  0.01s             1           0  0.21s           2025-11-28T13:44:55
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.27s           2025-11-28T13:44:56
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.91s           2025-11-28T13:44:58
+================================================================================
+[2025-11-28T13:45:56.002+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1412  0.01s             1           0  0.20s           2025-11-28T13:45:25
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:45:26
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.95s           2025-11-28T13:45:30
+================================================================================
+[2025-11-28T13:46:26.257+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1431  0.01s             1           0  0.18s           2025-11-28T13:45:56
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:45:57
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.84s           2025-11-28T13:46:03
+================================================================================
+[2025-11-28T13:46:56.856+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1450  0.01s             1           0  0.21s           2025-11-28T13:46:26
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:46:27
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.59s           2025-11-28T13:46:36
+================================================================================
+[2025-11-28T13:47:27.214+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1469  0.01s             1           0  0.22s           2025-11-28T13:46:57
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:46:58
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.91s           2025-11-28T13:47:08
+================================================================================
+[2025-11-28T13:47:57.635+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1488  0.01s             1           0  0.18s           2025-11-28T13:47:27
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:47:28
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.04s           2025-11-28T13:47:40
+================================================================================
+[2025-11-28T13:47:59.816+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:47:59.829+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:48:28.108+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1507  0.01s             1           0  0.17s           2025-11-28T13:47:57
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.19s           2025-11-28T13:47:58
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.04s           2025-11-28T13:48:12
+================================================================================
+[2025-11-28T13:48:58.511+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1526  0.01s             1           0  0.17s           2025-11-28T13:48:28
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:48:29
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.00s           2025-11-28T13:48:45
+================================================================================
+[2025-11-28T13:49:28.898+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1545  0.01s             1           0  0.17s           2025-11-28T13:48:58
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:48:59
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.98s           2025-11-28T13:49:17
+================================================================================
+[2025-11-28T13:49:59.215+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1564  0.01s             1           0  0.19s           2025-11-28T13:49:29
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.24s           2025-11-28T13:49:30
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.89s           2025-11-28T13:49:50
+================================================================================
+[2025-11-28T13:50:29.479+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1583  0.01s             1           0  0.20s           2025-11-28T13:49:59
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:50:00
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.81s           2025-11-28T13:50:22
+================================================================================
+[2025-11-28T13:50:59.855+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1602  0.01s             1           0  0.22s           2025-11-28T13:50:29
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:50:30
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.93s           2025-11-28T13:50:54
+================================================================================
+[2025-11-28T13:51:30.206+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1621  0.01s             1           0  0.20s           2025-11-28T13:51:00
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:51:01
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.90s           2025-11-28T13:51:27
+================================================================================
+[2025-11-28T13:52:00.609+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1640  0.01s             1           0  0.17s           2025-11-28T13:51:30
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:51:31
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.23s           2025-11-28T13:51:59
+================================================================================
+[2025-11-28T13:52:31.084+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1657  0.02s             1           0  0.20s           2025-11-28T13:52:00
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:52:01
+/opt/airflow/dags/house_prices_train_model.py   1650  1.04s             1           0  2.23s           2025-11-28T13:51:59
+================================================================================
+[2025-11-28T13:53:00.355+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T13:53:00.362+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-28T13:53:01.397+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1669  0.01s             1           0  0.23s           2025-11-28T13:52:31
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.18s           2025-11-28T13:52:32
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.07s           2025-11-28T13:52:32
+================================================================================
+[2025-11-28T13:53:31.661+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1688  0.01s             1           0  0.15s           2025-11-28T13:53:01
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.31s           2025-11-28T13:53:02
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.92s           2025-11-28T13:53:04
+================================================================================
+[2025-11-28T13:54:01.959+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1707  0.01s             1           0  0.16s           2025-11-28T13:53:31
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.21s           2025-11-28T13:53:33
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.89s           2025-11-28T13:53:36
+================================================================================
+[2025-11-28T13:54:32.052+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py                           1           0  0.16s           2025-11-28T13:54:02
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.22s           2025-11-28T13:54:04
+/opt/airflow/dags/house_prices_train_model.py                           1           0  2.71s           2025-11-28T13:54:09
+================================================================================
+[2025-11-28T13:55:02.904+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1754  0.01s             1           0  0.16s           2025-11-28T13:54:32
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:54:34
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.96s           2025-11-28T13:54:42
+================================================================================
+[2025-11-28T13:55:33.241+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                        PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/house_prices_build_clean.py   1773  0.01s             1           0  0.20s           2025-11-28T13:55:03
+/opt/airflow/dags/house_prices_ingest.py                                1           0  0.20s           2025-11-28T13:55:05
+/opt/airflow/dags/house_prices_train_model.py                           1           0  1.91s           2025-11-28T13:55:15
+================================================================================

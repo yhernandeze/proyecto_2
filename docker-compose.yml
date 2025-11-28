@@ -134,6 +134,7 @@ services:
       AIRFLOW__CORE__FERNET_KEY: 'UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E='
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
       AIRFLOW__WEBSERVER__SECRET_KEY: 'your-secret-key-here'
+      AIRFLOW__LOGGING__LOG_SERVER_URL_TEMPLATE: http://airflow-scheduler:8793/log/{dag_id}/{task_id}/{run_id}/{map_index}/{try_number}.log
       MLFLOW_TRACKING_URI: http://mlflow:5000
       DATA_API_URL: ${DATA_API_URL}
       DATA_DB_URI: mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/datasets_db
@@ -170,6 +171,7 @@ services:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
       AIRFLOW__CORE__FERNET_KEY: 'UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E='
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__LOGGING__LOG_SERVER_URL_TEMPLATE: http://airflow-scheduler:8793/log/{dag_id}/{task_id}/{run_id}/{map_index}/{try_number}.log
       MLFLOW_TRACKING_URI: http://mlflow:5000
       DATA_API_URL: ${DATA_API_URL}
       DATA_DB_URI: mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/datasets_db
