@@ -32,6 +32,14 @@ spec:
               value: "{{ .Values.inference.modelName }}"
             - name: MODEL_STAGE
               value: "{{ .Values.inference.modelStage }}"
+            - name: DATA_DB_URI
+              value: "{{ .Values.inference.dataDbUri }}"
+            - name: AWS_ACCESS_KEY_ID
+              value: "{{ .Values.minio.rootUser }}"
+            - name: AWS_SECRET_ACCESS_KEY
+              value: "{{ .Values.minio.rootPassword }}"
+            - name: MLFLOW_S3_ENDPOINT_URL
+              value: "{{ .Values.mlflow.s3Endpoint }}"
           resources:
             requests:
               cpu: 100m

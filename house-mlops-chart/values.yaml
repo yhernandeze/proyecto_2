@@ -7,16 +7,75 @@ image:
   streamlit:
     repository: docker.io/yolandah/house-streamlit
     tag: "latest"
+  mlflow:
+    repository: docker.io/yolandah/mlflow
+    tag: "latest"
+  airflow:
+    repository: docker.io/yolandah/airflow
+    tag: "latest"
+  prometheus:
+    repository: prom/prometheus
+    tag: "v2.55.0"
+  grafana:
+    repository: grafana/grafana
+    tag: "10.0.0"
+  mysql:
+    repository: mysql
+    tag: "8.0"
+  minio:
+    repository: minio/minio
+    tag: "latest"
+  postgres:
+    repository: postgres
+    tag: "13"
 
 replicas:
   api: 1
   streamlit: 1
+  mlflow: 1
+  airflowWeb: 1
+  airflowScheduler: 1
+  prometheus: 1
+  grafana: 1
+  minio: 1
+  mysql: 1
+  postgres: 1
 
 inference:
   mlflowTrackingUri: "http://mlflow:5000"
   modelName: "house_prices_regression"
   modelStage: "Production"
+  dataDbUri: "mysql+pymysql://mlops_user:mlops_pass@mysql:3306/datasets_db"
 
 streamlit:
   inferenceApiUrl: "http://house-inference-api:8989"
   nodePort: 30851
+
+mlflow:
+  backendDb: "mysql+pymysql://mlops_user:mlops_pass@mysql:3306/datasets_db"
+  defaultArtifactRoot: "s3://mlflow/"
+  s3Endpoint: "http://minio:9000"
+
+minio:
+  rootUser: "minio"
+  rootPassword: "minio123"
+  bucket: "mlflow"
+
+mysql:
+  rootPassword: "rootpass"
+  user: "mlops_user"
+  password: "mlops_pass"
+  database: "datasets_db"
+  mlflowDatabase: "datasets_db"
+
+postgres:
+  user: "airflow"
+  password: "airflow"
+  database: "airflow"
+
+prometheus:
+  scrapeInterval: "15s"
+
+grafana:
+  adminUser: "admin"
+  adminPassword: "admin"

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airflow-scheduler
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: airflow-scheduler
+spec:
+  replicas: {{ .Values.replicas.airflowScheduler }}
+  selector:
+    matchLabels:
+      app: airflow-scheduler
+  template:
+    metadata:
+      labels:
+        app: airflow-scheduler
+    spec:
+      containers:
+        - name: airflow-scheduler
+          image: "{{ .Values.image.airflow.repository }}:{{ .Values.image.airflow.tag }}"
+          env:
+            - name: AIRFLOW__CORE__EXECUTOR
+              value: LocalExecutor
+            - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+              value: "postgresql+psycopg2://{{ .Values.postgres.user }}:{{ .Values.postgres.password }}@postgres/{{ .Values.postgres.database }}"
+            - name: AIRFLOW__CORE__FERNET_KEY
+              value: "UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E="
+            - name: AIRFLOW__CORE__LOAD_EXAMPLES
+              value: "false"
+            - name: MLFLOW_TRACKING_URI
+              value: "http://mlflow:5000"
+            - name: DATA_API_URL
+              value: ""
+            - name: DATA_DB_URI
+              value: "{{ .Values.inference.dataDbUri }}"
+            - name: GROUP_NUMBER
+              value: "6"
+            - name: AWS_ACCESS_KEY_ID
+              value: "{{ .Values.minio.rootUser }}"
+            - name: AWS_SECRET_ACCESS_KEY
+              value: "{{ .Values.minio.rootPassword }}"
+            - name: MLFLOW_S3_ENDPOINT_URL
+              value: "{{ .Values.mlflow.s3Endpoint }}"
+          args:
+            - "airflow"
+            - "scheduler"

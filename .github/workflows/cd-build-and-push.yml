@@ -10,10 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: [inference_api, streamlit_ui]
+        service: [inference_api, streamlit_ui, mlflow, airflow]
     env:
       IMAGE_NAME_INFERENCE: house-inference-api
       IMAGE_NAME_STREAMLIT: house-streamlit
+      IMAGE_NAME_MLFLOW: mlflow
+      IMAGE_NAME_AIRFLOW: airflow
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,8 +41,12 @@ jobs:
         run: |
           if [ "${{ matrix.service }}" = "inference_api" ]; then
             echo "image_name=${IMAGE_NAME_INFERENCE}" >> $GITHUB_OUTPUT
-          else
+          elif [ "${{ matrix.service }}" = "streamlit_ui" ]; then
             echo "image_name=${IMAGE_NAME_STREAMLIT}" >> $GITHUB_OUTPUT
+          elif [ "${{ matrix.service }}" = "mlflow" ]; then
+            echo "image_name=${IMAGE_NAME_MLFLOW}" >> $GITHUB_OUTPUT
+          else
+            echo "image_name=${IMAGE_NAME_AIRFLOW}" >> $GITHUB_OUTPUT
           fi
 
       - name: Build and push ${{ matrix.service }}

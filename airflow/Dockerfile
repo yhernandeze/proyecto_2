@@ -22,4 +22,6 @@ COPY shared /opt/airflow/shared
 ENV PYTHONPATH="/opt/airflow/shared:${PYTHONPATH}"
 
 RUN mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins
+# Incluir DAGs en la imagen para despliegues en Kubernetes
+COPY airflow/dags /opt/airflow/dags
 WORKDIR /opt/airflow
