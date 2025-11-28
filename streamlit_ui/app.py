@@ -1,7 +1,10 @@
 import os
 from datetime import datetime
 
+import mlflow
+import pandas as pd
 import requests
+import shap
 import streamlit as st
 
 from shared.feature_contract import FEATURE_COLUMNS, get_feature_names as shared_get_feature_names
@@ -22,6 +25,9 @@ CARD_BG = "#FFFFFF"   # blanco
 
 # Endpoint de la API de inferencia (desde variable de entorno)
 INFERENCE_API_URL = os.getenv("INFERENCE_API_URL", "http://localhost:8989")
+MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://mlflow:5000")
+MODEL_NAME = os.getenv("MODEL_NAME", "house_prices_regression")
+MODEL_STAGE = os.getenv("MODEL_STAGE", "Production")
 
 # ESTILOS
 st.markdown(
@@ -71,6 +77,19 @@ st.markdown(
 )
 
 # FUNCIONES AUXILIARES
+DEFAULT_BASELINE = pd.DataFrame([{
+    "bed": 3,
+    "bath": 2,
+    "acre_lot": 0.1,
+    "house_size": 1200,
+    "zip_code": 12345,
+    "brokered_by": 60000,
+    "street": 1000,
+}])
+
+def build_feature_df(payload: dict) -> pd.DataFrame:
+    """Create DataFrame with proper column order for the model."""
+    return pd.DataFrame([{col: payload[col] for col in FEATURE_COLUMNS}])
 
 def call_inference_api(payload: dict):
     """
@@ -99,6 +118,26 @@ def call_inference_api(payload: dict):
 
     except Exception as e:
         return None, {"error": str(e)}
+
+
+@st.cache_resource(show_spinner=False)
+def load_model_and_explainer():
+    """Load the MLflow model and prepare a SHAP explainer (cached)."""
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+    model_uri = f"models:/{MODEL_NAME}/{MODEL_STAGE}"
+    model = mlflow.pyfunc.load_model(model_uri)
+    # Use a small background sample to keep SHAP cheap
+    explainer = shap.Explainer(model.predict, DEFAULT_BASELINE)
+    return model, explainer
+
+
+@st.cache_data(show_spinner=False)
+def compute_shap_values(explainer, df: pd.DataFrame):
+    """Compute SHAP values for a single-row dataframe."""
+    explanation = explainer(df)
+    shap_values = explanation.values[0]
+    base_value = explanation.base_values[0]
+    return shap_values, base_value
 
 
 # SIDEBAR – INFO GENERAL
@@ -179,6 +218,7 @@ with col_result:
             "brokered_by": brokered_by,
             "street": street,
         }
+        feature_df = build_feature_df(payload)
 
         predicted_price, raw_response = call_inference_api(payload)
 
@@ -200,6 +240,22 @@ with col_result:
                 con los datos históricos de precios de vivienda del proyecto.
                 """,
             )
+
+            # Explicabilidad con SHAP
+            st.markdown("---")
+            st.markdown("#### 🔍 Explicabilidad (SHAP)")
+            try:
+                model, explainer = load_model_and_explainer()
+                shap_vals, base_value = compute_shap_values(explainer, feature_df)
+                shap_df = (
+                    pd.DataFrame({"feature": FEATURE_COLUMNS, "contribution": shap_vals})
+                    .sort_values("contribution", key=abs, ascending=False)
+                )
+                st.caption("Impacto de cada feature en la predicción (mayor a menor).")
+                st.bar_chart(shap_df.set_index("feature"))
+                st.caption(f"Valor base del modelo: ${base_value:,.0f}")
+            except Exception as e:
+                st.warning(f"No se pudo calcular SHAP: {e}")
 
             with st.expander("Ver detalles técnicos de la respuesta"):
                 st.json(raw_response)
